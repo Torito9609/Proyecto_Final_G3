@@ -1,0 +1,273 @@
+.contenedor-padre {
+    display: flex;
+    flex-direction: column;
+    background-color: #243D74;
+    box-shadow:  -10px 10px 20px #5a5a5a,
+    10px -10px 20px #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-left: 300px;
+    margin-right: 300px;
+    border: 3px solid #DBC078;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+@media (max-width:1133) {
+    .contenedor-padre {
+        flex: 0 0 100%;
+        padding: 20px;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .contenedor-padre {
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        padding: 20px;
+        margin: 0 10px;
+    }
+}
+
+.title {
+    text-align: center;
+    color: #DBC078;
+}
+
+.contenedor-right {
+    width: 700px;
+    padding: 10px;
+    background-color: none;
+    margin: 10px;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedor-left {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: none;
+    margin: 10px 0;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.left,
+.right {
+    background-color: none;
+    padding: 20px;
+
+    color: #fff;
+    text-align: center;
+
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: auto;
+    height: 600px;
+
+}
+
+.left {
+    align-self: flex-start;
+}
+
+.right {
+    align-self: flex-end;
+
+}
+
+/* Responsividad */
+@media (max-width: 1146px) {
+
+    .left,
+    .right {
+        width: 100%;
+        align-self: center;
+        flex: 0 0 100%;
+
+
+    }
+}
+
+@media (max-width: 768px) {
+
+    .left,
+    .right {
+        width: 100%;
+        align-self: center;
+
+        flex: 0 0 100%;
+
+
+    }
+}
+
+@media (max-width: 768px) {
+    .right {
+        align-self: flex-end;
+    }
+}
+
+.left:hover {
+    background-color: #e9e9e973;
+}
+
+
+.card {
+    width: 450px;
+    /** tamaño control*/
+    height: 600px;
+    perspective: 1000px;
+    background-color: #243d7400;
+    border: none;
+}
+
+.card-inner {
+    width: 450px;
+    /** tamaño control*/
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+    border-radius: 50%;
+    background-color: #ff000000;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #6a2c7000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #6a2c7000;
+    border-radius: 50%;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+
+    width: 450px;
+    /** tamaño control*/
+    height: 600px;
+}
+
+.card-back {
+    background-color: #00000000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+
+    width: 450px;
+    /** tamaño control*/
+    height: 600px;
+
+}
+
+
+.img-contain {
+    border: 1px solid black;
+
+
+    width: 100%;
+    /** tamaño control*/
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+
+
+
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .img-contain {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .img-contain,
+    .card-back,
+    .card-front,
+    .card-inner {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+
+
+.texto {
+    border: 2px solid #DBC078;
+    border-radius: 30px;
+    padding: 7px;
+    width: 100%;
+    height: fit-content;
+    margin: 20px;
+    font-size: 18px;
+    background-color: #1A6CB4;
+}
+
+@media (max-width:768) {
+    .texto {
+        width: 450px;
+        font-size: 13px;
+        padding: 5px;
+
+    }
+}
+
+@media (min-width:768) {
+    .texto {
+        width: 200px;
+        font-size: 10px;
+
+    }
+}
+
+
+.texto h3 {
+    color: #DBC078;
+}
+
+.descrip {
+    color: white;
+    font-size: larger;
+
+}

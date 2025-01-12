@@ -10,15 +10,6 @@
   padding: 0;
 }
 
-body {
-  font-family: montserrat, sans-serif;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -126,6 +117,7 @@ body {
 
 .card__body {
   padding: 15px;
+  font-family: montserrat, sans-serif;
 }
 
 .card__body h3 {

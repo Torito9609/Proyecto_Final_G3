@@ -21,6 +21,11 @@
 
 body{
     font-family: 'Roma Bold', sans-serif; 
+
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    
 }
 
 .onCenter{
@@ -36,12 +41,13 @@ body{
   }
   
   .text-content {
-    max-width: 680px;
+    max-width: 700px;
     height: 200px;
     padding-left: 20px;
-    background-color: #1a2e4d;
-    border-radius: 0 100px 100px 0;
-    margin-left: 150px;
+    background-color: #243D74;
+    border-radius: 20px 100px 100px 20px;
+    margin-left: 80px;
+    border: 3px solid #DBC078;
   }
   
   .text-content h2 {
