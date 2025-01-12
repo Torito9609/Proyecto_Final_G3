@@ -1,9 +1,94 @@
-body{
-    font-family: roma, sans-serif;
+@font-face {
+  font-family: "Roma Bold";
+  src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
-.onCenter{
+@font-face {
+  font-family: "Roma SemiBold";
+  src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ivymode";
+  src: url("/fonts/IvyMode-ThinItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Roma Bold", sans-serif;
+
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.onCenter {
+  text-align: center;
+  font-weight: bold;
+  color: #1d1d1b;
+  font-size: 36px;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-content {
+  max-width: 700px;
+  height: 200px;
+  padding-left: 20px;
+  background-color: #243d74;
+  border-radius: 20px 100px 100px 20px;
+  margin-left: 80px;
+  border: 3px solid #dbc078;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  color: #dbc078;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.text-content h4 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-family: "IvyMode", "sans serif";
+  font-style: italic;
+}
+
+.text-content p {
+  font-size: 1rem;
+  color: #c1e5fb;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  margin-top: 50px;
+  width: 60%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    flex-direction: column;
     text-align: center;
-    font-weight: bold;
+  }
+  .image-content {
+    margin-top: 20px;
+  }
 }
-
