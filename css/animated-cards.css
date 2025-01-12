@@ -15,6 +15,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 50px;
 }
 
 .card {
@@ -49,11 +50,8 @@
 }
 
 .card__face--front {
-  background-image: linear-gradient(
-    to bottom right,
-    var(--primary),
-    var(--secondary)
-  );
+  background-color: var(--primary);
+  border: 3px solid #dbc078;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,12 +59,13 @@
 
 .card__face--front h2 {
   color: #dbc078;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .card__face--back {
   background-color: var(--light);
   transform: rotateY(180deg);
+  border: 3px solid #dbc078;
 }
 
 .card__content {
