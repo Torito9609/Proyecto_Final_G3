@@ -24,7 +24,10 @@ body {
 
   justify-content: center;
   align-items: center;
-  padding: 50px;
+}
+
+main{
+  padding: 10px;
 }
 
 .onCenter {
@@ -34,6 +37,9 @@ body {
   font-size: 36px;
 }
 
+.info-anoutus{
+  margin-top: 50px;
+}
 .about-us {
   display: flex;
   align-items: center;
