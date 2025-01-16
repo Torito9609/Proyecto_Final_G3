@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "Roma Bold";
+    src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Roma SemiBold";
+    src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Ivymode";
+    src: url("/fonts/IvyMode-ThinItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body{
+    padding: 0;
+    margin: 0;
+    background: rgb(231, 231, 231);    
+}
+
+main{
+
+
+}
+
+.video-banner {
+    position: relative;
+    width: 100%;
+    height: 95vh; /* Ajusta el tamaño del banner */
+    overflow: hidden;
+  }
+  
+  .video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.44); /* Oscurece el video para mejor visibilidad del texto */
+  }
+  
+  .overlay h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .overlay p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+h1 {
+    font-family: "Roma Bold", sans-serif;
+    text-align: center;
+}
+
+.categories{
+    text-align: center;
+  
+
+}
+
+.categorie-card{
+    display: inline-block;
+    background-color: rgb(201, 195, 112);
+    width: 10%;
+    height: 100px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.populars{
+    text-align: center;
+  
+
+}
+
+.popular-card{
+    display: inline-block;
+    background-color: rgb(221, 221, 221);
+    width: 15%;
+    height: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.specials{
+    text-align: center;
+}
+
+.special-card{
+    display: inline-block;
+    background-color: beige;
+    width: 18%;
+    height: 180px;
+   
+}
+
+.bussines{
+    text-align: center;
+}
+
+.bussines-container{
+    display: block;
+    background-color: rgb(220, 220, 220);
+    width: 80%;
+    height: 400px;
+}
