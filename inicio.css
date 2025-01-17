@@ -22,11 +22,17 @@
 body{
     padding: 0;
     margin: 0;
-    background: rgb(231, 231, 231);    
+    background-image: url(/img/fondo3.png) !important; 
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-size: 100% 100%; /* 100% de ancho y 50% de altura */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* La imagen se mantiene fija */
+     
 }
 
 main{
-
+  
 
 }
 
@@ -60,7 +66,6 @@ main{
     align-items: center;
     color: white;
     text-align: center;
-    background: rgba(0, 0, 0, 0.44); /* Oscurece el video para mejor visibilidad del texto */
   }
   
   .overlay h1 {
@@ -85,13 +90,13 @@ h1 {
 .categorie-card{
   display: inline-block;
   width: 375px;
-  background: #DBC078;
+  background: #243D74;
   /*border-radius: 8px;*/
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  color: #1D1D1B;
+  color: #ffffff;
   font-family: "Ivymode", sans-serif;
   font-weight: bolder;
 }
@@ -111,13 +116,13 @@ h1 {
 
 .categorie-card p {
   margin: 10px 0 5px;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 2.5rem;
+  color: #DBC078;
   font-weight: bold;
 }
 .categorie-card span {
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.6rem;
+  color: #ffffff;
   line-height: 1.4;
   display: block;
   padding: 0 10px;
@@ -175,14 +180,15 @@ h1 {
 .specials {
   text-align: center;
   padding: 20px;
-  background-color: #F8F8F8;
+  background: linear-gradient(45deg, #1A6CB4, #243D74, #1A6CB4);
+  
 }
 
 .specials h1 {
   font-family: "Roma Bold", sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #DBC078;
 }
 
 .special-card {
@@ -205,7 +211,6 @@ h1 {
 .special-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
 }
 
 .special-card img {
@@ -235,7 +240,8 @@ h1 {
 .bussines {
   text-align: center;
   padding: 40px 20px;
-  background-color: #f4f4f4; /* Color suave para fondo */
+  background-color: #FFF;
+ 
 }
 
 .bussines h1 {

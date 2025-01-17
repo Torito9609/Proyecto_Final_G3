@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página_de_inicio</title>
     <link rel="stylesheet" href="/inicio.css" />
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 </head>
 <body>
     <div class="video-banner">
@@ -42,11 +45,20 @@
         </div>
     </div>
 
-    <div class="populars">
+    <div id="productCarousel" class="carousel slide populars" data-ride="carousel">
         <h1>POPULARES</h1>
-        <div class="popular-card">Producto1</div>
-        <div class="popular-card">Producto2</div>
-        <div class="popular-card">Producto3</div>
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators"></ol>
+
+        <!-- Wrapper for product cards -->
+        <div class="carousel-inner carousel-size"></div>
+
+        <!-- left Control -->
+        <a class="left carousel-control" href="#productCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <!-- right Control -->
+        <a class="right carousel-control" href="#productCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        
     </div>
     
     <div class="specials">
@@ -96,6 +108,87 @@
             </div>
         </div>
     </div>
-    
+
+    <footer>
+        <div id="footer_content">
+          <div id="footer_contacts">
+            <img src="img-logos/Logo_sin-fondo_sin_slogan.png" alt="Logo" id="footer_logo">
+            <p>Síguenos en nuestras redes sociales</p>
+      
+            <div id="footer_social_media">
+              <a href="#" class="footer-link" id="instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+      
+              <a href="#" class="footer-link" id="facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+      
+              <a href="#" class="footer-link" id="whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+      
+              <a href="#" class="footer-link" id="tiktok">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+      
+          <ul class="footer-list">
+            <li>
+              <h3>Nuestros Canales de Comunicación</h3>
+            </li>
+            <li>
+              <p class="footer-link"> +57 302 4116438</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">inversioneselzafiro@gmail.com</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">01 80000 11 2345</a>
+            </li>
+          </ul>
+      
+          <ul class="footer-list">
+            <li>
+              <h3>Política de Privacidad</h3>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Tratamiento de Datos Personales</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Condiciones de Uso</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Atención al Cliente (PQRS)</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Superintendencia de industria y comercio</a>
+            </li>
+      
+          </ul>
+      
+          <div id="footer_subscribe">
+            <h3>Suscríbete</h3>
+      
+            <p> ¡Únete a nuestra comunidad! Suscríbete para recibir promociones y novedades de nuestros condimentos. </p>
+            <div id="input_group">
+              <input type="email" id="email">
+              <button>
+                <i class="fa-regular fa-envelope"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <div id="footer_copyright">
+          &#169
+          2025 Inversiones El Zafiro BA SAS. Todos los derechos reservados.
+        </div>
+      </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./scripts/inicio.js"></script>
 </body>
 </html>
