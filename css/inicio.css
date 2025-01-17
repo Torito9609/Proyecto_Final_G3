@@ -39,7 +39,7 @@ main{
 .video-banner {
     position: relative;
     width: 100%;
-    height: 95vh; /* Ajusta el tamaño del banner */
+    height: 70vh; /* Ajusta el tamaño del banner */
     overflow: hidden;
   }
   
@@ -221,15 +221,15 @@ h1 {
 
 .special-card p {
   font-family: "Ivymode", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   color: #555;
   font-weight: bold;
   margin: 0;
 }
 
 .special-card span {
-  font-family: "Ivymode", sans-serif;
-  font-size: 0.9rem; /* Tamaño más pequeño para descripción */
+  font-family: "Roma SemiBold", sans-serif;
+  font-size: 1.4rem; /* Tamaño más pequeño para descripción */
   color: #777;
   margin-top: 5px;
   line-height: 1.4;
