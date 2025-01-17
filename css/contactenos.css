@@ -1,0 +1,251 @@
+/* Variables CSS */
+
+:root {
+  --primary-color: #1d2957;
+  --secondary-color: #dbc078;
+  --hover-color: #98c8e6;
+  --background-color: rgba(255, 255, 255, 0.7);
+  --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+  font-family: "Roma";
+  src: url("/fonts/Roma-Regular-iF6666b5402fe3b.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roma", sans-serif !important;
+}
+
+/* Sección Contactenos */
+.contactenos {
+  padding: 3rem 0;
+  color: #c1e5fb;
+}
+
+.subcontactenos {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.subcontactenos h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1d1d1d;
+}
+
+.subcontactenos p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #000;
+}
+
+/* Contenedor de tarjetas */
+.containerC {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Asegura tarjetas del mismo tamaño */
+  gap: 20px; /* Espaciado uniforme */
+  justify-items: center; /* Alinea las tarjetas al centro */
+}
+
+.boxC {
+  width: 300px;
+  height: auto; /* Ajusta la altura según el contenido */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Espacio uniforme entre elementos */
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boxC:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño del contenedor */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más grande al hacer hover */
+}
+
+.boxC h3,
+.boxC p {
+  margin: 10px 0; /* Separación uniforme */
+}
+
+.boxC h3 {
+  color: var(--secondary-color);
+  font-size: 18px; /* Tamaño consistente */
+}
+
+.boxC p {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.5; /* Mejora la legibilidad */
+}
+
+.boxC img {
+  width: 80px; /* Tamaño uniforme para imágenes */
+  height: 80px;
+  margin-bottom: 10px;
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+}
+
+.boxC p a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500; /* Hace que el enlace destaque ligeramente */
+}
+
+.boxC p a:hover {
+  text-decoration: underline;
+  color: #c1e5fb; /* Cambio de color al pasar el cursor */
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Título principal */
+h2 {
+  text-align: center;
+  color: #fff;
+  font-family: var(--font-family);
+}
+
+/* Contenedor de contacto */
+.contact-container {
+  display: flex;
+  background: linear-gradient(
+    135deg,
+    #b39c7d 0%,
+    #7e8cab 25%,
+    #525f7f 50%,
+    #35334b 75%,
+    var(--primary-color) 100%
+  );
+  padding: 20px;
+  font-family: var(--font-family);
+}
+
+.form-container {
+  flex: 1;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: var(--background-color);
+  color: #000;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.btn-initial {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-initial:hover {
+  background-color: var(--hover-color);
+  color: #243d74;
+}
+
+.btn-initial:active {
+  background-color: #1d1d1b;
+  color: var(--secondary-color);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-initial:focus {
+  outline: none;
+}
+
+/* Mapa */
+.map-container {
+  flex: 1;
+  height: 341px;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .form-container,
+  .map-container {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Notificación */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #525f7f;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification p {
+  margin: 0;
+  padding-right: 20px;
+}
+
+.notification button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}

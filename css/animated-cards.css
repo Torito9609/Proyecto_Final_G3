@@ -1,0 +1,133 @@
+:root {
+  --primary: #243d74;
+  --secondary: #1a6cb4;
+  --dark: #212121;
+  --light: #f3f3f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.card {
+  margin: 100px auto 0;
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+  background-color: var(--primary);
+  border: 3px solid #dbc078;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__face--front h2 {
+  color: #dbc078;
+  font-size: 36px;
+}
+
+.card__face--back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+  border: 3px solid #dbc078;
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card__header {
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+.card__header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom left,
+    var(--primary) 10%,
+    var(--secondary) 115%
+  );
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+.card_img {
+  display: block;
+  width: 98px;
+  height: 98px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5px solid #fff;
+  object-fit: cover;
+}
+
+.card__header h2 {
+  color: #dbc078;
+  font-size: 26px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card__body {
+  padding: 15px;
+  font-family: montserrat, sans-serif;
+}
+
+.card__body h3 {
+  color: var(--dark);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card__body p {
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 1.4;
+}
