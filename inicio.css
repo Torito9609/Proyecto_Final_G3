@@ -60,7 +60,7 @@ main{
     align-items: center;
     color: white;
     text-align: center;
-    /*background: rgba(0, 0, 0, 0.44); /* Oscurece el video para mejor visibilidad del texto */
+    background: rgba(0, 0, 0, 0.44); /* Oscurece el video para mejor visibilidad del texto */
   }
   
   .overlay h1 {
@@ -74,7 +74,7 @@ main{
   }
 
 h1 {
-    font-family: "Roma Bold", sans-serif;
+    font-family: "Roma Bold" !important;
     text-align: center;
 }
 
@@ -83,147 +83,181 @@ h1 {
 }
 
 .categorie-card{
-    display: inline-block;
-    width: 375px;
-    background: #DBC078;
-    /*border-radius: 8px;*/
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    color: #1D1D1B;
-    font-family: "Ivymode", sans-serif;
-    font-weight: bolder;
+  display: inline-block;
+  width: 375px;
+  background: #DBC078;
+  /*border-radius: 8px;*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #1D1D1B;
+  font-family: "Ivymode", sans-serif;
+  font-weight: bolder;
 }
 
 .categorie-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .categorie-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  
 }
 
 .categorie-card p {
-    margin: 10px 0 5px;
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: bold;
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
 }
 .categorie-card span {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.4;
-    display: block;
-    padding: 0 10px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  display: block;
+  padding: 0 10px;
 }
+
+.product-name{
+  font-family: 'Ivymode' !important;
+}
+
+.product-info{
+  font-family: 'Roma SemiBold' !important;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.hide-carousel-controls{
+  display: none;
+}
+
 .populars{
     text-align: center;
-  
-
 }
 
-.popular-card{
+.carousel-size{
+  width: 60% !important;
+  margin-left: 20%;
+}
+
+.popular-product-card{
     display: inline-block;
-    background-color: rgb(221, 221, 221);
-    width: 15%;
+    width: 246px;
     height: 300px;
     border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
+    margin: 10px;
+    border: 2px solid #dbc078;
+}
+
+.line-separation{
+  width: 80%;
+  margin-left: 10%;
+  border-bottom: 1px solid #243d74;
+}
+
+.product-image-container, img{
+  height: 150px;
+  background-color: #fff;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.product-info-container{
+  width: 80%;
+  padding-left: 10%;
 }
 
 .specials {
-    text-align: center;
-    padding: 20px;
-    background-color: #F8F8F8;
+  text-align: center;
+  padding: 20px;
+  background-color: #F8F8F8;
 }
 
 .specials h1 {
-    font-family: "Roma Bold", sans-serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+  font-family: "Roma Bold", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .special-card {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 300px; /* Ajuste para acomodar el texto adicional */
-    margin: 10px;
-    background-color: #FFF;
-    border: 2px solid #DBC078;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 10px; /* Espaciado interno */
-    text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px; /* Ajuste para acomodar el texto adicional */
+  margin: 10px;
+  background-color: #FFF;
+  border: 2px solid #DBC078;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px; /* Espaciado interno */
+  text-align: center;
 }
 
 .special-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .special-card img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
 }
 
 .special-card p {
-    font-family: "Ivymode", sans-serif;
-    font-size: 1.2rem;
-    color: #555;
-    font-weight: bold;
-    margin: 0;
+  font-family: "Ivymode", sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: bold;
+  margin: 0;
 }
 
 .special-card span {
-    font-family: "Ivymode", sans-serif;
-    font-size: 0.9rem; /* Tamaño más pequeño para descripción */
-    color: #777;
-    margin-top: 5px;
-    line-height: 1.4;
-    font-weight: bolder;
+  font-family: "Ivymode", sans-serif;
+  font-size: 0.9rem; /* Tamaño más pequeño para descripción */
+  color: #777;
+  margin-top: 5px;
+  line-height: 1.4;
+  font-weight: bolder;
 }
 
 
 .bussines {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f4f4f4; /* Color suave para fondo */
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f4; /* Color suave para fondo */
 }
 
 .bussines h1 {
-    font-family: "Roma Bold", sans-serif;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
+  font-family: "Roma Bold", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .bussines-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Permite apilar contenido en pantallas pequeñas */
-    padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite apilar contenido en pantallas pequeñas */
+  padding: 20px;
 }
 
 .bussines-image {
-    flex: 1; /* Ocupa la mitad del espacio disponible */
-    min-width: 300px; /* Mínimo ancho para imagen */
-    text-align: center;
+  flex: 1; /* Ocupa la mitad del espacio disponible */
+  min-width: 300px; /* Mínimo ancho para imagen */
+  text-align: center;
 }
 
 .bussines-image img {
