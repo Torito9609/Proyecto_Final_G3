@@ -208,7 +208,7 @@
 @media (max-width: 768px) {
   .img-contain {
     width: 100%;
-    height: 200px;
+    height: fit-content;
   }
 }
 
