@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inversiones El Zafiro Azul</title>
+
+    <!-- FUENTE GOOGLE FONTS : Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Css nav bar-->
+    <link rel="stylesheet" href="/css/menu.css">
+    <!-- Css Contactenos  -->
+    <link rel="stylesheet" href="/css/contactenos.css">
+
+    <!-- Css Footer -->
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<header class="top-bar">
+  <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
+      Para compras mayoristas: Pedido mínimo $100.000 COP
+  </marquee>
+  <marquee behavior="alternate" direction="left" scrollamount="5" loop="-1">
+      💬 Servicio al cliente
+  </marquee>
+</header>
+<nav class="main-navbar">
+  <div class="top-section">
+      <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
+      <div class="search-bar">
+          <input type="text" placeholder="Buscar productos..." />
+          <button type="submit" class="button-search">
+              <box-icon name='search-alt-2' color='#dbc078'></box-icon>
+
+          </button>
+      </div>
+      <div class="user-options">
+          <button>Registrarse / Iniciar Sesión</button>
+          <button>🛒</button>
+      </div>
+  </div>
+  <div class="bottom-section">
+      <ul class="nav-links">
+          <li><a href="/html/">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="/html/index.html">Sobre nosotros</a></li>
+          <li><a href="/html/contactenos.html">Contáctenos</a></li>
+      </ul>
+      <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      </ul>
+</nav>
+
+
+
+<body>
+   <section class="contactenos">
+    <div class="subcontactenos">
+        <h2>Conéctate con nosotros</h2>
+        <p>
+            En Inversiones el Zafiro BA SAS, valoramos la confianza de nuestros clientes y nos esforzamos por estar siempre a tu lado. 
+            Si tienes alguna pregunta o comentario sobre nuestros productos, estaremos encantados de ayudarte. 
+            Déjanos tus inquietudes y nos pondremos en contacto contigo lo antes posible.
+        </p>
+    </div>
+
+    <!-- Tarjetas de contacto -->
+    <div class="containerC">
+        <div class="boxC">
+            <div class="icon">
+                <img src="/img/calling-16.png" alt="Teléfono">
+            </div>
+            <h3>Teléfono</h3>
+            <p><a href="tel:+573024116438">+57 302 411 6438</a></p>
+        </div>
+        <div class="boxC">
+            <div class="icon">
+                <img src="/img/navigation-8.png" alt="Dirección">
+            </div>
+            <h3>Dirección</h3>
+            <p><a href="https://maps.app.goo.gl/FMRZ6wgtjsRGYBNm9" >Calle 44F No. 72-73 sur</a></p>
+        </div>
+        <div class="boxC">
+            <div class="icon">
+                <img src="/img/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png" alt="whatsapp">
+            </div>
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/573024116438" >+57 302 411 6438</a></p>
+        </div>
+        <div class="boxC">
+            <div class="icon">
+                <img src="/img/sending-emails-84.png" alt="Correo Electrónico">
+            </div>
+            <h3>Correo Electrónico</h3>
+            <p><a href="mailto:inversioneselzafiro@gmail.com">inversioneselzafiro@gmail.com</a></p>
+        </div>
+    </div>
+</section>
+
+    <!--CONTACTO -->
+ <div class="container">
+    <h2>Compártenos tus opiniones</h2>
+    <div class="contact-container">
+        <div class="form-container">
+            <form action="https://formspree.io/f/xqazngao" method="Post" id="form">
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-initial">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div id="notification" class="notification">
+            <p id="notification-message"></p>
+            <button id="notification-close">&times;</button>
+        </div>
+         <!--mapa-->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.317622590657!2d-74.14611218311427!3d4.595603123666429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9fbdbb88f885%3A0x2aa2712f6ef1684d!2sCondimentos%20El%20Zafiro%20Azul!5e0!3m2!1ses-419!2sco!4v1724460391296!5m2!1ses-419!2sco" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <div id="footer_content">
+      <div id="footer_contacts">
+        <img src="/img-logos/Logo_sin-fondo_sin_slogan.png" alt="Logo" id="footer_logo">
+        <p>Síguenos en nuestras redes sociales</p>
+
+        <div id="footer_social_media">
+          <a href="#" class="footer-link" id="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="tiktok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+      <ul class="footer-list">
+        <li>
+          <h3>Nuestros Canales de Comunicación</h3>
+        </li>
+        <li>
+          <p class="footer-link"> +57 302 4116438</p>
+        </li>
+        <li>
+          <a href="#" class="footer-link">inversioneselzafiro@gmail.com</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">01 80000 11 2345</a>
+        </li>
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <h3>Política de Privacidad</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Tratamiento de Datos Personales</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Condiciones de Uso</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Atención al Cliente (PQRS)</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Superintendencia de industria y comercio</a>
+        </li>
+
+      </ul>
+
+      <div id="footer_subscribe">
+        <h3>Suscríbete</h3>
+
+        <p> ¡Únete a nuestra comunidad! Suscríbete para recibir promociones y novedades de nuestros condimentos. </p>
+        <div id="input_group">
+          <input type="email" id="email">
+          <button>
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer_copyright">
+      &#169
+      2025 Inversiones El Zafiro BA SAS. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Mi Script Footer -->
+  <script src="/scripts/animated-cards.js"></script>
+
+   <!-- Mi Script contactenos -->
+   <script src="/scripts/contactenos.js"></script>
+
+   <!--scripts nav bar-->
+   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+   <script src="/scripts/menu.js"></script>
+
+</body>
+</html>
