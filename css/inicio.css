@@ -287,7 +287,8 @@ h1 {
 }
 
 .bussines-text p {
-    font-size: 1.1rem;
+    font-size:medium;
+    font-family: "Ivymode", sans-serif;
     color: #666;
     line-height: 1.6;
     margin-bottom: 15px;
@@ -304,4 +305,16 @@ h1 {
     font-size: 1rem;
 }
 
+.bussines-text-half-container{
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+  float: left;
+  margin-left: 5px;
+}
 
+@media (max-width: 768px) {
+  .bussines-text-half-container {
+    width: 100%;
+  }
+}
