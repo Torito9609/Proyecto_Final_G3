@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acerca-de-nosotros</title>
+  <link rel="stylesheet" href="/css/menu.css">
   <link rel="stylesheet" href="/css/styles.css" />
   <link rel="stylesheet" href="/css/animated-cards.css" />
   <link rel="stylesheet" href="/css/team.css" />
@@ -18,8 +19,49 @@
 
 <body>
   <header>
+    <header class="top-bar">
+      <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
+          Para compras mayoristas: Pedido mínimo $100.000 COP
+      </marquee>
+      <marquee behavior="alternate" direction="left" scrollamount="5" loop="-1">
+          💬 Servicio al cliente
+      </marquee>
+    </header>
+    
+    <nav class="main-navbar">
+      <div class="top-section">
+        <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar productos..." />
+          <button type="submit" class="button-search">
+            <box-icon name='search-alt-2' color='#dbc078'></box-icon>
+            
+          </button>
+        </div>
+        <div class="user-options">
+          <button>Registrarse / Iniciar Sesión</button>
+          <button>🛒</button>
+        </div>
+      </div>
+      <div class="bottom-section">
+        <ul class="nav-links">
+          <li><a href="/html/">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="/html/index.html">Sobre nosotros</a></li>
+          <li><a href="/html/contactenos.html">Contáctenos</a></li>
+        </ul>
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </ul>
+    </nav>
+    
+  
+    
     <h1 class="onCenter">ACERCA DE NOSOTROS</h1>
-  </header>
+
 
   <main>
     <div class="info-aboutus">
@@ -314,6 +356,8 @@
     </div>
   </footer>
   <script src="/scripts/animated-cards.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script src="/scripts/menu.js"></script>
 </body>
 
 </html>
