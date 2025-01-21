@@ -2,7 +2,7 @@
   "productos": [
     {
       "nombre": "Ajo en Polvo",
-      "imagen": ".img/productos/ajo.png",
+      "imagen": "img/productos/ajo.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [8340, 2502, 1403],
       "categoría": "producto_natural",
@@ -10,7 +10,7 @@
     },
     {
       "nombre": "Canela en Astilla",
-      "imagen": ".img/productos/canela.png",
+      "imagen": "img/productos/canela.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [67830, 35700, 20230, 2083],
       "categoría": "producto_natural",
@@ -18,7 +18,7 @@
     },
     {
       "nombre": "Color Amarillo",
-      "imagen": ".img/productos/color_amarillo.png",
+      "imagen": "img/productos/color_amarillo.png",
       "cantidad": ["500g", "250g", "10g"],
       "precio": [4865, 1390, 904],
       "categoría": "producto_procesado",
@@ -26,7 +26,7 @@
     },
     {
       "nombre": "Comino en Molido",
-      "imagen": ".img/productos/comino.png",
+      "imagen": "img/productos/comino.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [18070, 5560, 1390],
       "categoría": "producto_natural",
@@ -34,7 +34,7 @@
     },
     {
       "nombre": "Cúrcuma en Polvo",
-      "imagen": ".img/productos/curcuma.png",
+      "imagen": "img/productos/curcuma.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [10829, 3570, 1190],
       "categoría": "producto_natural",
@@ -42,7 +42,7 @@
     },
     {
       "nombre": "Curry",
-      "imagen": ".img/productos/curry.png",
+      "imagen": "img/productos/curry.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [10710, 3570, 1190],
       "categoría": "producto_natural",
@@ -50,7 +50,7 @@
     },
     {
       "nombre": "Orégano",
-      "imagen": ".img/productos/oregano.png",
+      "imagen": "img/productos/oregano.png",
       "cantidad": ["500g", "250g", "125g", "10g"],
       "precio": [13090, 6188, 3570, 1131],
       "categoría": "producto_natural",
@@ -58,7 +58,7 @@
     },
     {
       "nombre": "Paprika",
-      "imagen": ".img/productos/paprika.png",
+      "imagen": "img/productos/paprika.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [10710, 3570, 1131],
       "categoría": "producto_natural",
@@ -66,7 +66,7 @@
     },
     {
       "nombre": "Pimienta en Pepa",
-      "imagen": ".img/productos/pimienta.png",
+      "imagen": "img/productos/pimienta.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [17017, 5236, 1426],
       "categoría": "Hierbas",
@@ -74,7 +74,7 @@
     },
     {
       "nombre": "Tomillo",
-      "imagen": ".img/productos/tomillo.png",
+      "imagen": "img/productos/tomillo.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [13090, 3094, 1131],
       "categoría": "producto_natural",
