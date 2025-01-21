@@ -1,5 +1,5 @@
 const products = [
-    { "ImagePath": "../img/canela.png", "ProductName": "Canela", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 10000 },
+    { "ImagePath": "https://drive.google.com/uc?id=1HVPH-cUKmMHWWGzmTCYw_BhJITQwkzPJ", "ProductName": "Canela", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 10000 },
     { "ImagePath": "../img/paprika.png", "ProductName": "Paprika", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 15000 },
     { "ImagePath": "../img/pimienta.png", "ProductName": "Pimienta en polvo", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 5000 },
     { "ImagePath": "../img/paprika.png", "ProductName": "Paprika", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 15000 },
