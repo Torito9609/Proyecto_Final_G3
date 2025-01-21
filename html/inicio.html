@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página_de_inicio</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/inicio.css" />
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="icon" type="image/png" href="/img/logo2.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+  <header>
+    <header class="top-bar">
+      <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
+          Para compras mayoristas: Pedido mínimo $100.000 COP
+      </marquee>
+      <marquee behavior="alternate" direction="left" scrollamount="5" loop="-1">
+          💬 Servicio al cliente
+      </marquee>
+    </header>
+    
+    <nav class="main-navbar">
+      <div class="top-section">
+        <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar productos..." />
+          <button type="submit" class="button-search">
+            <box-icon name='search-alt-2' color='#dbc078'></box-icon>
+            
+          </button>
+        </div>
+        <div class="user-options">
+          <button>Registrarse / Iniciar Sesión</button>
+          <button>🛒</button>
+        </div>
+      </div>
+      <div class="bottom-section">
+        <ul class="nav-links">
+          <li><a href="/html/inicio.html">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="/html/index.html">Sobre nosotros</a></li>
+          <li><a href="/html/contactenos.html">Contáctenos</a></li>
+        </ul>
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </ul>
+    </nav>
+
+    <div class="video-banner">
+        <video autoplay muted loop class="video">
+            <source src="/video/videobanner.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+          <div class="overlay">
+            
+          </div>
+    </div>
+ 
+
+    <div class="categories">
+        <h1>CATEGORÍAS</h1>
+        <div class="categorie-card">
+            <img src="/img/naturales.jpg" alt="Productos Naturales">
+            <p>Productos Naturales</p>
+            <span>Disfruta de lo mejor de la naturaleza en cada producto.</span>
+        </div>
+        <div class="categorie-card">
+            <img src="/img/procesados.jpg" alt="Productos Procesados">
+            <p>Productos Procesados</p>
+            <span>Calidad y sabor en productos listos para disfrutar.</span>
+        </div>
+        <div class="categorie-card">
+            <img src="/img/mermelada.jpg" alt="Productos Dulces">
+            <p>Productos Dulces</p>
+            <span>Endulza tu vida con nuestras opciones irresistibles.</span>
+        </div>
+        <div class="categorie-card">
+            <img src="/img/vinagre.webp" alt="Vinagres y otros">
+            <p>Vinagres y otros</p>
+            <span>Descubre sabores únicos para tu cocina.</span>
+        </div>
+    </div>
+
+    <div id="productCarousel" class="carousel slide populars" data-ride="carousel">
+        <h1>POPULARES</h1>
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators"></ol>
+
+        <!-- Wrapper for product cards -->
+        <div class="carousel-inner carousel-size"></div>
+
+        <!-- left Control -->
+        <a class="left carousel-control" href="#productCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <!-- right Control -->
+        <a class="right carousel-control" href="#productCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        
+    </div>
+    
+    <div class="specials">
+        <h1>LO QUE NOS HACE ESPECIALES</h1>
+        <div class="special-card">
+            <img src="/icons/customer-service-headset-svgrepo-com.svg" alt="Atención al cliente">
+            <p>Atención al cliente</p>
+            <span>Recibirás un servicio dedicado que entiende y se adapta a las necesidades de tu negocio mayorista.</span>
+        </div>
+        <div class="special-card">
+            <img src="/icons/payment-method-bank-svgrepo-com.svg" alt="Métodos de pago flexible">
+            <p>Métodos de pago flexible</p>
+            <span>Ofrecemos múltiples métodos de pago pensados para tu comodidad y la de tu negocio.</span>
+        </div>
+        <div class="special-card">
+            <img src="/icons/delivery-svgrepo-com.svg" alt="Entrega confiable">
+            <p>Entrega confiable</p>
+            <span>Tus pedidos llegarán a tiempo y en perfectas condiciones, directamente a tu puerta.</span>
+        </div>
+        <div class="special-card">
+            <img src="/icons/secure-shield-shield-svgrepo-com.svg" alt="Compra segura">
+            <p>Compra segura</p>
+            <span>Garantizamos transacciones seguras y el manejo adecuado de tus datos personales</span>
+        </div>
+        <div class="special-card">
+            <img src="/icons/award-badge-quality-svgrepo-com.svg" alt="Productos de alta calidad">
+            <p>Productos de alta calidad</p>
+            <span>Seleccionamos los mejores condimentos para ofrecerte frescura, sabor y calidad superior.</span>
+        </div>
+    </div>
+
+    <div class="bussines">
+        <h1>PENSADO PARA NEGOCIOS</h1>
+        <div class="bussines-container">
+            <div class="bussines-image">
+                <img src="/img/negocios.jpg" alt="Soluciones para negocios">
+            </div>
+            <div class="bussines-text">
+                <h2>Soluciones diseñadas para tu empresa</h2>
+                <p>
+                  En Zafiro Azul, hemos diseñado nuestra plataforma pensando exclusivamente en las necesidades del comercio mayorista.
+                  Nuestro objetivo es brindar un servicio especializado y eficiente que impulse el crecimiento de empresas como la suya.
+                  Sabemos que los mayoristas enfrentan retos únicos, y estamos aqui para ofrecer soluciones a medida, con
+                  la calidad y cantidad que su negocio necesita.
+                </p>
+                <h2>¡Tu mejor opción para compras al por mayor!</h2>
+                <p>
+                  En Zafiro Azul, valoramos la confianza de nuestros clientes mayoristas, por eso ofrecemos
+                  precios competitivos y un servicio diseñado especialmente para empresas.
+                </p>
+
+                <div class="bussines-text-half-container">
+                  <h2>Compra mínima</h2>
+                  <p>
+                    $100.000 COP, asegurando que siempre obtengas cantidades suficientes para satisfacer tus necesidades.
+                  </p>
+                </div>
+                <div class="bussines-text-half-container">
+                  <h2>Ventajas exclusivas</h2>
+                  <p>
+                    Al realizar compras al por mayor, accedes a promociones especiales y una experiencia de compra eficiente y sin
+                    complicaciones
+                  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer_content">
+          <div id="footer_contacts">
+            <img src="../img-logos/Logo_sin-fondo_sin_slogan.png" alt="Logo" id="footer_logo" style="background-color: unset !important;">
+            <p>Síguenos en nuestras redes sociales</p>
+      
+            <div id="footer_social_media">
+              <a href="#" class="footer-link" id="instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+      
+              <a href="#" class="footer-link" id="facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+      
+              <a href="#" class="footer-link" id="whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+      
+              <a href="#" class="footer-link" id="tiktok">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+      
+          <ul class="footer-list">
+            <li>
+              <h3>Nuestros Canales de Comunicación</h3>
+            </li>
+            <li>
+              <p class="footer-link"> +57 302 4116438</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">inversioneselzafiro@gmail.com</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">01 80000 11 2345</a>
+            </li>
+          </ul>
+      
+          <ul class="footer-list">
+            <li>
+              <h3>Política de Privacidad</h3>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Tratamiento de Datos Personales</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Condiciones de Uso</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Atención al Cliente (PQRS)</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Superintendencia de industria y comercio</a>
+            </li>
+      
+          </ul>
+      
+          <div id="footer_subscribe">
+            <h3>Suscríbete</h3>
+      
+            <p> ¡Únete a nuestra comunidad! Suscríbete para recibir promociones y novedades de nuestros condimentos. </p>
+            <div id="input_group">
+              <input type="email" id="email">
+              <button>
+                <i class="fa-regular fa-envelope"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <div id="footer_copyright">
+          &#169
+          2025 Inversiones El Zafiro BA SAS. Todos los derechos reservados.
+        </div>
+      </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../scripts/inicio.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="/Js_nav/menu.js"></script>
+</body>
+</html>

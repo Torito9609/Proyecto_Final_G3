@@ -1,0 +1,321 @@
+@font-face {
+    font-family: "Roma Bold";
+    src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Roma SemiBold";
+    src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Ivymode";
+    src: url("/fonts/IvyMode-ThinItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(/img/fondo3.png) !important; 
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-size: 100% 100%; /* 100% de ancho y 50% de altura */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* La imagen se mantiene fija */
+     
+}
+
+main{
+  
+
+}
+
+.video-banner {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Ajusta el tamaño del banner */
+    overflow: hidden;
+  }
+  
+  .video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .overlay h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .overlay p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+h1 {
+    font-family: "Roma Bold" !important;
+    text-align: center;
+}
+
+.categories{
+    text-align: center;
+}
+
+.categorie-card{
+  display: inline-block;
+  width: 375px;
+  background: #243D74;
+  /*border-radius: 8px;*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #ffffff;
+  font-family: "Ivymode", sans-serif;
+  font-weight: bolder;
+}
+
+.categorie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.categorie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  
+}
+
+.categorie-card p {
+  margin: 10px 0 5px;
+  font-size: 2.5rem;
+  color: #DBC078;
+  font-weight: bold;
+}
+.categorie-card span {
+  font-size: 1.6rem;
+  color: #ffffff;
+  line-height: 1.4;
+  display: block;
+  padding: 0 10px;
+}
+
+.product-name{
+  font-family: 'Ivymode' !important;
+}
+
+.product-info{
+  font-family: 'Roma SemiBold' !important;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.hide-carousel-controls{
+  display: none;
+}
+
+.populars{
+    text-align: center;
+}
+
+.carousel-size{
+  width: 60% !important;
+  margin-left: 20%;
+}
+
+.popular-product-card{
+    display: inline-block;
+    width: 246px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid #dbc078;
+}
+
+.line-separation{
+  width: 80%;
+  margin-left: 10%;
+  border-bottom: 1px solid #243d74;
+}
+
+.product-image-container img{
+  height: 150px;
+  background-color: #fff;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.product-info-container{
+  width: 80%;
+  padding-left: 10%;
+}
+
+.specials {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(45deg, #1A6CB4, #243D74, #1A6CB4);
+  
+}
+
+.specials h1 {
+  font-family: "Roma Bold", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #DBC078;
+}
+
+.special-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px; /* Ajuste para acomodar el texto adicional */
+  margin: 10px;
+  background-color: #FFF;
+  border: 2px solid #DBC078;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px; /* Espaciado interno */
+  text-align: center;
+}
+
+.special-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.special-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.special-card p {
+  font-family: "Ivymode", sans-serif;
+  font-size: 1.7rem;
+  color: #555;
+  font-weight: bold;
+  margin: 0;
+}
+
+.special-card span {
+  font-family: "Roma SemiBold", sans-serif;
+  font-size: 1.4rem; /* Tamaño más pequeño para descripción */
+  color: #777;
+  margin-top: 5px;
+  line-height: 1.4;
+  font-weight: bolder;
+}
+
+
+.bussines {
+  text-align: center;
+  padding: 40px 20px;
+  /*background-color: #FFF;*/
+ 
+}
+
+.bussines h1 {
+  font-family: "Roma Bold", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.bussines-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite apilar contenido en pantallas pequeñas */
+  padding: 20px;
+}
+
+.bussines-image {
+  flex: 1; /* Ocupa la mitad del espacio disponible */
+  min-width: 300px; /* Mínimo ancho para imagen */
+  text-align: center;
+}
+
+.bussines-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bussines-text {
+    flex: 1;
+    min-width: 300px; /* Mínimo ancho para texto */
+    text-align: left;
+}
+
+.bussines-text h2 {
+    font-family: "Roma SemiBold", sans-serif;
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.bussines-text p {
+    font-size:medium;
+    font-family: "Ivymode", sans-serif;
+    font-weight: bolder;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.bussines-text ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: #444;
+}
+
+.bussines-text ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.bussines-text-half-container{
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+  float: left;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .bussines-text-half-container {
+    width: 100%;
+  }
+}
