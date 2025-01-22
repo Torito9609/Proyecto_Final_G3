@@ -1,6 +1,7 @@
 {
   "productos": [
     {
+      "id": 1,
       "nombre": "Ajo en Polvo",
       "imagen": "img/productos/ajo.png",
       "cantidad": ["500g", "125g", "10g"],
@@ -9,6 +10,7 @@
       "descripción": "Ajo en polvo concentrado, ideal para sazonar carnes y guisos."
     },
     {
+      "id": 2,
       "nombre": "Canela en Astilla",
       "imagen": "img/productos/canela.png",
       "cantidad": ["500g", "125g", "10g"],
@@ -17,6 +19,7 @@
       "descripción": "Canela pa la agua panela."
     },
     {
+      "id": 3,
       "nombre": "Color Amarillo",
       "imagen": "img/productos/color_amarillo.png",
       "cantidad": ["500g", "250g", "10g"],
@@ -25,6 +28,7 @@
       "descripción": "Para darle color a la vida de tus recetas."
     },
     {
+      "id": 4,
       "nombre": "Comino en Molido",
       "imagen": "img/productos/comino.png",
       "cantidad": ["500g", "125g", "10g"],
@@ -33,6 +37,7 @@
       "descripción": "AEste es el comino más rico del mundo."
     },
     {
+      "id": 5,
       "nombre": "Cúrcuma en Polvo",
       "imagen": "img/productos/curcuma.png",
       "cantidad": ["500g", "125g", "10g"],
@@ -41,6 +46,7 @@
       "descripción": "Cúrcuma en polvo con una mezcla de especias para darle un toque exótico a tus platillos."
     },
     {
+      "id": 6,
       "nombre": "Curry",
       "imagen": "img/productos/curry.png",
       "cantidad": ["500g", "125g", "10g"],
@@ -49,6 +55,7 @@
       "descripción": "Curry de alta calidad, perfecto para lo que se usa el curry."
     },
     {
+      "id": 7,
       "nombre": "Orégano",
       "imagen": "img/productos/oregano.png",
       "cantidad": ["500g", "250g", "125g", "10g"],
@@ -57,6 +64,7 @@
       "descripción": "Orégano para la pizza."
     },
     {
+      "id": 8,
       "nombre": "Paprika",
       "imagen": "img/productos/paprika.png",
       "cantidad": ["500g", "125g", "10g"],
@@ -65,6 +73,7 @@
       "descripción": "Paprika que no pika."
     },
     {
+      "id": 9,
       "nombre": "Pimienta en Pepa",
       "imagen": "img/productos/pimienta.png",
       "cantidad": ["500g", "125g", "10g"],
@@ -73,6 +82,7 @@
       "descripción": "Pimienta en pepa para cocinar."
     },
     {
+      "id": 10,
       "nombre": "Tomillo",
       "imagen": "img/productos/tomillo.png",
       "cantidad": ["500g", "125g", "10g"],
