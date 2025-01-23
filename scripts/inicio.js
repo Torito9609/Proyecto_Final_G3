@@ -35,7 +35,8 @@ async function displayPopularProducts(productsFromJson) {
         carouselControls.forEach(control =>{
             control.classList.add('hide-carousel-controls');
         });
-        
+        const carouselIndicators = document.querySelector('.carousel-indicators');
+        carouselIndicators.classList.add('hide-carousel-controls');     
     }
 
     for (let i = 0; i < totalPages; i++) {
@@ -87,9 +88,6 @@ function createProductCard(product){
     img.src = product.imagen;
     img.alt = product.nombre;
 
-    const lineDiv = document.createElement('div');
-    lineDiv.classList.add('line-separation');
-
     //Create product info container for product name, price, weight, etc...
     const infoContainer = document.createElement('div');
     infoContainer.classList.add('product-info-container');
@@ -101,25 +99,33 @@ function createProductCard(product){
 
     const weight = document.createElement('p');
     weight.classList.add('product-info');
-    weight.textContent = product.cantidad[2];
+    weight.textContent = 'Sobre de '+product.cantidad[2];
 
     const price = document.createElement('p');
     price.classList.add('product-info');
+    price.classList.add('product-price');
     price.textContent = '$'+product.precio[2].toLocaleString();
 
     //Create card element that will contain the image container and product info container
     const productCard = document.createElement('div');
     productCard.classList.add('popular-product-card');
 
+    //TODO: CREAR BOTON Y ASIGNAR CLASES DE ESTILOS
+
+    const boton = document.createElement('button');
+    boton.classList.add('add-button');
+    boton.textContent = 'Añadir al carrito';
+
     imageContainer.appendChild(img);//Append img element to imgage container div
 
     infoContainer.appendChild(name);//Append product name (h3) to product info container div
     infoContainer.appendChild(weight);//Append product weight (p) to product info container div
     infoContainer.appendChild(price);//Append product price (p) to product info container div
+    infoContainer.appendChild(boton);
+    //TODO: Append botoin a info container
 
     //Append image container and info container divs to product card
     productCard.appendChild(imageContainer);
-    productCard.appendChild(lineDiv);
     productCard.appendChild(infoContainer);
 
     return productCard;

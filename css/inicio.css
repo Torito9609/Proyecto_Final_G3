@@ -134,12 +134,26 @@ h1 {
 
 .product-info{
   font-family: 'Roma SemiBold' !important;
-  display: inline-block;
+
   padding-left: 10px;
+}
+
+.product-price{
+  font-size: large;
 }
 
 .hide-carousel-controls{
   display: none;
+}
+
+.add-button{
+  background-color: #1A6CB4;
+  color: #ffffff;
+  border:#DBC078 solid 3px;
+  border-radius: 20px;
+  width: 55%;
+  height: 30%;
+
 }
 
 .populars{
@@ -160,24 +174,36 @@ h1 {
     border: 2px solid #dbc078;
 }
 
-.line-separation{
+/*.line-separation{
   width: 80%;
   margin-left: 10%;
   border-bottom: 1px solid #243d74;
-}
+}*/
 
 .product-image-container img{
-  height: 150px;
+  height: 148px;
   background-color: #fff;
   border-radius: 10px 10px 0px 0px;
 }
 
-.product-info-container{
+.product-info-container{  
   background-color: #243D74;
-  color:#fff;
-  width: 80%;
-  padding-left: 10%;
+  color:#dbc078;
+  height: 50%;
+  border-radius: 0px 0px 8px 8px;
 }
+
+.product-info-container h3{
+  margin: 0 !important;
+}
+
+.carousel-indicators{
+  position: unset !important;
+  width: 100% !important;
+  margin-left: 0% !important;
+  background-color: rgba(0,0,0,0.09);
+}
+
 
 .specials {
   text-align: center;
