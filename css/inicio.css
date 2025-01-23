@@ -173,6 +173,8 @@ h1 {
 }
 
 .product-info-container{
+  background-color: #243D74;
+  color:#fff;
   width: 80%;
   padding-left: 10%;
 }
