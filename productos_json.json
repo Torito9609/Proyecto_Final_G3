@@ -90,5 +90,43 @@
       "categoría": "producto_natural",
       "descripción": "Tomillo que es muy rico."
     }
+  ],
+  "productosPopulares": [
+    {
+      "id": 1,
+      "nombre": "Ajo en Polvo",
+      "imagen": "../img/productos/ajo.png",
+      "cantidad": ["500g", "125g", "10g"],
+      "precio": [8340, 2502, 1403],
+      "categoría": "producto_natural",
+      "descripción": "Ajo en polvo concentrado, ideal para sazonar carnes y guisos."
+    },
+    {
+      "id": 2,
+      "nombre": "Canela en Astilla",
+      "imagen": "../img/productos/canela.png",
+      "cantidad": ["500g", "125g", "10g"],
+      "precio": [67830, 35700, 20230, 2083],
+      "categoría": "producto_natural",
+      "descripción": "Canela pa la agua panela."
+    },
+    {
+      "id": 3,
+      "nombre": "Color Amarillo",
+      "imagen": "../img/productos/color_amarillo.png",
+      "cantidad": ["500g", "250g", "10g"],
+      "precio": [4865, 1390, 904],
+      "categoría": "producto_procesado",
+      "descripción": "Para darle color a la vida de tus recetas."
+    },
+    {
+      "id": 4,
+      "nombre": "Comino en Molido",
+      "imagen": "../img/productos/comino.png",
+      "cantidad": ["500g", "125g", "10g"],
+      "precio": [18070, 5560, 1390],
+      "categoría": "producto_natural",
+      "descripción": "AEste es el comino más rico del mundo."
+    }
   ]
 }

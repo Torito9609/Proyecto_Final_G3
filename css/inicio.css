@@ -129,7 +129,7 @@ h1 {
 }
 
 .product-name{
-  font-family: 'Ivymode' !important;
+  font-family: 'Roma Bold' !important;
 }
 
 .product-info{
@@ -150,10 +150,14 @@ h1 {
   background-color: #1A6CB4;
   color: #ffffff;
   border:#DBC078 solid 3px;
-  border-radius: 20px;
+  border-radius: 5px;
   width: 55%;
   height: 30%;
 
+}
+
+.add-button :hover{
+  background-color: #C1E5FB !important;
 }
 
 .populars{

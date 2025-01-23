@@ -17,7 +17,7 @@ async function loadJson() {
 async function displayPopularProducts(productsFromJson) {
     //console.log(products);
     let products = [];
-    products =  await productsFromJson.productos;
+    products =  await productsFromJson.productosPopulares;
     
     const carouselInner = document.querySelector('.carousel-inner');
     const indicators = document.querySelector('.carousel-indicators');
