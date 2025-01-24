@@ -6,7 +6,7 @@
       "imagen": "../img/productos/ajo.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [8340, 2502, 1403],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Ajo en polvo concentrado, ideal para sazonar carnes y guisos."
     },
     {
@@ -15,7 +15,7 @@
       "imagen": "../img/productos/canela.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [67830, 35700, 20230, 2083],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Canela pa la agua panela."
     },
     {
@@ -24,7 +24,7 @@
       "imagen": "../img/productos/color_amarillo.png",
       "cantidad": ["500g", "250g", "10g"],
       "precio": [4865, 1390, 904],
-      "categoría": "producto_procesado",
+      "categoría": "producto procesado",
       "descripción": "Para darle color a la vida de tus recetas."
     },
     {
@@ -33,7 +33,7 @@
       "imagen": "../img/productos/comino.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [18070, 5560, 1390],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "AEste es el comino más rico del mundo."
     },
     {
@@ -42,7 +42,7 @@
       "imagen": "../img/productos/curcuma.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [10829, 3570, 1190],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Cúrcuma en polvo con una mezcla de especias para darle un toque exótico a tus platillos."
     },
     {
@@ -51,7 +51,7 @@
       "imagen": "../img/productos/curry.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [10710, 3570, 1190],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Curry de alta calidad, perfecto para lo que se usa el curry."
     },
     {
@@ -60,7 +60,7 @@
       "imagen": "../img/productos/oregano.png",
       "cantidad": ["500g", "250g", "125g", "10g"],
       "precio": [13090, 6188, 3570, 1131],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Orégano para la pizza."
     },
     {
@@ -69,7 +69,7 @@
       "imagen": "../img/productos/paprika.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [10710, 3570, 1131],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Paprika que no pika."
     },
     {
@@ -78,7 +78,7 @@
       "imagen": "../img/productos/pimienta.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [17017, 5236, 1426],
-      "categoría": "Hierbas",
+      "categoría": "producto natural",
       "descripción": "Pimienta en pepa para cocinar."
     },
     {
@@ -87,7 +87,7 @@
       "imagen": "../img/productos/tomillo.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [13090, 3094, 1131],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Tomillo que es muy rico."
     }
   ],
@@ -98,7 +98,7 @@
       "imagen": "../img/productos/ajo.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [8340, 2502, 1403],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Ajo en polvo concentrado, ideal para sazonar carnes y guisos."
     },
     {
@@ -107,7 +107,7 @@
       "imagen": "../img/productos/canela.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [67830, 35700, 20230, 2083],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "Canela pa la agua panela."
     },
     {
@@ -116,16 +116,16 @@
       "imagen": "../img/productos/color_amarillo.png",
       "cantidad": ["500g", "250g", "10g"],
       "precio": [4865, 1390, 904],
-      "categoría": "producto_procesado",
+      "categoría": "producto procesado",
       "descripción": "Para darle color a la vida de tus recetas."
     },
     {
       "id": 4,
-      "nombre": "Comino en Molido",
+      "nombre": "Comino Molido",
       "imagen": "../img/productos/comino.png",
       "cantidad": ["500g", "125g", "10g"],
       "precio": [18070, 5560, 1390],
-      "categoría": "producto_natural",
+      "categoría": "producto natural",
       "descripción": "AEste es el comino más rico del mundo."
     }
   ]
