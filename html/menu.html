@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css_nav/menu.css">
-    <link rel="icon" type="image/png" href="/img/logo2.png">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="icon" type="image/png" href="/img-logos/">
     <title>Document</title>
 </head>
 
@@ -20,7 +20,7 @@
     </header>
     <nav class="main-navbar">
         <div class="top-section">
-            <div class="logo"><img src="/img_nav/logo2.png" class="logo_nav"> </div>
+            <div class="logo"><img src="/img-logos/Logo_sin-fondo_con_slogan.png" class="logo_nav"> </div>
             <div class="search-bar">
                 <input type="text" placeholder="Buscar productos..." />
                 <button type="submit" class="button-search">
@@ -30,7 +30,9 @@
             </div>
             <div class="user-options">
                 <button>Registrarse / Iniciar Sesión</button>
-                <button>🛒</button>
+                <button class="cart-button">🛒 
+                    <div class="counter" id="cartCounter">0</div>
+                </button>
             </div>
         </div>
         <div class="bottom-section">
@@ -51,7 +53,7 @@
     
 <!--* Scripts para iconos y script-->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="/Js_nav/menu.js"></script>
+    <script src="/scripts/menu.js"></script>
 
 
 </body>
