@@ -91,6 +91,7 @@ function showModal(
   // Agregar un atributo personalizado a cada botón
   botones.forEach((boton, index) => {
     boton.setAttribute("data-id", productoId); // Atributo personalizado con el id del producto
+    boton.setAttribute("data-name", nombre); // Atributo personalizado con el id del producto
     boton.setAttribute("data-quantity", cantidad[index]); //Atributo personalizado con la cantidad del producto
     boton.setAttribute("data.price", precios[index]); // Ejemplo: agregar la cantidad como atributo
   });
@@ -99,7 +100,7 @@ function showModal(
   modal.style.display = "flex";
 }
 
-let carrito = []; // Inicializo la variable carrito, aqui guardaremos los objetos json del carrito
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Inicializamos carrito desde localStorage si existe, de lo contrario, es un array vacío
 let productoSeleccionado = null; // Para almacenar el producto seleccionado
 
 // Seleccionar la lista de productos generados, aqui fue donde se renderizaron los botones de los
@@ -121,6 +122,7 @@ modalPrices.addEventListener("click", (event) => {
     // Guardar la información del producto seleccionado
     productoSeleccionado = {
       id: add.getAttribute("data-id"),
+      nombre: add.getAttribute("data-name"),
       cantidad: add.getAttribute("data-quantity"),
       precio: add.getAttribute("data.price"),
       cantidad_carrito: 1,
@@ -149,7 +151,7 @@ addToCartButton.addEventListener("click", () => {
   productoSeleccionado.cantidad_carrito = parseInt(cantidad, 10);
 
   // Añadimos el producto al carrito
-  agregarProducto(carrito, productoSeleccionado);
+  agregarProducto(productoSeleccionado);
 
   // Reiniciamos la selección después de añadir al carrito
   productoSeleccionado = null;
@@ -159,21 +161,39 @@ addToCartButton.addEventListener("click", () => {
   console.log(carrito); //Aqui imprimo el carrito por consola.
 });
 
-function agregarProducto(carrito, nuevo_producto) {
-  // Verifico si el producto ya existe en el carrito, notar que también se comparan los pesos(500g, 10g, ... etc)
+function agregarProducto(nuevo_producto) {
+   // Verifico si el producto ya existe en el carrito, notar que también se comparan los pesos(500g, 10g, ... etc)
   //Esto porque aunque tengan el mismo id, pueden tener pesos diferentes.
   const productoExistente = carrito.find(
     (producto) =>
       producto.id === nuevo_producto.id &&
       producto.cantidad == nuevo_producto.cantidad
   );
-  //Si el producto en id y cantidad(peso 500g, 125g, etc) ya existe, solo modifico la cantidad del que ya existe
+//Si el producto en id y cantidad(peso 500g, 125g, etc) ya existe, solo modifico la cantidad del que ya existe
   if (productoExistente) {
+    // Si el producto existe, solo actualizo la cantidad
     productoExistente.cantidad_carrito += nuevo_producto.cantidad_carrito;
   } else {
+
     carrito.push(nuevo_producto); // si no, solo agrego un nuevo objeto a nuestro arreglo carrito.
   }
+
+  // Guarda el carrito actualizado en localStorage
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  // Actualiza el contador
+  actualizarContador();
 }
+
+function actualizarContador() {
+  const cartCounter = document.getElementById("cartCounter");
+  cartCounter.innerText = carrito.length; // Actualiza el número de productos en el carrito
+}
+
+// Este evento se ejecuta cuando la página se ha cargado completamente
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarContador(); // Llama a la función para actualizar el contador
+});
 
 function closeModal() {
   const modal = document.getElementById("productModal");

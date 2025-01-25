@@ -16,15 +16,16 @@
 
 
     <body>
-        <header class="top-bar">
+      <header class="top-bar">
             <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
                 Para compras mayoristas: Pedido mínimo $100.000 COP
             </marquee>
             <marquee behavior="alternate" direction="left" scrollamount="5" loop="-1">
                 💬 Servicio al cliente
             </marquee>
-        </header>
-        <nav class="main-navbar">
+      </header>
+
+      <nav class="main-navbar">
             <div class="top-section">
                 <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
                 <div class="search-bar">
@@ -36,9 +37,11 @@
                 </div>
                 <div class="user-options">
                     <button>Registrarse / Iniciar Sesión</button>
-                    <button class="cart-button">🛒 
-                      <div class="counter" id="cartCounter">0</div>
-                  </button>
+                    <a href="/html/carrito.html">
+                      <button class="cart-button" id="cartButton">🛒 
+                        <div class="counter" id="cartCounter">0</div>
+                      </button>
+                    </a>
                 </div>
             </div>
             <div class="bottom-section">
@@ -54,9 +57,7 @@
                     <span></span>
                 </div>
                 </ul>
-        </nav>  
-
-
+      </nav>  
 
     <!--* contenedor normal-->
 <main>
