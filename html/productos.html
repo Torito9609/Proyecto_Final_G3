@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>cards with Modal :D</title>
 
 
@@ -70,9 +71,14 @@
             <h3 id="modalTitle"></h3>
             <p id="modalCategory"></p>
             <p id="modalDescription"></p>
-            <ul id="modalPrices"></ul>
-            <button class="show-modal">Añadir al carrito</button>
-
+            <ul id="modalPrices", class="modalPrices"></ul>
+            <div class="cantidad-container">
+                <a href="#"><i class='bx bx-minus'></i></a></i>
+                <input type="number" class="cantidad-producto" min="1" value="1">
+                <a href="#"><i class='bx bx-plus' ></i></a></i>
+            </div>
+            <button class="btn_open_card carrito">Añadir al carrito</button>
+            
             
         </div>
         </div>
