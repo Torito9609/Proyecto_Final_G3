@@ -13,6 +13,10 @@ async function loadProducts() {
   }
 }
 
+const notification = document.querySelector('#notification');
+const notificationMessage = document.querySelector('#notification-message');
+const notificationClose = document.querySelector('#notification-close');
+
 function displayProducts(productos) {
   const productContainer = document.querySelector(".product-container");
 
@@ -176,6 +180,7 @@ function agregarProducto(nuevo_producto) {
   } else {
 
     carrito.push(nuevo_producto); // si no, solo agrego un nuevo objeto a nuestro arreglo carrito.
+    showNotification('Producto añadido al carrito');
   }
 
   // Guarda el carrito actualizado en localStorage
@@ -219,6 +224,23 @@ aumentarBtn.addEventListener("click", (e) => {
   let cantidad = parseInt(cantidadInput.value, 10);
   cantidadInput.value = cantidad + 1;
 });
+
+// Función para mostrar la notificación
+function showNotification(message) {
+  notificationMessage.textContent = message;
+  notification.style.display = 'block';
+
+  // Oculta la notificación después de 5 segundos
+  setTimeout(() => {
+      notification.style.display = 'none';
+  }, 5000);
+}
+
+// Cerrar la notificación manualmente
+notificationClose.addEventListener('click', () => {
+  notification.style.display = 'none';
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();

@@ -103,6 +103,7 @@ body {
   margin: 0 8px;
   cursor: pointer;
 }
+
 .cantidad-producto {
   width: 80px;
   height: 16px;
@@ -191,6 +192,15 @@ body {
   background-color: #dbc078;
 }
 
+.btn_open_card:hover{
+  background-color: #dbc078;
+}
+
+.btn_open_card:active {
+  transform: scale(0.95);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .li-modal {
   font-family: "Roma SemiBold";
   list-style-type: inside;
@@ -256,4 +266,34 @@ body {
   background-color: #1a6cb4; /* Fondo al seleccionar */
   color: white; /* Texto al seleccionar */
   border-color: #dbc078; /* Cambiar el color del borde */
+}
+
+/* Notificación */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification p {
+  margin: 0;
+  padding-right: 20px;
+}
+
+.notification button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
 }
