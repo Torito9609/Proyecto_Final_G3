@@ -6,10 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function renderizarCarrito(carrito) {
   const cartItemsContainer = document.getElementById("cart-items");
+  const vaciarCarritoBtn = document.querySelector(".vaciar-carrito");
 
   // Verificamos si hay productos en el carrito
   if (carrito.length === 0) {
-    cartItemsContainer.innerHTML = "<p>Tu carrito está vacío.</p>";
+    cartItemsContainer.innerHTML = "";
+
+    const mensajeVacio = document.createElement("p");
+    mensajeVacio.textContent = "Tu carrito está vacío.";
+    cartItemsContainer.appendChild(mensajeVacio);
+
+    const enlaceAnadir = document.createElement("a");
+    enlaceAnadir.href = "/html/productos.html"; // Asegúrate de que la ruta sea correcta
+    enlaceAnadir.textContent = "Añadir items al carrito";
+    cartItemsContainer.appendChild(enlaceAnadir);
+    if (vaciarCarritoBtn) {
+      vaciarCarritoBtn.style.display = "none";
+    }
   } else {
     //Limpiamos el contenedor
     const cartItems = document.getElementById("cart-items");
@@ -25,9 +38,12 @@ function renderizarCarrito(carrito) {
       productCard.classList.add("cartItems");
       productCard.innerHTML = `
       <div class="cart-item-info">
-        <p>${producto.nombre}</p>
+        <p class="nombre-producto">${producto.nombre}</p>
+        <p class=".cantidad">${producto.cantidad}</p>
       </div>
-      <p>${producto.cantidad_carrito}</p>
+      <div class = "cantidad-producto">
+      <p class="cantidad-producto">${producto.cantidad_carrito}</p>
+       </div>
       <div class="cart-item-price">${(
         producto.precio * producto.cantidad_carrito
       ).toLocaleString("es-CO", {
@@ -35,42 +51,46 @@ function renderizarCarrito(carrito) {
         currency: "COP",
       })}
       </div>
-      <button class="dismiss" data-id="${
-        producto.id
+      <button class="dismiss" data-id="${producto.id}" cantidad="${
+        producto.cantidad
       }" onclick="eliminarDelCarrito(event)"> X </button>
+      
       `;
       cartItemsContainer.appendChild(productCard);
-    });    
-    calcularTotalCompra();  
+    });
+    calcularTotalCompra();
   }
 }
 
 function calcularTotalCompra() {
-  let productosCarrito = JSON.parse(localStorage.getItem('carrito'));
+  let productosCarrito = JSON.parse(localStorage.getItem("carrito"));
+  if (!productosCarrito || productosCarrito.length === 0) {
+    productosCarrito = []; // Aseguramos que sea un array vacío si no hay productos
+  }
   let precioTotal = 0;
   productosCarrito.forEach((producto) => {
     let cantidad = producto.cantidad_carrito;
     let precio = producto.precio;
-    let total = cantidad*precio;
+    let total = cantidad * precio;
     precioTotal += total;
-  })
+  });
   //Se muestra la suma total de productos
   const sumaTotal = document.getElementById("total-cost");
-    if (sumaTotal) {
-      sumaTotal.innerText = precioTotal.toLocaleString("es-CO", {
-        style: "currency",
-        currency: "COP",
-      });
-    }
+  if (sumaTotal) {
+    sumaTotal.innerText = precioTotal.toLocaleString("es-CO", {
+      style: "currency",
+      currency: "COP",
+    });
+  }
 }
-
 
 //Eliminar productos del carrito
 function eliminarDelCarrito(event) {
-  console.log(event.target.getAttribute("data-id"));
-
   const idProductoEliminado = event.target.getAttribute("data-id");
-  
+  console.log(idProductoEliminado);
+  const cantidadProductoEliminado = event.target.getAttribute("cantidad");
+  console.log(cantidadProductoEliminado);
+
   let carritoActualizado = [];
   //Se hace una copia del carrito que está en Localstorage
   let carritoActual = JSON.parse(localStorage.getItem("carrito"));
@@ -78,7 +98,10 @@ function eliminarDelCarrito(event) {
   //Se agregan a otra lista los productos cuyo id es diferente del id del producto seleccionado
   console.log("carritoActual: ", carritoActual);
   carritoActual.forEach((producto) => {
-    if (producto.id != idProductoEliminado) {
+    if (
+      producto.cantidad != cantidadProductoEliminado ||
+      producto.id != idProductoEliminado
+    ) {
       carritoActualizado.push(producto);
     }
   });
@@ -87,6 +110,14 @@ function eliminarDelCarrito(event) {
   localStorage.setItem("carrito", JSON.stringify(carritoActualizado));
   showNotification("producto eliminado");
   renderizarCarrito(carritoActualizado);
+  calcularTotalCompra();
+}
+
+function vaciarCarrito() {
+  localStorage.removeItem("carrito");
+
+  carrito_actualizado = [];
+  renderizarCarrito(carrito_actualizado);
   calcularTotalCompra();
 }
 
