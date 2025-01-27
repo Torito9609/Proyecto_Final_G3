@@ -13,10 +13,6 @@ async function loadProducts() {
   }
 }
 
-const notification = document.querySelector('#notification');
-const notificationMessage = document.querySelector('#notification-message');
-const notificationClose = document.querySelector('#notification-close');
-
 function displayProducts(productos) {
   const productContainer = document.querySelector(".product-container");
 
@@ -143,6 +139,7 @@ const addToCartButton = document.querySelector(".carrito");
 addToCartButton.addEventListener("click", () => {
   // Verificamos que se haya seleccionado un producto
   if (!productoSeleccionado) {
+    showNotification('Por favor selecciona un tamaño primero.');
     console.log("Por favor selecciona un producto primero.");
     return;
   }
@@ -224,6 +221,10 @@ aumentarBtn.addEventListener("click", (e) => {
   let cantidad = parseInt(cantidadInput.value, 10);
   cantidadInput.value = cantidad + 1;
 });
+
+const notification = document.querySelector('#notification');
+const notificationMessage = document.querySelector('#notification-message');
+const notificationClose = document.querySelector('#notification-close');
 
 // Función para mostrar la notificación
 function showNotification(message) {
