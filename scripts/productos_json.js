@@ -151,7 +151,7 @@ addToCartButton.addEventListener("click", () => {
   productoSeleccionado.cantidad_carrito = parseInt(cantidad, 10);
 
   // Añadimos el producto al carrito
-  agregarProducto(productoSeleccionado);
+  agregarProducto(carrito, productoSeleccionado);
 
   // Reiniciamos la selección después de añadir al carrito
   productoSeleccionado = null;
@@ -161,20 +161,19 @@ addToCartButton.addEventListener("click", () => {
   console.log(carrito); //Aqui imprimo el carrito por consola.
 });
 
-function agregarProducto(nuevo_producto) {
-   // Verifico si el producto ya existe en el carrito, notar que también se comparan los pesos(500g, 10g, ... etc)
+function agregarProducto(carrito, nuevo_producto) {
+  // Verifico si el producto ya existe en el carrito, notar que también se comparan los pesos(500g, 10g, ... etc)
   //Esto porque aunque tengan el mismo id, pueden tener pesos diferentes.
   const productoExistente = carrito.find(
     (producto) =>
       producto.id === nuevo_producto.id &&
       producto.cantidad == nuevo_producto.cantidad
   );
-//Si el producto en id y cantidad(peso 500g, 125g, etc) ya existe, solo modifico la cantidad del que ya existe
+  //Si el producto en id y cantidad(peso 500g, 125g, etc) ya existe, solo modifico la cantidad del que ya existe
   if (productoExistente) {
     // Si el producto existe, solo actualizo la cantidad
     productoExistente.cantidad_carrito += nuevo_producto.cantidad_carrito;
   } else {
-
     carrito.push(nuevo_producto); // si no, solo agrego un nuevo objeto a nuestro arreglo carrito.
   }
 
