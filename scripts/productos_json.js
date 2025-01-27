@@ -139,6 +139,7 @@ const addToCartButton = document.querySelector(".carrito");
 addToCartButton.addEventListener("click", () => {
   // Verificamos que se haya seleccionado un producto
   if (!productoSeleccionado) {
+    showNotification('Por favor selecciona un tamaño primero.');
     console.log("Por favor selecciona un producto primero.");
     return;
   }
@@ -175,6 +176,7 @@ function agregarProducto(carrito, nuevo_producto) {
     productoExistente.cantidad_carrito += nuevo_producto.cantidad_carrito;
   } else {
     carrito.push(nuevo_producto); // si no, solo agrego un nuevo objeto a nuestro arreglo carrito.
+    showNotification('Producto añadido al carrito');
   }
 
   // Guarda el carrito actualizado en localStorage
@@ -218,6 +220,27 @@ aumentarBtn.addEventListener("click", (e) => {
   let cantidad = parseInt(cantidadInput.value, 10);
   cantidadInput.value = cantidad + 1;
 });
+
+const notification = document.querySelector('#notification');
+const notificationMessage = document.querySelector('#notification-message');
+const notificationClose = document.querySelector('#notification-close');
+
+// Función para mostrar la notificación
+function showNotification(message) {
+  notificationMessage.textContent = message;
+  notification.style.display = 'block';
+
+  // Oculta la notificación después de 5 segundos
+  setTimeout(() => {
+      notification.style.display = 'none';
+  }, 5000);
+}
+
+// Cerrar la notificación manualmente
+notificationClose.addEventListener('click', () => {
+  notification.style.display = 'none';
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();
