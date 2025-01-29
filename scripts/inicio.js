@@ -110,7 +110,6 @@ function createProductCard(product){
     const productCard = document.createElement('div');
     productCard.classList.add('popular-product-card');
 
-    //TODO: CREAR BOTON Y ASIGNAR CLASES DE ESTILOS
 
     const boton = document.createElement('button');
     boton.classList.add('add-button');
@@ -122,7 +121,6 @@ function createProductCard(product){
     infoContainer.appendChild(weight);//Append product weight (p) to product info container div
     infoContainer.appendChild(price);//Append product price (p) to product info container div
     infoContainer.appendChild(boton);
-    //TODO: Append botoin a info container
 
     //Append image container and info container divs to product card
     productCard.appendChild(imageContainer);

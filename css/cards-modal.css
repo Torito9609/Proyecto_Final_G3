@@ -6,204 +6,229 @@
 }
 
 @font-face {
+  font-family: "Roma Light";
+  src: url("/fonts/Roma-Regular-iF6666b5402fe3b.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Roma SemiBold";
   src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-body{
+body {
   margin: 0;
 }
 
 .product-card {
-    margin: 10px;
-    width: 250px;
-    height: auto;
-    text-align: center;
+  margin: 10px;
+  width: 250px;
+  height: auto;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border: 4px solid #dbc078;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+}
 
-    background-color: rgb(255, 255, 255);
-    border: 4px solid #DBC078;
-    border-radius: 20px;
-
-    display: flex; 
-    flex-direction: column; 
-
-
-    overflow: hidden; 
-    align-items: center;
-
- 
-
-  }
-
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    
-
-  }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 .modal img {
-    
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    width: 50%;
-    
-   
-    
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 50%;
 }
 
-
-.org-modal{
-    background-color: #243D74;
-    width: 50%;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    color: #DBC078;
-
-
-
-    display: flex; /* Activar flexbox */
-    flex-direction: column; /* Alinear los elementos en columna */
-    align-items: center; /* Centrar horizontalmente */
-    justify-content: center; /* Centrar verticalmente */
-    padding: 20px; /* Espaciado interno */
+.org-modal {
+  background-color: #243d74;
+  width: 50%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: #dbc078;
+  display: flex; /* Activar flexbox */
+  flex-direction: column; /* Alinear los elementos en columna */
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: center; /* Centrar verticalmente */
+  padding: 20px; /* Espaciado interno */
 }
 
-
-
-  .modal-content {
-    background: rgb(255, 255, 255);
-
-    border-radius: 8px;
-    text-align: center;
-    width: 50%;
-    max-width: 900px;
-    display: flex;
-    flex: 1;
-    border: 4px solid #DBC078;
-    border-radius: 20px;
-  }
-
-  .close-btn {
-    background: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-
-
- /* * contenedor padre*/
-  .product-container {
-    padding: 50px;
-    
-    background-color: rgb(255, 255, 255);
-    
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    
-  }
-
-
-.img-cards-modal{
-    width: 150px;
-    height: 200px;
-    
-    object-fit: cover;
-    margin: 10px;
+.modal-content {
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  text-align: center;
+  width: 50%;
+  max-width: 900px;
+  display: flex;
+  flex: 1;
+  border: 4px solid #dbc078;
+  border-radius: 20px;
 }
 
-.decoration-cards{
-    background-color: #243D74;
-    width: 100%;
-    height:auto;
-
-    color: #DBC078;
-
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 10px;
-    font-family: "Roma SemiBold";
+.modalTitle {
+  font-family: "Roma Bold", sans-serif;
+  font-size: 36px;
+}
+.modalCategory {
+  font-family: "Roma SemiBold", sans-serif;
+  font-size: 18px;
+}
+.modalDescription {
+  font-family: "Roma Light", sans-serif;
+  font-size: 16px;
 }
 
-.show-modal{
-    /* background-color: #243D74; */
-    border-radius: 20px;
-    padding: 10px;
-    /* border: 4px solid #DBC078; */
-    color: white;
-
-    font-family: "Roma SemiBold";
-    background-color: #1A6CB4;
-    color: white;
-    border: 3px solid;
-    border-color: #DBC078;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 10px;
-    margin: 10px;
+.cantidad-container a i {
+  display: inline-flex;
+  padding: 10px;
+  border: 2px solid #dbc078;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+  cursor: pointer;
 }
 
-.show-modal:hover{
-  background-color: #DBC078;
+.cantidad-producto {
+  width: 80px;
+  height: 16px;
+  font-size: 16px;
+  font-family: "Roma Bold", sans-serif;
+  text-align: center;
+  border: 2px solid #dbc078;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
 
+.close-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
-.li-modal{
+/* * contenedor padre*/
+.product-container {
+  padding: 50px;
 
+  background-color: rgb(255, 255, 255);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.img-cards-modal {
+  width: 150px;
+  height: 200px;
+
+  object-fit: cover;
+  margin: 10px;
+}
+
+.decoration-cards {
+  background-color: #243d74;
+  width: 100%;
+  height: auto;
+
+  color: #dbc078;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
   font-family: "Roma SemiBold";
-  list-style-type: inside; 
+}
+
+.show-modal,
+.btn_open_card {
+  /* background-color: #243D74; */
+  border-radius: 20px;
+  padding: 10px;
+  /* border: 4px solid #DBC078; */
+  color: white;
+  font-family: "Roma SemiBold";
+  background-color: #1a6cb4;
+  color: white;
+  border: 3px solid;
+  border-color: #dbc078;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  margin: 10px;
+}
+
+.show-modal.selected {
+  background-color: #f0ad4e; /* Color de fondo para indicar selección */
+  color: white;
+}
+
+.show-modal:hover {
+  background-color: #dbc078;
+}
+
+.btn_open_card:hover{
+  background-color: #dbc078;
+}
+
+.btn_open_card:active {
+  transform: scale(0.95);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.li-modal {
+  font-family: "Roma SemiBold";
+  list-style-type: inside;
   padding: 10px;
   margin: 0;
   text-align: left;
   margin: 20px 0;
-  list-style-type: disc; 
-  list-style-position: inside; 
-  padding-left: 0; 
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 0;
   margin-left: 0;
 
-  background-color: #1A6CB4;
+  background-color: #1a6cb4;
   border-radius: 20px;
-  border: 2px solid #DBC078;
+  border: 2px solid #dbc078;
 
   max-width: 60%;
-
 }
 
-.li-modal li{
-  margin: 0px 0; 
+.li-modal li {
+  margin: 0px 0;
   text-align: center;
   padding: 10px;
 }
 
-#modalPrices{
+#modalPrices {
   padding: 0px;
 }
-
-
-
-
-
-
 
 /* Ocultar el checkbox original */
 .checkbox-input {
@@ -220,9 +245,9 @@ body{
   display: inline-block;
   padding: 10px 20px;
   border-radius: 10px;
-  border: 2px solid #1A6CB4; /* Borde inicial */
+  border: 2px solid #1a6cb4; /* Borde inicial */
   background-color: #ffffff; /* Fondo inicial */
-  color: #1A6CB4; /* Color inicial del texto */
+  color: #1a6cb4; /* Color inicial del texto */
   cursor: pointer;
   font-family: Arial, sans-serif;
   font-size: 1rem;
@@ -232,16 +257,43 @@ body{
 
 /* Cambio de estilo al hacer hover */
 .checkbox-label:hover {
-  background-color: #E1ECF9;
-  color: #1A6CB4;
+  background-color: #e1ecf9;
+  color: #1a6cb4;
 }
 
 /* Estilo cuando el checkbox está marcado */
 .checkbox-input:checked + .checkbox-label {
-  background-color: #1A6CB4; /* Fondo al seleccionar */
+  background-color: #1a6cb4; /* Fondo al seleccionar */
   color: white; /* Texto al seleccionar */
-  border-color: #DBC078; /* Cambiar el color del borde */
+  border-color: #dbc078; /* Cambiar el color del borde */
 }
 
+/* Notificación */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.notification p {
+  margin: 0;
+  padding-right: 20px;
+}
 
+.notification button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
