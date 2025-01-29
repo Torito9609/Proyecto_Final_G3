@@ -35,6 +35,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   align-items: center;
+  transition: transform 0.9s;
 }
 
 .modal {
@@ -47,6 +48,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  transition: transform 0.9s;
 }
 .modal img {
   border-top-left-radius: 20px;
@@ -178,9 +180,10 @@ body {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 1s ease;
   padding: 10px;
   margin: 10px;
+  transition: transform 0.5s;
 }
 
 .show-modal.selected {
@@ -190,6 +193,7 @@ body {
 
 .show-modal:hover {
   background-color: #dbc078;
+  transition: transform 0.9s, box-shadow 0.3s;
 }
 
 .btn_open_card:hover{
@@ -297,3 +301,12 @@ body {
   right: 5px;
   cursor: pointer;
 }
+
+
+.product-card:hover{
+  transition: transform 0.5s, box-shadow 0.9s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.09);
+}
+
+
