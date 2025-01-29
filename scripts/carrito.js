@@ -42,7 +42,9 @@ function renderizarCarrito(carrito) {
         <p class=".cantidad">${producto.cantidad}</p>
       </div>
       <div class = "cantidad-producto">
-      <p class="cantidad-producto">${producto.cantidad_carrito}</p>
+      <i class='bx bxs-minus-circle'></i>
+      <p class="cantidad-productoP">${producto.cantidad_carrito}</p>
+      <i class='bx bxs-plus-circle' ></i>
        </div>
       <div class="cart-item-price">${(
         producto.precio * producto.cantidad_carrito
@@ -60,6 +62,43 @@ function renderizarCarrito(carrito) {
     });
     calcularTotalCompra();
   }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const cartContainer = document.querySelector(".cart-items");
+
+  cartContainer.addEventListener("click", (event) => {
+    // Check if the clicked element is the plus button
+    if (event.target.classList.contains("bxs-plus-circle")) {
+      incrementQuantity(event);
+    }
+    // Check if the clicked element is the minus button
+    else if (event.target.classList.contains("bxs-minus-circle")) {
+      decrementQuantity(event);
+    }
+  });
+});
+
+function incrementQuantity(event) {
+  const productCard = event.target.closest(".cantidad-producto");
+  const cantidadProductoP = productCard.querySelector(".cantidad-productoP");
+  let currentQuantity = parseInt(cantidadProductoP.textContent, 10);
+
+  currentQuantity += 1;
+
+  cantidadProductoP.textContent = currentQuantity;
+  console.log("Plus button pressed");
+}
+
+function decrementQuantity(event) {
+  const productCard = event.target.closest(".cantidad-producto");
+  const cantidadProductoP = productCard.querySelector(".cantidad-productoP");
+  let currentQuantity = parseInt(cantidadProductoP.textContent, 10); // Get the current quantity as a number
+
+  if (currentQuantity > 1) {
+    currentQuantity -= 1;
+    cantidadProductoP.textContent = currentQuantity;
+  }
+  console.log("Minus button pressed");
 }
 
 function calcularTotalCompra() {
