@@ -82,7 +82,7 @@ function displayProducts(productos) {
     <h2>${product.nombre}</h2>
        <p><strong>Categoría:</strong> ${product.categoría}</p>
        <p>$${product.precio[2]}</p>
-        <button class="show-modal">Ver detalles</button>
+        <button class="show-modal_1">Ver detalles</button>
           
         </div>
       `;
@@ -93,7 +93,7 @@ function displayProducts(productos) {
     productCard.innerHTML = productHTML;
 
     // Añadir evento para abrir el modal
-    const modalButton = productCard.querySelector(".show-modal");
+    const modalButton = productCard.querySelector(".show-modal_1");
     modalButton.addEventListener("click", () => {
       showModal(
         product.nombre,
