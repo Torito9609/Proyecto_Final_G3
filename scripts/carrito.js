@@ -42,9 +42,13 @@ function renderizarCarrito(carrito) {
         <p class=".cantidad">${producto.cantidad}</p>
       </div>
       <div class = "cantidad-producto">
-      <i class='bx bxs-minus-circle'></i>
+      <i id="${producto.id}" cantidad="${
+        producto.cantidad
+      }" class='bx bxs-minus-circle'></i>
       <p class="cantidad-productoP">${producto.cantidad_carrito}</p>
-      <i class='bx bxs-plus-circle' ></i>
+      <i id="${producto.id}" cantidad="${
+        producto.cantidad
+      }"class='bx bxs-plus-circle' ></i>
        </div>
       <div class="cart-item-price">${(
         producto.precio * producto.cantidad_carrito
@@ -76,29 +80,48 @@ document.addEventListener("DOMContentLoaded", () => {
       decrementQuantity(event);
     }
   });
+
+  // Renderizar carrito cuando la página se carga
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  renderizarCarrito(carrito);
 });
 
 function incrementQuantity(event) {
-  const productCard = event.target.closest(".cantidad-producto");
-  const cantidadProductoP = productCard.querySelector(".cantidad-productoP");
-  let currentQuantity = parseInt(cantidadProductoP.textContent, 10);
+  const productId = event.target.getAttribute("id");
+  const peso = event.target.getAttribute("cantidad");
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  currentQuantity += 1;
+  carrito = carrito.map((producto) => {
+    if (producto.id === productId && producto.cantidad == peso) {
+      producto.cantidad_carrito += 1; // Incrementar la cantidad
+    }
+    return producto;
+  });
 
-  cantidadProductoP.textContent = currentQuantity;
-  console.log("Plus button pressed");
+  // Guardar en localStorage y volver a renderizar el carrito
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderizarCarrito(carrito);
 }
 
 function decrementQuantity(event) {
-  const productCard = event.target.closest(".cantidad-producto");
-  const cantidadProductoP = productCard.querySelector(".cantidad-productoP");
-  let currentQuantity = parseInt(cantidadProductoP.textContent, 10); // Get the current quantity as a number
+  const productId = event.target.getAttribute("id");
+  const peso = event.target.getAttribute("cantidad");
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  if (currentQuantity > 1) {
-    currentQuantity -= 1;
-    cantidadProductoP.textContent = currentQuantity;
-  }
-  console.log("Minus button pressed");
+  carrito = carrito.map((producto) => {
+    if (
+      producto.id === productId &&
+      producto.cantidad_carrito > 1 &&
+      producto.cantidad == peso
+    ) {
+      producto.cantidad_carrito -= 1; // Decrementar la cantidad si es mayor a 1
+    }
+    return producto;
+  });
+
+  // Guardar en localStorage y volver a renderizar el carrito
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderizarCarrito(carrito);
 }
 
 function calcularTotalCompra() {
