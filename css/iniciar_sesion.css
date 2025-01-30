@@ -37,7 +37,7 @@ body {
 .container {
   position: relative;
   width: 850px;
-  height: 550px;
+  height: 600px;
   background: #c1e5fb;
   border-radius: 30px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
@@ -139,6 +139,11 @@ form {
   font-size: 20px;
   color: #fff;
   font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #dbc078;
 }
 
 .container p {
@@ -225,6 +230,10 @@ form {
   height: 48px;
   box-shadow: none;
   margin-bottom: 20px;
+}
+
+.btn-alert {
+  background-color: #dbc078 !important;
 }
 
 @media screen and (max-width: 650px) {

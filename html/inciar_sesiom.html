@@ -9,24 +9,35 @@
       rel="stylesheet"
     />
     <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <div class="container">
       <div class="form-box login">
-        <form action="">
+        <form id="loginForm" action="">
           <h1>Login</h1>
           <div class="input-box">
-            <input type="email" placeholder="Correo electrónico" required />
+            <input
+              id="email_login"
+              type="email"
+              placeholder="Correo electrónico"
+              required
+            />
             <i class="bx bxs-envelope"></i>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Contraseña" required />
+            <input
+              id="password_login"
+              type="password"
+              placeholder="Contraseña"
+              required
+            />
             <i class="bx bxs-lock-alt"></i>
           </div>
           <div class="forgot-link">
             <a href="#">¿Olvidaste tu contraseña?</a>
           </div>
-          <button type="submit" class="btn">Login</button>
+          <button type="submit" class="btn login">Login</button>
           <p>O ingresa con tus redes sociales</p>
           <div class="social-icons">
             <a href="#"><i class="bx bxl-google"></i></a>
@@ -74,7 +85,16 @@
             />
             <i class="bx bxs-lock-alt"></i>
           </div>
-          <button type="submit" class="btn login">Crear cuenta</button>
+          <div class="input-box">
+            <input
+              id="password_confirm"
+              type="password"
+              placeholder="Confirma tu contraseña"
+              required
+            />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <button type="submit" class="btn register">Crear cuenta</button>
           <p>O registrate con tus redes sociales</p>
           <div class="social-icons">
             <a href="#"><i class="bx bxl-google"></i></a>
@@ -89,7 +109,7 @@
           </div>
           <h1>¡Hola! Bienvenido</h1>
           <p>¿No tienes una cuenta?</p>
-          <button class="btn register-btn">Registrate</button>
+          <button class="btn register-btn-toggle">Registrate</button>
         </div>
         <div class="toggle-panel toggle-right">
           <div class="logo">
@@ -97,7 +117,7 @@
           </div>
           <h1>¡Bienvenido de vuelta!</h1>
           <p>¿Ya tienes una cuenta?</p>
-          <button class="btn login-btn">Login</button>
+          <button class="btn login-btn-toggle">Login</button>
         </div>
       </div>
     </div>
