@@ -11,45 +11,57 @@ document
     const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
-    let usuario = {
-      name: name,
-      phone: phone,
-      email: email,
-      password: password,
-    };
-    let users = JSON.parse(localStorage.getItem("user")) || [];
 
     const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
-    if (!namePattern.test(name)) {
-      alert("El nombre solo debe contener letras y espacios.");
-      return;
-    }
-
     const phonePattern = /^\d{7,15}$/;
-    if (!phonePattern.test(phone)) {
-      alert("El teléfono debe contener entre 7 y 15 dígitos numéricos.");
-      return;
-    }
-
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-      alert("Por favor, ingresa un correo válido.");
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    let users = JSON.parse(localStorage.getItem("user")) || [];
+
+    if (!namePattern.test(name)) {
+      alert("❌ El nombre solo debe contener letras y espacios.");
+      console.log("Error: Nombre inválido ->", name);
       return;
     }
-
-    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    if (!phonePattern.test(phone)) {
+      alert("❌ El teléfono debe contener entre 7 y 15 dígitos numéricos.");
+      console.log("Error: Teléfono inválido ->", phone);
+      return;
+    }
+    if (!emailPattern.test(email)) {
+      alert("❌ Por favor, ingresa un correo válido.");
+      console.log("Error: Correo inválido ->", email);
+      return;
+    }
     if (!passwordPattern.test(password)) {
       alert(
-        "La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula, un número y un carácter especial."
+        "❌ La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula, un número y un carácter especial."
+      );
+      console.log("Error: Contraseña inválida ->", password);
+      return;
+    }
+
+    const userExists = users.some(
+      (user) => user.email === email || user.phone === phone
+    );
+    if (userExists) {
+      alert("⚠️ El correo o teléfono ya están registrados. Usa otro.");
+      console.log(
+        "Error: Usuario duplicado -> Email:",
+        email,
+        "Teléfono:",
+        phone
       );
       return;
     }
 
-    alert("Formulario enviado exitosamente");
-    users.push(usuario);
-    console.log(users);
+    let newUser = { name, phone, email, password };
+    users.push(newUser);
     localStorage.setItem("user", JSON.stringify(users));
-    //location.reload();
+
+    alert("✅ Registro exitoso");
+    console.log("Usuario registrado con éxito ->", newUser);
     this.reset();
   });
 
