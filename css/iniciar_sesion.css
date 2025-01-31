@@ -201,6 +201,17 @@ form {
   transition: 0.6s ease-in-out;
 }
 
+#errorCorreo, #errorNombre, #errorTelefono, #errorContrasenia, #errorContrasenia2{
+  color: red;
+}
+.displayError{
+  display: block;
+}
+
+.hideError{
+  display: none;
+}
+
 .toggle-panel.toggle-left {
   left: 0;
   transition-delay: 0.6s;
