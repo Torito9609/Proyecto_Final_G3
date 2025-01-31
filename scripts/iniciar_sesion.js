@@ -215,7 +215,7 @@ document
       console.log("Error: Correo inválido ->", email);
       errorCorreo.classList.remove("hideError");
       errorCorreo.classList.add("displayError");
-      errorCorreo.innerText = "esto es un error (como yo :v)";
+      errorCorreo.innerText = "Correo no válido: ejemplo@correo.com";
       return;
     }else{
       console.log("El correo si sirve :D", email);
@@ -257,7 +257,7 @@ document
     let password_confirm = document.getElementById("password_confirm").value;
     let errorContrasenia2 = document.getElementById("errorContrasenia2");
 
-    console.log(password_confirm, password);
+   // console.log(password_confirm, password);
 
     
 
@@ -281,6 +281,23 @@ document
     }
   }
 
+  function validarCorreoLogin(){
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    let email = document.getElementById("email_login").value;
+    let errorCorreoLogin = document.getElementById("errorCorreoLogin");
+
+    if (!emailPattern.test(email) && email != "") {
+      console.log("Error: Correo inválido ->", email);
+      errorCorreoLogin.classList.remove("hideError");
+      errorCorreoLogin.classList.add("displayError");
+      errorCorreoLogin.innerText = "Correo no válido: ejemplo@correo.com";
+      return;
+    }else{
+      errorCorreoLogin.classList.remove("displayError");
+      errorCorreoLogin.classList.add("hideError");
+    }
+  }
 
 register_btn_toggle.addEventListener("click", () => {
   container.classList.add("active");

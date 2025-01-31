@@ -21,8 +21,10 @@
               id="email_login"
               type="email"
               placeholder="Correo electrónico"
+              onchange="validarCorreoLogin()"
               required
             />
+            <p id="errorCorreoLogin"></p>
             <i class="bx bxs-envelope"></i>
           </div>
           <div class="input-box">
