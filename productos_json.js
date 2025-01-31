@@ -8,10 +8,16 @@ async function loadProducts() {
 
     const data = await response.json();
     displayProducts(data.productos);
+
+    console.log(data);
+    
+
   } catch (error) {
     console.error("Error:", error);
   }
 }
+
+
 
 function displayProducts(productos) {
   const productContainer = document.querySelector(".product-container");
@@ -43,6 +49,8 @@ function displayProducts(productos) {
     productContainer.appendChild(productCard);
   });
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();

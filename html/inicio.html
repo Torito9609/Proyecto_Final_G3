@@ -37,14 +37,20 @@
           </button>
         </div>
         <div class="user-options">
-          <button>Registrarse / Iniciar Sesión</button>
-          <button>🛒</button>
+          <a href="/html/inciar_sesiom.html">
+            <button id="btn-login">Registrarse / Iniciar Sesión</button>
+          </a>
+          <a href="/html/carrito.html">
+          <button class="cart-button" id="cartButton">🛒 
+            <div class="counter" id="cartCounter">0</div>
+          </button>
+        </a>
         </div>
       </div>
       <div class="bottom-section">
         <ul class="nav-links">
           <li><a href="/html/inicio.html">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
+          <li><a href="/html/productos.html">Productos</a></li>
           <li><a href="/html/index.html">Sobre nosotros</a></li>
           <li><a href="/html/contactenos.html">Contáctenos</a></li>
         </ul>
@@ -94,12 +100,12 @@
     <div id="productCarousel" class="carousel slide populars" data-ride="carousel">
         <h1>POPULARES</h1>
 
-        <!-- Indicators -->
-        <ol class="carousel-indicators"></ol>
+       
 
         <!-- Wrapper for product cards -->
         <div class="carousel-inner carousel-size"></div>
-
+        <!-- Indicators -->
+        <ol class="carousel-indicators"></ol>
         <!-- left Control -->
         <a class="left carousel-control" href="#productCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
         <!-- right Control -->
@@ -255,6 +261,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../scripts/inicio.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="/Js_nav/menu.js"></script>
+    <script src="/scripts/menu.js"></script>
+    <script src="/scripts/carrito_contador.js"></script>
 </body>
 </html>

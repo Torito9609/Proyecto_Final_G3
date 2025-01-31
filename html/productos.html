@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cards-modal.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="icon" type="image/png" href="/img-logos/Logo_sin-fondo_sin_slogan.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>cards with Modal :D</title>
+
+
+    <body>
+      <header class="top-bar">
+            <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
+                Para compras mayoristas: Pedido mínimo $100.000 COP
+            </marquee>
+            <marquee behavior="alternate" direction="left" scrollamount="5" loop="-1">
+                💬 Servicio al cliente
+            </marquee>
+      </header>
+
+      <nav class="main-navbar">
+            <div class="top-section">
+                <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos..." />
+                    <button type="submit" class="button-search">
+                        <box-icon name='search-alt-2' color='#dbc078'></box-icon>
+    
+                    </button>
+                </div>
+                <div class="user-options">
+                  <a href="/html/inciar_sesiom.html">
+                    <button id="btn-login">Registrarse / Iniciar Sesión</button>
+                  </a>
+                    <a href="/html/carrito.html">
+                      <button class="cart-button" id="cartButton">🛒 
+                        <div class="counter" id="cartCounter">0</div>
+                      </button>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <ul class="nav-links">
+                    <li><a href="/html/inicio.html">Inicio</a></li>
+                    <li><a href="/html/productos.html">Productos</a></li>
+                    <li><a href="/html/index.html">Sobre nosotros</a></li>
+                    <li><a href="/html/contactenos.html">Contáctenos</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                </ul>
+      </nav>  
+
+    <!--* contenedor normal-->
+<main>
+    <div class="product-container"></div>
+
+    <!--* lo que aparece en el modal -->
+    <div class="modal" id="productModal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <img id="modalImage" src="" alt="Product Image" >
+            <div class="org-modal">
+            <h3 id="modalTitle"></h3>
+            <p id="modalCategory"></p>
+            <p id="modalDescription"></p>
+            <ul id="modalPrices", class="modalPrices"></ul>
+            <div class="cantidad-container">
+                <a href="#"><i class='bx bx-minus'></i></a></i>
+                <input type="number" class="cantidad-producto" min="1" value="1">
+                <a href="#"><i class='bx bx-plus' ></i></a></i>
+            </div>
+            <button class="btn_open_card carrito">Añadir al carrito</button>
+            
+            
+        </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+      <p id="notification-message"></p>
+      <button id="notification-close">&times;</button>
+  </div>
+  
+</main>
+
+<footer>
+    <div id="footer_content">
+      <div id="footer_contacts">
+        <img src="/img-logos/Logo_sin-fondo_sin_slogan.png" alt="Logo" id="footer_logo">
+        <p>Síguenos en nuestras redes sociales</p>
+
+        <div id="footer_social_media">
+          <a href="#" class="footer-link" id="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="tiktok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+      <ul class="footer-list">
+        <li>
+          <h3>Nuestros Canales de Comunicación</h3>
+        </li>
+        <li>
+          <p class="footer-link"> +57 302 4116438</p>
+        </li>
+        <li>
+          <a href="#" class="footer-link">inversioneselzafiro@gmail.com</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">01 80000 11 2345</a>
+        </li>
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <h3>Política de Privacidad</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Tratamiento de Datos Personales</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Condiciones de Uso</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Atención al Cliente (PQRS)</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Superintendencia de industria y comercio</a>
+        </li>
+
+      </ul>
+
+      <div id="footer_subscribe">
+        <h3>Suscríbete</h3>
+
+        <p> ¡Únete a nuestra comunidad! Suscríbete para recibir promociones y novedades de nuestros condimentos. </p>
+        <div id="input_group">
+          <input type="email" id="email">
+          <button>
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer_copyright">
+      &#169
+      2025 Inversiones El Zafiro BA SAS. Todos los derechos reservados.
+    </div>
+  </footer>
+
+    
+    
+
+    <script src="/scripts/productos_json.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="/scripts/menu.js"></script>
+        </body>
+
+</html>
