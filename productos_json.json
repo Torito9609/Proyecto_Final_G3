@@ -13,8 +13,8 @@
       "id": 2,
       "nombre": "Canela en Astilla",
       "imagen": "../img/productos/canela.png",
-      "cantidad": ["500g", "125g", "10g"],
-      "precio": [67830, 35700, 20230, 2083],
+      "cantidad": ["500g", "125g", "250g", "10g"],
+      "precio": [67830, 20230, 35700, 2063],
       "categoría": "producto natural",
       "descripción": "Canela pa la agua panela."
     },
@@ -105,8 +105,8 @@
       "id": 2,
       "nombre": "Canela en Astilla",
       "imagen": "../img/productos/canela.png",
-      "cantidad": ["500g", "125g", "10g"],
-      "precio": [67830, 35700, 20230, 2083],
+      "cantidad": ["500g", "125g", "250g", "10g"],
+      "precio": [67830, 20230, 35700, 2063],
       "categoría": "producto natural",
       "descripción": "Canela pa la agua panela."
     },
