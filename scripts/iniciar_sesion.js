@@ -110,12 +110,19 @@ document
     localStorage.setItem("user", JSON.stringify(users));
 
     Swal.fire({
-      icon: "succes",
+      icon: "success",
       title: "¡Registro existoso!",
       text: "Ahora intenta iniciar sesión con tu correo y contraseña.",
       background: "#243d74",
       color: "#dbc078",
       customClass: { confirmButton: "btn-alert" },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        container.classList.remove("active");
+        lock1.style.display = "none";
+        lock2.style.display = "none";
+        console.log("El registro ha sido exitoso.");
+      }
     });
     console.log("Usuario registrado con éxito ->", newUser);
     this.reset();
@@ -152,13 +159,13 @@ document
     }
   });
 
-  function validarNombre(){
-    const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+function validarNombre() {
+  const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
-    let name = document.getElementById("name").value;
-    let errorNombre = document.getElementById("errorNombre");
+  let name = document.getElementById("name").value;
+  let errorNombre = document.getElementById("errorNombre");
 
-    if (!namePattern.test(name) && name != "") {
+  if (!namePattern.test(name) && name != "") {
     /*  Swal.fire({
         icon: "error",
         title: "Nombre no válido.",
@@ -167,26 +174,27 @@ document
         color: "#dbc078",
         customClass: { confirmButton: "btn-alert" },
       });*/
-      console.log("Error: Nombre inválido ->", name);
-      errorNombre.classList.remove("hideError");
-      errorNombre.classList.add("displayError");
-      errorNombre.innerText = "El nombre debería contener solo letras y espacios.";
-      return;
-    }else{
-     // console.log("El correo si sirve :D", email);
-      errorNombre.classList.remove("displayError");
-      errorNombre.classList.add("hideError");
-    }
+    console.log("Error: Nombre inválido ->", name);
+    errorNombre.classList.remove("hideError");
+    errorNombre.classList.add("displayError");
+    errorNombre.innerText =
+      "El nombre debería contener solo letras y espacios.";
+    return;
+  } else {
+    // console.log("El correo si sirve :D", email);
+    errorNombre.classList.remove("displayError");
+    errorNombre.classList.add("hideError");
   }
+}
 
-  function validarTelefono(){
-    const phonePattern = /^\d{7,15}$/;
+function validarTelefono() {
+  const phonePattern = /^\d{7,15}$/;
 
-    let phone = document.getElementById("phone").value;
-    let errorTelefono = document.getElementById("errorTelefono");
+  let phone = document.getElementById("phone").value;
+  let errorTelefono = document.getElementById("errorTelefono");
 
-    if (!phonePattern.test(phone) && phone != "") {
-  /*    Swal.fire({
+  if (!phonePattern.test(phone) && phone != "") {
+    /*    Swal.fire({
         icon: "error",
         title: "Teléfono no válido",
         text: "El teléfono debe contener entre 7 y 15 dígitos numéricos.",
@@ -194,75 +202,77 @@ document
         color: "#dbc078",
         customClass: { confirmButton: "btn-alert" },
       });*/
-      console.log("Error: Teléfono inválido ->", phone);      
-      errorTelefono.classList.remove("hideError");
-      errorTelefono.classList.add("displayError");
-      errorTelefono.innerText = "El teléfono debe contener entre 7 y 15 números.";
-      return;
-    }else{
-       errorTelefono.classList.remove("displayError");
-      errorTelefono.classList.add("hideError");
-    }
+    console.log("Error: Teléfono inválido ->", phone);
+    errorTelefono.classList.remove("hideError");
+    errorTelefono.classList.add("displayError");
+    errorTelefono.innerText = "El teléfono debe contener entre 7 y 15 números.";
+    return;
+  } else {
+    errorTelefono.classList.remove("displayError");
+    errorTelefono.classList.add("hideError");
   }
+}
 
-  function validarCorreo(){
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+function validarCorreo() {
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    let email = document.getElementById("email").value;
-    let errorCorreo = document.getElementById("errorCorreo");
+  let email = document.getElementById("email").value;
+  let errorCorreo = document.getElementById("errorCorreo");
 
-    if (!emailPattern.test(email) && email != "") {
-      console.log("Error: Correo inválido ->", email);
-      errorCorreo.classList.remove("hideError");
-      errorCorreo.classList.add("displayError");
-      errorCorreo.innerText = "Correo no válido: ejemplo@correo.com";
-      return;
-    }else{
-      console.log("El correo si sirve :D", email);
-      errorCorreo.classList.remove("displayError");
-      errorCorreo.classList.add("hideError");
-    }
+  if (!emailPattern.test(email) && email != "") {
+    console.log("Error: Correo inválido ->", email);
+    errorCorreo.classList.remove("hideError");
+    errorCorreo.classList.add("displayError");
+    errorCorreo.innerText = "Correo no válido: ejemplo@correo.com";
+    return;
+  } else {
+    console.log("El correo si sirve :D", email);
+    errorCorreo.classList.remove("displayError");
+    errorCorreo.classList.add("hideError");
   }
+}
 
-  function validarContrasenia(){
-   const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+function validarContrasenia() {
+  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-    let password = document.getElementById("password").value;
-    let errorContrasenia = document.getElementById("errorContrasenia");
+  let password = document.getElementById("password").value;
+  let errorContrasenia = document.getElementById("errorContrasenia");
 
-    if (!passwordPattern.test(password) && password != "") {
-   /*   Swal.fire({
+  if (!passwordPattern.test(password) && password != "") {
+    /*   Swal.fire({
         icon: "error",
         title: "Contraseña no válida",
         text: "La contraseña debe tener al menos 8 carácteres (1 letra mayúscula, 1 letra minúscula, 1 número y un carácter epecial.)",
         background: "#243d74",
         color: "#dbc078",
         customClass: { confirmButton: "btn-alert" },
-      });*/   
-      errorContrasenia.classList.remove("hideError");
-      errorContrasenia.classList.add("displayError");
-      errorContrasenia.innerText = "La contraseña no es segura.";
-      return;
-    }else{
-      errorContrasenia.classList.remove("displayError");
-      errorContrasenia.classList.add("hideError");
-    }
-
-    confirmarContrasenia();
+      });*/
+    errorContrasenia.classList.remove("hideError");
+    errorContrasenia.classList.add("displayError");
+    errorContrasenia.innerText = "La contraseña no es segura.";
+    return;
+  } else {
+    errorContrasenia.classList.remove("displayError");
+    errorContrasenia.classList.add("hideError");
   }
 
-  function confirmarContrasenia(){
+  confirmarContrasenia();
+}
+
+function confirmarContrasenia() {
   //  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-    let password = document.getElementById("password").value;
-    let password_confirm = document.getElementById("password_confirm").value;
-    let errorContrasenia2 = document.getElementById("errorContrasenia2");
+  let password = document.getElementById("password").value;
+  let password_confirm = document.getElementById("password_confirm").value;
+  let errorContrasenia2 = document.getElementById("errorContrasenia2");
 
-   // console.log(password_confirm, password);
+  // console.log(password_confirm, password);
 
-    
-
-    if (password != password_confirm && password_confirm != "" && password != "") {
-   /*   Swal.fire({
+  if (
+    password != password_confirm &&
+    password_confirm != "" &&
+    password != ""
+  ) {
+    /*   Swal.fire({
         icon: "warning",
         title: "Las contraseñas no coinciden",
         text: "Por favor verifica que ambas contraseñas son iguales.",
@@ -270,34 +280,76 @@ document
         color: "#dbc078",
         customClass: { confirmButton: "btn-alert" },
       });*/
-       
-      errorContrasenia2.classList.remove("hideError");
-      errorContrasenia2.classList.add("displayError");
-      errorContrasenia2.innerText = "Las contraseñas no coinciden.";
-      return;
-    }else{
-      errorContrasenia2.classList.remove("displayError");
-      errorContrasenia2.classList.add("hideError");
-    }
+
+    errorContrasenia2.classList.remove("hideError");
+    errorContrasenia2.classList.add("displayError");
+    errorContrasenia2.innerText = "Las contraseñas no coinciden.";
+    return;
+  } else {
+    errorContrasenia2.classList.remove("displayError");
+    errorContrasenia2.classList.add("hideError");
   }
+}
 
-  function validarCorreoLogin(){
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+function validarCorreoLogin() {
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    let email = document.getElementById("email_login").value;
-    let errorCorreoLogin = document.getElementById("errorCorreoLogin");
+  let email = document.getElementById("email_login").value;
+  let errorCorreoLogin = document.getElementById("errorCorreoLogin");
 
-    if (!emailPattern.test(email) && email != "") {
-      console.log("Error: Correo inválido ->", email);
-      errorCorreoLogin.classList.remove("hideError");
-      errorCorreoLogin.classList.add("displayError");
-      errorCorreoLogin.innerText = "Correo no válido: ejemplo@correo.com";
-      return;
-    }else{
-      errorCorreoLogin.classList.remove("displayError");
-      errorCorreoLogin.classList.add("hideError");
-    }
+  if (!emailPattern.test(email) && email != "") {
+    console.log("Error: Correo inválido ->", email);
+    errorCorreoLogin.classList.remove("hideError");
+    errorCorreoLogin.classList.add("displayError");
+    errorCorreoLogin.innerText = "Correo no válido: ejemplo@correo.com";
+    return;
+  } else {
+    errorCorreoLogin.classList.remove("displayError");
+    errorCorreoLogin.classList.add("hideError");
   }
+}
+const passwordInput = document.getElementById("password");
+const passwordConfirm = document.getElementById("password_confirm");
+const togglePassword = document.getElementById("togglePassword");
+const togglePassword2 = document.getElementById("togglePassword2");
+const lock1 = document.getElementById("lock1");
+const lock2 = document.getElementById("lock2");
+
+passwordInput.addEventListener("input", function () {
+  if (this.value.length > 0) {
+    togglePassword.style.display = "block";
+    lock1.style.display = "none";
+  } else {
+    togglePassword.style.display = "none";
+    lock1.style.display = "block";
+  }
+});
+
+passwordConfirm.addEventListener("input", function () {
+  if (this.value.length > 0) {
+    togglePassword2.style.display = "block";
+    lock2.style.display = "none";
+  } else {
+    togglePassword2.style.display = "none";
+    lock2.style.display = "block";
+  }
+});
+
+togglePassword.addEventListener("click", function () {
+  const type =
+    passwordInput.getAttribute("type") === "password" ? "text" : "password";
+  passwordInput.setAttribute("type", type);
+
+  this.classList.toggle("bxs-hide");
+});
+
+togglePassword2.addEventListener("click", function () {
+  const type =
+    passwordConfirm.getAttribute("type") === "password" ? "text" : "password";
+  passwordConfirm.setAttribute("type", type);
+
+  this.classList.toggle("bxs-hide");
+});
 
 register_btn_toggle.addEventListener("click", () => {
   container.classList.add("active");
