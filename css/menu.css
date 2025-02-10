@@ -44,6 +44,10 @@
 .main-navbar {
     background-color: #243D74;
     border-bottom: 1px solid #ccc;
+    
+
+
+ 
 }
 
 .top-section {
@@ -53,6 +57,22 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 5px 0px 5px;
+
+
+    /**modificaciones top section */
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 .logo {
@@ -291,6 +311,11 @@
 .close-menu{
     display: none;
 }
+.close-menu:hover{
+    color: #C1E5FB;
+transform: scale(1.1);
+transition: color 0.3s ease, transform 0.3s ease;
+}
 
 @media (max-width: 768px) {
     .nav-links {
@@ -344,6 +369,8 @@
         border: none;
 
     }
+    
+
 
 }
 
@@ -384,7 +411,7 @@
   /* Responsividad */
 @media (max-width: 768px) {
     .cart-button {
-      font-size: 16px;
+      font-size: 1.2rem;
       padding: 8px 15px;
     }
   
