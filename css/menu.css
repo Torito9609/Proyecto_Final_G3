@@ -4,14 +4,14 @@
     src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
-  }
+  }*/
   
   @font-face {
     font-family: "Roma SemiBold";
     src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-  } */
+  } 
 
 /* body {
     font-family: Arial, sans-serif;
@@ -133,6 +133,35 @@
 .user-options button:hover {
   background-color: #c1e5fb;
   color: #243d74;
+}
+
+.user-name-container{
+  display: flex;
+  border: solid 4px;
+  border-color: #dbc078;
+  border-radius: 5px;
+  background-color: #1a6cb4;
+  align-items: center; 
+  justify-content: center;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 5px;
+ 
+
+}
+
+.user-name-container p{
+  font-family:"Roma SemiBold" ;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.bxs-user{
+  color: #dbc078;
+  font-size: 30px;
 }
 
 .bottom-section {
