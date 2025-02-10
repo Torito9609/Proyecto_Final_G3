@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -36,8 +37,8 @@
             
           </button> -->
         </div>
-        <div class="user-options">
-          <button>Registrarse / Iniciar Sesión</button>
+        <div class="user-options">            
+          <div id="login-section"></div>
           <a href="/html/carrito.html">
           <button class="cart-button" id="cartButton">
             <box-icon name='cart' color='#ffffff' ></box-icon>
@@ -58,8 +59,11 @@
           <span></span>
           <span></span>
         </div>
-      </ul>
     </nav>
+
+    <div class="call-to-action">
+      <p>¡Haz crecer tu negocio con Zafiro Azul! Comprar ahora</p>
+    </div>
 
     <div class="video-banner">
         <video autoplay muted loop class="video">
@@ -142,40 +146,35 @@
     </div>
 
     <div class="bussines">
-        <h1>PENSADO PARA NEGOCIOS</h1>
-        <div class="bussines-container">
-            <div class="bussines-image">
-                <img src="/img/negocios.jpg" alt="Soluciones para negocios">
-            </div>
-            <div class="bussines-text">
-                <h2>Soluciones diseñadas para tu empresa</h2>
-                <p>
-                  En Zafiro Azul, hemos diseñado nuestra plataforma pensando exclusivamente en las necesidades del comercio mayorista.
-                  Nuestro objetivo es brindar un servicio especializado y eficiente que impulse el crecimiento de empresas como la suya.
-                  Sabemos que los mayoristas enfrentan retos únicos, y estamos aqui para ofrecer soluciones a medida, con
-                  la calidad y cantidad que su negocio necesita.
-                </p>
-                <h2>¡Tu mejor opción para compras al por mayor!</h2>
-                <p>
-                  En Zafiro Azul, valoramos la confianza de nuestros clientes mayoristas, por eso ofrecemos
-                  precios competitivos y un servicio diseñado especialmente para empresas.
-                </p>
-
-                <div class="bussines-text-half-container">
-                  <h2>Compra mínima</h2>
-                  <p>
-                    $100.000 COP, asegurando que siempre obtengas cantidades suficientes para satisfacer tus necesidades.
-                  </p>
-                </div>
-                <div class="bussines-text-half-container">
-                  <h2>Ventajas exclusivas</h2>
-                  <p>
-                    Al realizar compras al por mayor, accedes a promociones especiales y una experiencia de compra eficiente y sin
-                    complicaciones
-                  </p>
-                </div>
-            </div>
+      <div class="bubble-container animate-on-scroll">
+        <div class="top-container">
+          <div class="service-container animate-on-scroll">
+            <h3>💼 Servicio especializado</h3>
+            <p>Optimizado para el comercio mayorista, con la calidad y cantidad que tu negocio necesita.</p>
+          </div>
+          <div class="competitive-container animate-on-scroll">
+            <h3>💰 Precios competitivos</h3>
+            <p>Accede a tarifas exclusivas y promociones especiales.</p>
+          </div>
         </div>
+        <div class="tittle-container animate-on-scroll">
+          <h1>PENSADO PARA NEGOCIOS</h1>
+          <p>Soluciones eficientes para mayoristas</p>
+          <a href="/html/productos.html">
+          <button>Comprar al por mayor ahora</button>
+          </a>
+        </div>
+        <div class="bottom-container">
+          <div class="minimum-container animate-on-scroll">
+            <h3>📦 Compra mínima: $100.000 COP</h3>
+            <p>Suficiente stock para abastecer tu empresa sin complicaciones.</p>
+          </div>
+          <div class="experience-container animate-on-scroll">
+            <h3>⚡ Experiencia sin fricciones</h3>
+            <p>Compra fácil, segura y con entregas rápidas.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer>

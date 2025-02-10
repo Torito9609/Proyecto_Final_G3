@@ -21,8 +21,10 @@
               id="email_login"
               type="email"
               placeholder="Correo electrónico"
+              onchange="validarCorreoLogin()"
               required
             />
+            <p id="errorCorreoLogin"></p>
             <i class="bx bxs-envelope"></i>
           </div>
           <div class="input-box">
@@ -54,8 +56,10 @@
               id="name"
               type="text"
               placeholder="Ingresa tus nombres y apellidos"
+              onchange="validarNombre()"
               required
             />
+            <p id="errorNombre"></p>
             <i class="bx bxs-user"></i>
           </div>
           <div class="input-box">
@@ -63,8 +67,10 @@
               id="phone"
               type="text"
               placeholder="Ingresa tu teléfono"
+              onchange="validarTelefono()"
               required
             />
+            <p id="errorTelefono"></p>
             <i class="bx bxs-phone"></i>
           </div>
           <div class="input-box">
@@ -72,8 +78,10 @@
               id="email"
               type="email"
               placeholder="Ingresa tu Correo"
+              onchange="validarCorreo()"
               required
             />
+            <p id="errorCorreo"></p>
             <i class="bx bxs-envelope"></i>
           </div>
           <div class="input-box">
@@ -81,18 +89,24 @@
               id="password"
               type="password"
               placeholder="Ingresa tu contraseña"
+              onchange="validarContrasenia()"
               required
             />
-            <i class="bx bxs-lock-alt"></i>
+            <p id="errorContrasenia"></p>
+            <i class="bx bxs-show" id="togglePassword"></i>
+            <i class="bx bxs-lock-alt" id="lock1"></i>
           </div>
           <div class="input-box">
             <input
               id="password_confirm"
               type="password"
               placeholder="Confirma tu contraseña"
+              onchange="confirmarContrasenia()"
               required
             />
-            <i class="bx bxs-lock-alt"></i>
+            <p id="errorContrasenia2"></p>
+            <i class="bx bxs-show" id="togglePassword2"></i>
+            <i class="bx bxs-lock-alt" id="lock2"></i>
           </div>
           <button type="submit" class="btn register">Crear cuenta</button>
           <p>O registrate con tus redes sociales</p>

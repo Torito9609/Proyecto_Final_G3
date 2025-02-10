@@ -133,3 +133,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     const products = await loadJson();
     displayPopularProducts(products);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-up");
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.2 }); 
+  
+    elements.forEach((el) => observer.observe(el));
+  });
