@@ -48,15 +48,18 @@
 
 .top-section {
     display: flex;
+   
     align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 5px 5px 0px 5px;
 }
 
 .logo {
     font-size: 1.5em;
-    font-weight: bold;
+    /* font-weight: bold; */
     align-items: start;
+    margin-left: 20px;
 
 
 }
@@ -117,19 +120,33 @@
 /**login y boton carrito*/
 .user-options {
     display: flex;
+   
     align-items: center;
-    gap: 10px ;
+    gap: 40px ;
+    margin-right: 20px;
+
+    /**modificaiones user option*/
+
+
+
+
+
+
+
+
+
 }
 
 .user-options button {
     background-color: #1A6CB4;
     border: 4px solid #DBC078;
-    padding: 5px 10px !important;
-    border-radius: 5px;
+    padding: 15px !important;
+    border-radius: 20px;
     cursor: pointer;
-    color: #DBC078;
+    color: #ffffff;
     transition: all 0.3s ease;
-    font-size: 1em ;
+    font-size: 1.2em ;
+
 }
 
 .user-options button:hover {
@@ -137,11 +154,17 @@
     color: #243D74;
 }
 
+#cartButton {
+    border-radius: 50%;
+}
+
 
 .bottom-section {
-    background-color: #1A6CB4;
-    padding: 10px 20px !important;
+    background-color: #1a6cb4;
+
     text-align: center;
+
+    
 
 
 }
@@ -154,7 +177,10 @@
     text-align: center;
     gap: 34px;
     margin: 0;
-    padding: 0;
+    padding: 10px;
+
+
+    
 }
 
 .nav-links li {
@@ -166,7 +192,7 @@
     color: #DBC078;
     margin: 0 20px;
     font-size: 18px;
-    font-weight: bold;
+    /* font-weight: bold; */
 
     display: inline-block; 
     transition: transform 0.3s ease, color 0.3s ease; 
@@ -190,7 +216,7 @@
     text-decoration: none;
     margin: 0 20px;
     font-size: 18px;
-    font-weight: bold;
+    /* font-weight: bold; */
     transition: color 0.3s ease, transform 0.3s ease;
 
 }
@@ -247,17 +273,24 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 7px;
+    
+    
+       
 }
-
 .hamburger-menu span {
     background-color: white;
     height: 3px;
     width: 25px;
-    margin-top: 10px;
+    margin-top: 5px;
+ 
     display: block;
 
 }
 
+.close-menu{
+    display: none;
+}
 
 @media (max-width: 768px) {
     .nav-links {
@@ -276,6 +309,9 @@
     z-index: 10; */
     }
 
+
+
+
     .nav-links li {
         margin: 10px 0;
     }
@@ -284,19 +320,31 @@
         text-decoration: none;
         color: #DBC078;
         font-size: 18px;
-        font-weight: bold;
+        /* font-weight: bold; */
         transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .nav-links.active {
-        max-height: 300px;
+        max-height: 320px;
         padding: 10px 0;
         transform: translateX(0);
+        transform: translateY(-60px);
     }
 
     .hamburger-menu {
         display: flex;
     }
+
+    .close-menu{
+        display: block;
+        background-color: #243D74;
+        color: #DBC078;
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+
+    }
+
 }
 
 /* Contador del carrito */
