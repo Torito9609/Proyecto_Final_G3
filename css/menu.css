@@ -50,7 +50,7 @@
 /* *logo barra busqueda login/carrito*/
 .main-navbar {
   background-color: #243d74;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0px solid #ccc;
 }
 
 .top-section {

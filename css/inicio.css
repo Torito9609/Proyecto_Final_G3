@@ -36,6 +36,16 @@ main{
 
 }
 
+.call-to-action p{
+  background-color: #243D74;
+  color: #DBC078;
+  font-family: "Roma Bold";
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
 .video-banner {
     position: relative;
     width: 100%;
@@ -345,7 +355,100 @@ h1 {
   float: left;
   margin-left: 5px;
 }
+.bubble-container {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1000px;
+  padding: 20px;
+  background-color: #ffffff05;
+  border-color: #DBC078;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.top-container, .bottom-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.service-container, .competitive-container, .minimum-container, .experience-container {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #ffffff19;
+  border: solid 3px;
+  border-radius: 10px;
+  border-color: #DBC078;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.service-container, .competitive-container, .minimum-container, .experience-container h3{
+  font-family: "Roma Bold";
+}
+
+.service-container, .competitive-container, .minimum-container, .experience-container p{
+  font-family: "Roma SemiBold";
+  font-size: 18px;
+}
+
+.tittle-container {
+  margin: 20px 0;
+}
+
+.tittle-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.tittle-container p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-family: "Ivymode";
+  font-weight: 500;
+}
+
+.tittle-container button {
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #1A6CB4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roma Bold";
+}
+
+.tittle-container button:hover {
+  background-color: #DBC078;
+  color: #243D74;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 @media (max-width: 768px) {
   .bussines-text-half-container {
     width: 100%;
