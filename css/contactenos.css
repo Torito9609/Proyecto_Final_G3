@@ -9,9 +9,23 @@
 }
 
 @font-face {
-  font-family: "Roma";
-  src: url("/fonts/Roma-Regular-iF6666b5402fe3b.ttf") format("truetype");
+  font-family: "Roma Bold";
+  src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roma SemiBold";
+  src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ivymode";
+  src: url("/fonts/IvyMode-ThinItalic.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -23,13 +37,12 @@
 }
 
 body {
-  font-family: "Roma", sans-serif !important;
+  /* font-family: "Roma Bold"; */
 }
 
 /* Sección Contactenos */
 .contactenos {
-  padding: 3rem 0;
-  color: #c1e5fb;
+  padding: 1.5rem 0;
 }
 
 .subcontactenos {
@@ -38,9 +51,10 @@ body {
 }
 
 .subcontactenos h2 {
+  font-family: "Roma Bold" !important;
   font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #1d1d1d;
+  margin-bottom: 1rem;
+  color: #2c2b2b;
 }
 
 .subcontactenos p {
@@ -49,6 +63,7 @@ body {
   max-width: 700px;
   margin: 0 auto;
   color: #000;
+  font-family: "Roma SemiBold";
 }
 
 /* Contenedor de tarjetas */
@@ -121,6 +136,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
+  margin-bottom: 50px;
 }
 
 /* Título principal */
@@ -128,6 +144,11 @@ h2 {
   text-align: center;
   color: #fff;
   font-family: var(--font-family);
+}
+
+.container h2{
+  margin-bottom: 25px;
+  font-family: "Roma Bold";
 }
 
 /* Contenedor de contacto */
@@ -142,7 +163,9 @@ h2 {
     var(--primary-color) 100%
   );
   padding: 20px;
+  padding-top: 32px;
   font-family: var(--font-family);
+  border-radius: 8px;
 }
 
 .form-container {
@@ -177,7 +200,7 @@ textarea {
   color: var(--secondary-color);
   border: none;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 5px;
   text-align: center;
@@ -204,6 +227,10 @@ textarea {
 .map-container {
   flex: 1;
   height: 341px;
+}
+
+.map-container iframe{
+  border-radius: 8px;
 }
 
 /* Media Query */
