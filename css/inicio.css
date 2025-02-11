@@ -32,21 +32,63 @@ body{
 }
 
 
-.call-to-action p{
-  background-color: #243D74;
-  color: #DBC078;
-  font-family: "Roma SemiBold";
-  font-size: 17px;
-  justify-content: center;
+.menu-open .call-to-action {
+  display: none;
+}
+
+.call-to-action {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaciado entre el título y el botón */
+  align-items: center; /* Centra los elementos en el eje horizontal */
+  padding: 20px;
   text-align: center;
-  margin: 0;
+}
+
+.cta-text {
+  /*background: rgba(26, 108, 180, 0.186); /* Azul fuerte con opacidad */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: "Roma Bold";
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cta-button {
+  background-color: #DBC078; /* Dorado */
+  color: #1D1D1B; /* Negro */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.cta-button:hover {
+  background-color: #C1E5FB; /* Celeste claro */
+  transform: scale(1.05);
 }
 
 .video-banner {
     position: relative;
     width: 100%;
-    height: 70vh; /* Ajusta el tamaño del banner */
+    height: 75vh; /* Ajusta el tamaño del banner */
     overflow: hidden;
+  }
+
+  #bannerVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .video {
@@ -470,6 +512,41 @@ h1 {
   .categories{
     grid-template-columns: repeat(1, 1fr);
     width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-container, .bottom-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-container, .competitive-container,
+  .minimum-container, .experience-container {
+    width: 90%;
+  }
+
+  .tittle-container h1 {
+    font-size: 26px;
+  }
+
+  .tittle-container button {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tittle-container h1 {
+    font-size: 22px;
+  }
+
+  .tittle-container p {
+    font-size: 14px;
+  }
+
+  .tittle-container button {
+    width: 100%;
   }
 }
 
