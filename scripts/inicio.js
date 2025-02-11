@@ -1,26 +1,42 @@
-const products = [
-    { "ImagePath": "https://drive.google.com/uc?id=1HVPH-cUKmMHWWGzmTCYw_BhJITQwkzPJ", "ProductName": "Canela", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 10000 },
-    { "ImagePath": "../img/paprika.png", "ProductName": "Paprika", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 15000 },
-    { "ImagePath": "../img/pimienta.png", "ProductName": "Pimienta en polvo", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 5000 },
-    { "ImagePath": "../img/paprika.png", "ProductName": "Paprika", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 15000 },
-    { "ImagePath": "../img/pimienta.png", "ProductName": "Pimienta en polvo", "ProductWeight": 10, "WeightUnit": "gr", "Precio": 5000 }
-]
+async function loadJson() {
+    try {
+        const response = await fetch("../productos_json.json");
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Productos cargados:", data);
+        return data;
+    } catch (error) {
+        console.error("Error al cargar el archivo JSON:", error);
+        return []; // Retorna un arreglo vacío si ocurre un error
+    }
+}
 
-console.log("products: ", products);
 
-function displayPopularProducts(products) {
+async function displayPopularProducts(productsFromJson) {
+    //console.log(products);
+    let products = [];
+    products =  await productsFromJson.productosPopulares;
+    
     const carouselInner = document.querySelector('.carousel-inner');
     const indicators = document.querySelector('.carousel-indicators');
 
     const itemsPerPage = 3;//define max num of products to show per page
-    const totalPages = Math.ceil(products.length / itemsPerPage);//calculate number of pages
+    const productsSize = products.length;
+    console.log(products);
+    console.log(products.length);
+    console.log(productsSize);
+    
+    const totalPages = Math.ceil(productsSize / itemsPerPage);//calculate number of pages
 
     if(totalPages === 1){
         const carouselControls = document.querySelectorAll('.carousel-control');
         carouselControls.forEach(control =>{
             control.classList.add('hide-carousel-controls');
         });
-        
+        const carouselIndicators = document.querySelector('.carousel-indicators');
+        carouselIndicators.classList.add('hide-carousel-controls');     
     }
 
     for (let i = 0; i < totalPages; i++) {
@@ -69,11 +85,8 @@ function createProductCard(product){
     imageContainer.classList.add('product-image-container');
 
     const img = document.createElement('img');
-    img.src = product.ImagePath;
-    img.alt = product.ProductName;
-
-    const lineDiv = document.createElement('div');
-    lineDiv.classList.add('line-separation');
+    img.src = product.imagen;
+    img.alt = product.nombre;
 
     //Create product info container for product name, price, weight, etc...
     const infoContainer = document.createElement('div');
@@ -82,34 +95,56 @@ function createProductCard(product){
     //Create elements for product name, price and weight
     const name = document.createElement('h3');
     name.classList.add('product-name');
-    name.textContent = product.ProductName;
+    name.textContent = product.nombre;
 
     const weight = document.createElement('p');
     weight.classList.add('product-info');
-    weight.textContent = product.ProductWeight+' '+product.WeightUnit;
+    weight.textContent = 'Sobre de '+product.cantidad[2];
 
     const price = document.createElement('p');
     price.classList.add('product-info');
-    price.textContent = '$'+product.Precio.toLocaleString();
+    price.classList.add('product-price');
+    price.textContent = '$'+product.precio[2].toLocaleString();
 
     //Create card element that will contain the image container and product info container
     const productCard = document.createElement('div');
     productCard.classList.add('popular-product-card');
+
+
+    const boton = document.createElement('button');
+    boton.classList.add('add-button');
+    boton.textContent = 'Añadir al carrito';
 
     imageContainer.appendChild(img);//Append img element to imgage container div
 
     infoContainer.appendChild(name);//Append product name (h3) to product info container div
     infoContainer.appendChild(weight);//Append product weight (p) to product info container div
     infoContainer.appendChild(price);//Append product price (p) to product info container div
+    infoContainer.appendChild(boton);
 
     //Append image container and info container divs to product card
     productCard.appendChild(imageContainer);
-    productCard.appendChild(lineDiv);
     productCard.appendChild(infoContainer);
 
     return productCard;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    const products = await loadJson();
     displayPopularProducts(products);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-up");
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.2 }); 
+  
+    elements.forEach((el) => observer.observe(el));
+  });

@@ -12,39 +12,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 
 </head>
 <body>
 
-  <header>
-    <header class="top-bar">
-      <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
-          Para compras mayoristas: Pedido mínimo $100.000 COP
-      </marquee>
-      <marquee behavior="alternate" direction="left" scrollamount="5" loop="-1">
-          💬 Servicio al cliente
-      </marquee>
-    </header>
+  <header class="top-bar">
+    <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
+        Para compras mayoristas: Pedido mínimo $100.000 COP
+    </marquee>
+</header>
     
     <nav class="main-navbar">
       <div class="top-section">
         <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
         <div class="search-bar">
-          <input type="text" placeholder="Buscar productos..." />
+          <!-- <input type="text" placeholder="Buscar productos..." />
           <button type="submit" class="button-search">
             <box-icon name='search-alt-2' color='#dbc078'></box-icon>
             
-          </button>
+          </button> -->
         </div>
-        <div class="user-options">
-          <button>Registrarse / Iniciar Sesión</button>
-          <button>🛒</button>
+        <div class="user-options">            
+          <div id="login-section"></div>
+          <a href="/html/carrito.html">
+          <button class="cart-button" id="cartButton">
+            <box-icon name='cart' color='#ffffff' ></box-icon>
+            <div class="counter" id="cartCounter">0</div>
+          </button>
+        </a>
         </div>
       </div>
       <div class="bottom-section">
         <ul class="nav-links">
           <li><a href="/html/inicio.html">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
+          <li><a href="/html/productos.html">Productos</a></li>
           <li><a href="/html/index.html">Sobre nosotros</a></li>
           <li><a href="/html/contactenos.html">Contáctenos</a></li>
         </ul>
@@ -53,8 +55,11 @@
           <span></span>
           <span></span>
         </div>
-      </ul>
     </nav>
+
+    <div class="call-to-action">
+      <p>¡Haz crecer tu negocio con Zafiro Azul! Comprar ahora</p>
+    </div>
 
     <div class="video-banner">
         <video autoplay muted loop class="video">
@@ -94,12 +99,12 @@
     <div id="productCarousel" class="carousel slide populars" data-ride="carousel">
         <h1>POPULARES</h1>
 
-        <!-- Indicators -->
-        <ol class="carousel-indicators"></ol>
+       
 
         <!-- Wrapper for product cards -->
         <div class="carousel-inner carousel-size"></div>
-
+        <!-- Indicators -->
+        <ol class="carousel-indicators"></ol>
         <!-- left Control -->
         <a class="left carousel-control" href="#productCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
         <!-- right Control -->
@@ -137,40 +142,35 @@
     </div>
 
     <div class="bussines">
-        <h1>PENSADO PARA NEGOCIOS</h1>
-        <div class="bussines-container">
-            <div class="bussines-image">
-                <img src="/img/negocios.jpg" alt="Soluciones para negocios">
-            </div>
-            <div class="bussines-text">
-                <h2>Soluciones diseñadas para tu empresa</h2>
-                <p>
-                  En Zafiro Azul, hemos diseñado nuestra plataforma pensando exclusivamente en las necesidades del comercio mayorista.
-                  Nuestro objetivo es brindar un servicio especializado y eficiente que impulse el crecimiento de empresas como la suya.
-                  Sabemos que los mayoristas enfrentan retos únicos, y estamos aqui para ofrecer soluciones a medida, con
-                  la calidad y cantidad que su negocio necesita.
-                </p>
-                <h2>¡Tu mejor opción para compras al por mayor!</h2>
-                <p>
-                  En Zafiro Azul, valoramos la confianza de nuestros clientes mayoristas, por eso ofrecemos
-                  precios competitivos y un servicio diseñado especialmente para empresas.
-                </p>
-
-                <div class="bussines-text-half-container">
-                  <h2>Compra mínima</h2>
-                  <p>
-                    $100.000 COP, asegurando que siempre obtengas cantidades suficientes para satisfacer tus necesidades.
-                  </p>
-                </div>
-                <div class="bussines-text-half-container">
-                  <h2>Ventajas exclusivas</h2>
-                  <p>
-                    Al realizar compras al por mayor, accedes a promociones especiales y una experiencia de compra eficiente y sin
-                    complicaciones
-                  </p>
-                </div>
-            </div>
+      <div class="bubble-container animate-on-scroll">
+        <div class="top-container">
+          <div class="service-container animate-on-scroll">
+            <h3>💼 Servicio especializado</h3>
+            <p>Optimizado para el comercio mayorista, con la calidad y cantidad que tu negocio necesita.</p>
+          </div>
+          <div class="competitive-container animate-on-scroll">
+            <h3>💰 Precios competitivos</h3>
+            <p>Accede a tarifas exclusivas y promociones especiales.</p>
+          </div>
         </div>
+        <div class="tittle-container animate-on-scroll">
+          <h1>PENSADO PARA NEGOCIOS</h1>
+          <p>Soluciones eficientes para mayoristas</p>
+          <a href="/html/productos.html">
+          <button>Comprar al por mayor ahora</button>
+          </a>
+        </div>
+        <div class="bottom-container">
+          <div class="minimum-container animate-on-scroll">
+            <h3>📦 Compra mínima: $100.000 COP</h3>
+            <p>Suficiente stock para abastecer tu empresa sin complicaciones.</p>
+          </div>
+          <div class="experience-container animate-on-scroll">
+            <h3>⚡ Experiencia sin fricciones</h3>
+            <p>Compra fácil, segura y con entregas rápidas.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer>
@@ -255,6 +255,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../scripts/inicio.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="/Js_nav/menu.js"></script>
+    <script src="/scripts/menu.js"></script>
+    <script src="/scripts/carrito_contador.js"></script>
 </body>
 </html>

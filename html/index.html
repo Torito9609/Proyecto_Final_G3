@@ -14,49 +14,53 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
 </head>
 
 <body>
-  <header>
-    <header class="top-bar">
-      <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
-          Para compras mayoristas: Pedido mínimo $100.000 COP
-      </marquee>
-      <marquee behavior="alternate" direction="left" scrollamount="5" loop="-1">
-          💬 Servicio al cliente
-      </marquee>
-    </header>
-    
-    <nav class="main-navbar">
-      <div class="top-section">
-        <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
+  <header class="top-bar">
+    <marquee behavior="alternate" direction="right" scrollamount="5" loop="-1">📦
+        Para compras mayoristas: Pedido mínimo $100.000 COP
+    </marquee>
+</header>
+<nav class="main-navbar">
+    <div class="top-section">
+        <div class="logo"><img src="/img-logos/Logo_sin-fondo_con_slogan.png" class="logo_nav"> </div>
         <div class="search-bar">
-          <input type="text" placeholder="Buscar productos..." />
-          <button type="submit" class="button-search">
-            <box-icon name='search-alt-2' color='#dbc078'></box-icon>
-            
-          </button>
+            <!-- <input type="text" placeholder="Buscar productos..." />
+            <button type="submit" class="button-search">
+                <box-icon name='search-alt-2' color='#dbc078'></box-icon>
+
+            </button> -->
         </div>
         <div class="user-options">
-          <button>Registrarse / Iniciar Sesión</button>
-          <button>🛒</button>
+            <button>Registrarse / Iniciar Sesión</button>
+            <a href="/html/carrito.html">
+                <button class="cart-button" id="cartButton">
+                    <box-icon name='cart' color='#ffffff' ></box-icon>
+                  <div class="counter" id="cartCounter">0</div>
+                </button>
+            </a>
         </div>
-      </div>
-      <div class="bottom-section">
+    </div>
+    <div class="bottom-section">
         <ul class="nav-links">
           <li><a href="/html/inicio.html">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
+          <li><a href="/html/productos.html">Productos</a></li>
           <li><a href="/html/index.html">Sobre nosotros</a></li>
           <li><a href="/html/contactenos.html">Contáctenos</a></li>
+            <button class="close-menu">Cerrar</button>
         </ul>
         <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+            
+            <span></span>
+            <span></span>
+            <span></span>
+            
         </div>
-      </ul>
-    </nav>
+        </ul>
+</nav>
     
   
     
@@ -168,8 +172,10 @@
     </div>
 
     <section>
-      <div class="contenedor-padre">
-        <h2 class="title">EQUIPO DESARROLLADOR</h2>
+      <div class="contenedor-padres">
+        
+
+<!--         
         <div class="left">
           <div class="card">
             <div class="card-inner">
@@ -276,6 +282,85 @@
           </div>
         </div>
       </div>
+ -->
+
+ <div class="contenedor-padre">
+  <h2 class="title">EQUIPO DESARROLLADOR </h2>
+
+  <div class="tarjeta" data-aos="fade-right" data-aos-duration="1000" >
+    <div class="imagen">
+        <img src="/img/ana.png" alt="Imagen de Ejemplo">
+    </div>
+    <div class="texto">
+        <h4>Ana María Leguizamón</h4>
+        <p>Soy estudiante de Desarrollo Web Full Stack en Generation Colombia,
+          apasionada por la tecnología y el desarrollo de software.
+          Actualmente formo parte del equipo de desarrollo del proyecto de e-commerce
+          'Inversiones El Zafiro'.</p>
+    </div>
+</div>
+
+
+
+
+  <div class="tarjeta derecha" data-aos="fade-left" data-aos-duration="1000" >
+    <div class="imagen">
+        <img src="/img/Paula.png" alt="Imagen de Ejemplo">
+    </div>
+    <div class="texto">
+        <h4>Paula Osorio</h4>
+        <p>Estudiante de octavo semestre de Ingeniería de Sistemas con una sólida formación 
+          en desarrollo de software. Cuento con experiencia como desarrolladora full stack, 
+          combinando conocimientos en diseño de interfaces y programación backend para crear 
+          soluciones efectivas y funcionales.</p>
+    </div>
+</div>
+ 
+    
+    <div class="tarjeta" data-aos="fade-right" data-aos-duration="1000" >
+        <div class="imagen">
+            <img src="/img/kevin.png" alt="Imagen de Ejemplo">
+        </div>
+        <div class="texto">
+            <h4>Kevin Andrés Toro Moreno</h4>
+            <p>Soy un desarrollador Full Stack con sólidos conocimientos
+              en tecnologías como Java (Spring Boot) y Python (Django)
+              para construir aplicaciones robustas y escalables. Amplio
+              conocimiento en bases de datos SQL, diseño de aplicaciones
+              web responsivas y atractivas, e implementación y consumo
+              de APIs RESTful.</p>
+        </div>
+    </div>
+
+  
+    <div class="tarjeta derecha" data-aos="fade-left" data-aos-duration="1000" >
+        <div class="imagen">
+            <img src="/img/marlon.png" alt="Imagen de Ejemplo">
+        </div>
+        <div class="texto">
+            <h4>Marlon Quintero</h4>
+            <p>
+              Estudiante del programa Desarrollador Junior
+              Full-Stack/Java en Generation. Me apasiona el diseño web y
+              la tecnología, y disfruto aprender nuevas habilidades para
+              resolver problemas creativos. Actualmente, trabajo en
+              proyectos que combinan creatividad y funcionalidad,
+              buscando siempre mejorar la experiencia del usuario. En mi
+              tiempo libre, me gusta explorar herramientas digitales y
+              leer sobre innovación.
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
     </section>
   </main>
   <footer>
@@ -358,6 +443,11 @@
   <script src="/scripts/animated-cards.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <script src="/scripts/menu.js"></script>
+  <script src="/scripts/carrito_contador.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+      AOS.init(); // Inicializa AOS
+  </script>
 </body>
 
 </html>

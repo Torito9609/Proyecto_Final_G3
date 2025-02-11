@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css_nav/menu.css">
-    <link rel="icon" type="image/png" href="/img/logo2.png">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/img-logos/">
     <title>Document</title>
 </head>
 
@@ -20,37 +21,47 @@
     </header>
     <nav class="main-navbar">
         <div class="top-section">
-            <div class="logo"><img src="/img_nav/logo2.png" class="logo_nav"> </div>
+            <div class="logo"><img src="/img-logos/Logo_sin-fondo_con_slogan.png" class="logo_nav"> </div>
             <div class="search-bar">
-                <input type="text" placeholder="Buscar productos..." />
+                <!-- <input type="text" placeholder="Buscar productos..." />
                 <button type="submit" class="button-search">
                     <box-icon name='search-alt-2' color='#dbc078'></box-icon>
-
-                </button>
+    
+                </button> -->
             </div>
             <div class="user-options">
-                <button>Registrarse / Iniciar Sesión</button>
-                <button>🛒</button>
-            </div>
+                <button>Registrarse <br> Iniciar Sesión</button>
+                <a href="/html/carrito.html">
+                    <button class="cart-button" id="cartButton">
+                        <box-icon name='cart' color='#ffffff' ></box-icon>
+                      <div class="counter" id="cartCounter">0</div>
+                    </button>
+                </a>
+              </div>
         </div>
         <div class="bottom-section">
             <ul class="nav-links">
-                <li><a href="/html/prueba.html">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#nosotros">Sobre nosotros</a></li>
-                <li><a href="#contacto">Contáctenos</a></li>
+              <li><a href="/html/inicio.html">Inicio</a></li>
+              <li><a href="/html/productos.html">Productos</a></li>
+              <li><a href="/html/index.html">Sobre nosotros</a></li>
+              <li><a href="/html/contactenos.html">Contáctenos</a></li>
+                <button class="close-menu">Cerrar</button>
             </ul>
             <div class="hamburger-menu">
+                
                 <span></span>
                 <span></span>
                 <span></span>
+                
             </div>
             </ul>
     </nav>
+
+    
 <!--* Scripts para iconos y script-->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="/Js_nav/menu.js"></script>
-
+    <script src="/scripts/menu.js"></script>
+    <script src="/scripts/carrito_contador.js"></script>
 
 </body>
 

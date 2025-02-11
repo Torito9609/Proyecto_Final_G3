@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/iniciar_sesion.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box login">
+        <form id="loginForm" action="">
+          <h1>Login</h1>
+          <div class="input-box">
+            <input
+              id="email_login"
+              type="email"
+              placeholder="Correo electrónico"
+              onchange="validarCorreoLogin()"
+              required
+            />
+            <p id="errorCorreoLogin"></p>
+            <i class="bx bxs-envelope"></i>
+          </div>
+          <div class="input-box">
+            <input
+              id="password_login"
+              type="password"
+              placeholder="Contraseña"
+              required
+            />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <div class="forgot-link">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+          <button type="submit" class="btn login">Login</button>
+          <p>O ingresa con tus redes sociales</p>
+          <div class="social-icons">
+            <a href="#"><i class="bx bxl-google"></i></a>
+            <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-box register">
+        <form id="registerForm" novalidate action="">
+          <h1>Registro</h1>
+          <div class="input-box">
+            <input
+              id="name"
+              type="text"
+              placeholder="Ingresa tus nombres y apellidos"
+              onchange="validarNombre()"
+              required
+            />
+            <p id="errorNombre"></p>
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input
+              id="phone"
+              type="text"
+              placeholder="Ingresa tu teléfono"
+              onchange="validarTelefono()"
+              required
+            />
+            <p id="errorTelefono"></p>
+            <i class="bx bxs-phone"></i>
+          </div>
+          <div class="input-box">
+            <input
+              id="email"
+              type="email"
+              placeholder="Ingresa tu Correo"
+              onchange="validarCorreo()"
+              required
+            />
+            <p id="errorCorreo"></p>
+            <i class="bx bxs-envelope"></i>
+          </div>
+          <div class="input-box">
+            <input
+              id="password"
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              onchange="validarContrasenia()"
+              required
+            />
+            <p id="errorContrasenia"></p>
+            <i class="bx bxs-show" id="togglePassword"></i>
+            <i class="bx bxs-lock-alt" id="lock1"></i>
+          </div>
+          <div class="input-box">
+            <input
+              id="password_confirm"
+              type="password"
+              placeholder="Confirma tu contraseña"
+              onchange="confirmarContrasenia()"
+              required
+            />
+            <p id="errorContrasenia2"></p>
+            <i class="bx bxs-show" id="togglePassword2"></i>
+            <i class="bx bxs-lock-alt" id="lock2"></i>
+          </div>
+          <button type="submit" class="btn register">Crear cuenta</button>
+          <p>O registrate con tus redes sociales</p>
+          <div class="social-icons">
+            <a href="#"><i class="bx bxl-google"></i></a>
+            <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+          </div>
+        </form>
+      </div>
+      <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+          <div class="logo">
+            <img src="/img-logos/Logo_sin-fondo_sin_slogan.png" alt="" />
+          </div>
+          <h1>¡Hola! Bienvenido</h1>
+          <p>¿No tienes una cuenta?</p>
+          <button class="btn register-btn-toggle">Registrate</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <div class="logo">
+            <img src="/img-logos/Logo_sin-fondo_sin_slogan.png" alt="" />
+          </div>
+          <h1>¡Bienvenido de vuelta!</h1>
+          <p>¿Ya tienes una cuenta?</p>
+          <button class="btn login-btn-toggle">Login</button>
+        </div>
+      </div>
+    </div>
+    <script src="/scripts/iniciar_sesion.js"></script>
+  </body>
+</html>
