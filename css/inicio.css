@@ -31,16 +31,12 @@ body{
      
 }
 
-main{
-  
-
-}
 
 .call-to-action p{
   background-color: #243D74;
   color: #DBC078;
-  font-family: "Roma Bold";
-  font-size: 20px;
+  font-family: "Roma SemiBold";
+  font-size: 17px;
   justify-content: center;
   text-align: center;
   margin: 0;
@@ -93,15 +89,23 @@ h1 {
     text-align: center;
 }
 
+#categorie-text{
+  margin-bottom: 25px;
+}
 .categories{
     text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    width: 90%;
+    justify-self: center;
+    gap: 2rem; 
 }
 
 .categorie-card{
   display: inline-block;
-  width: 375px;
+  /* width: 375px; */
   background: #243D74;
-  /*border-radius: 8px;*/
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
@@ -136,6 +140,7 @@ h1 {
   line-height: 1.4;
   display: block;
   padding: 0 10px;
+  padding-bottom: 10px;
 }
 
 .product-name{
@@ -193,7 +198,9 @@ h1 {
   margin-left: 10%;
   border-bottom: 1px solid #243d74;
 }*/
-
+#productCarousel{
+  margin-top: 50px;
+}
 .product-image-container img{
   height: 148px;
   background-color: #fff;
@@ -453,4 +460,16 @@ h1 {
   .bussines-text-half-container {
     width: 100%;
   }
+
+  .categories{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+@media (max-width: 425px){
+  .categories{
+    grid-template-columns: repeat(1, 1fr);
+    width: 80%;
+  }
+}
+
