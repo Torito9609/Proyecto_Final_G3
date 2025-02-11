@@ -24,6 +24,7 @@ footer {
 
 .footer-link {
     text-decoration: none;
+    font-family: "Roma SemiBold";
 }
 
 #footer_content {
@@ -31,6 +32,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 3rem 3.5rem;
+    gap: 15px;
+    
 }
 
 /* Ajustar solo la primera columna */
@@ -94,20 +97,36 @@ footer {
 .footer-list .footer-link {
     color: var(--color-neutral-30);
     transition: all 0.4s;
+    /* font-family: "Roma Bold" !important; */
 }
 
+.footer-list li h3{
+    font-family: "Roma Bold" !important;
+    font-size: 1.3rem !important;
+}
+
+
 .footer-list .footer-link:hover {
-    color: #7f37c9;
+    color: #DBC078;
+    text-decoration: none;
 }
 
 #footer_subscribe {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding-left: 40px;
+    font-family: "Roma SemiBold";
+}
+
+#footer_subscribe h3{
+    font-family: "Roma Bold" !important;
+    font-size: 1.3rem !important;
 }
 
 #footer_subscribe p {
     color: var(--color-neutral-30);
+    font-family: "Roma SemiBold";
 }
 
 #input_group {
@@ -146,6 +165,7 @@ footer {
     font-size: 0.9rem;
     padding: 1.5rem;
     font-weight: 100;
+    font-family: "Roma SemiBold";
 }
 
 @media screen and (max-width: 768px) {
