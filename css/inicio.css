@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Roma Bold";
-  src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
+  src: url("../fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roma SemiBold";
-  src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+  src: url("../fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-image: url(/img/fondo3.png) !important;
+  background-image: url(../img/fondo3.png) !important;
   background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
   background-size: 100% 100%; /* 100% de ancho y 50% de altura */
   background-position: center; /* Centra la imagen en la pantalla */

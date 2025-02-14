@@ -8,7 +8,7 @@
   
   @font-face {
     font-family: "Roma SemiBold";
-    src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+    src: url("../fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
   } 
