@@ -148,3 +148,4 @@ document.addEventListener("DOMContentLoaded", function () {
   
     elements.forEach((el) => observer.observe(el));
   });
+
