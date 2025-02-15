@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>`;
   }
 
+
   // Alternar el menú al hacer clic en el botón del menú hamburguesa
   hamburgerMenu.addEventListener("click", (event) => {
     event.stopPropagation(); // Prevenir que el clic en el menú  cierre el menú
