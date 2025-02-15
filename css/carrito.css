@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Roma";
-  src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+  src: url("../fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roma Regular";
-  src: url("/fonts/Roma-Regular-iF6666b5402fe3b.ttf") format("truetype");
+  src: url("../fonts/Roma-Regular-iF6666b5402fe3b.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }

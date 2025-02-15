@@ -7,14 +7,14 @@
 
 @font-face {
   font-family: "Roma SemiBold";
-  src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+  src: url("../fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Ivymode";
-  src: url("/fonts/IvyMode-ThinItalic.ttf") format("truetype");
+  src: url("../fonts/IvyMode-ThinItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -26,7 +26,7 @@ body {
   align-items: center;
 }
 
-main{
+main {
   padding: 10px;
 }
 
@@ -37,7 +37,7 @@ main{
   font-size: 36px;
 }
 
-.info-anoutus{
+.info-anoutus {
   margin-top: 50px;
 }
 .about-us {
@@ -46,7 +46,7 @@ main{
   justify-content: center;
 }
 
-.text-container{
+.text-container {
   max-width: 700px;
   background-color: #243d74;
   border-radius: 20px 20px 100px 20px;
@@ -100,7 +100,7 @@ main{
     display: none;
   }
 
-  .text-container{
+  .text-container {
     margin-top: 30px;
     margin-left: unset;
   }

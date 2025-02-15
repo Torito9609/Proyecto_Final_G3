@@ -37,6 +37,9 @@ function renderizarCarrito(carrito) {
       const productCard = document.createElement("div");
       productCard.classList.add("cartItems");
       productCard.innerHTML = `
+      <div>
+          <img src="${producto.imagen}" alt"${producto.nombre}" style="height: 100px;">
+      </div>
       <div class="cart-item-info">
         <p class="nombre-producto">${producto.nombre}</p>
         <p class=".cantidad">${producto.cantidad}</p>

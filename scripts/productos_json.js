@@ -94,6 +94,7 @@ function showModal(
     boton.setAttribute("data-name", nombre); // Atributo personalizado con el id del producto
     boton.setAttribute("data-quantity", cantidad[index]); //Atributo personalizado con la cantidad del producto
     boton.setAttribute("data.price", precios[index]); // Ejemplo: agregar la cantidad como atributo
+    boton.setAttribute("data-image", imagen);
   });
 
   // Mostrar el modal
@@ -126,6 +127,7 @@ modalPrices.addEventListener("click", (event) => {
       cantidad: add.getAttribute("data-quantity"),
       precio: add.getAttribute("data.price"),
       cantidad_carrito: 1,
+      imagen: add.getAttribute("data-image")
     };
 
     console.log("Producto seleccionado:", productoSeleccionado); //muestra el producto que se seleccionó.

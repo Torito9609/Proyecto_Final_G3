@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roma Bold";
-  src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
+  src: url("../fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -32,8 +32,6 @@
     align-self: center;
     justify-content: center;
     /* padding: 20px; */
-
-  
 
 /* 
 .title {
@@ -140,7 +138,7 @@
   transition: transform 0.999s;
   border-radius: 50%;
   background-color: #ff000000;
-} */ 
+} */
 
 /* .card:hover .card-inner {
   transform: rotateY(180deg);
@@ -227,7 +225,7 @@
   width: 100%;
   height: fit-content;
   /* margin: 20px; */
-  /* font-size: 18px;
+/* font-size: 18px;
   background-color: #1a6cb4;
 }  */
 
@@ -255,10 +253,6 @@
   font-size: larger;
 } */
 
-
-
-
-
 /** Nuevas cards*/
 
 .contenedor-padre {
@@ -282,7 +276,6 @@
   margin: 20px;
 }
 
-
 .tarjeta {
   display: flex;
   align-items: center;
@@ -292,9 +285,8 @@
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
-
 
 .imagen {
   width: 250px;
@@ -302,13 +294,12 @@
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
- 
 }
 
-.imagen:hover{
+.imagen:hover {
   transition: 0.8s ease;
 
-  transform: scale(1.050) rotate(10deg);
+  transform: scale(1.05) rotate(10deg);
 }
 
 .imagen img {
@@ -321,16 +312,15 @@
   margin-left: 10px;
   flex-grow: 1;
   overflow-wrap: break-word;
-  word-wrap: break-word; 
-  hyphens: auto; 
-  max-width: 400px;  /* Ajustar el ancho máximo del contenedor de texto */
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 400px; /* Ajustar el ancho máximo del contenedor de texto */
   border: 2px solid #dbc078;
   border-radius: 20px;
   text-align: center justify;
   color: #dbc078;
   background-color: #1a6cb4;
   padding: 20px;
-
 }
 
 .texto p {
@@ -338,7 +328,7 @@
   font-size: 1.2rem;
 }
 
-.texto h4{
+.texto h4 {
   color: #dbc078;
   font-size: 1.6rem;
   text-align: center;
@@ -359,7 +349,7 @@
   .texto {
     margin-left: 0;
     margin-top: 10px;
-    max-width: 100%;  /* Permitir que el texto ocupe todo el ancho en pantallas pequeñas */
+    max-width: 100%; /* Permitir que el texto ocupe todo el ancho en pantallas pequeñas */
   }
   .tarjeta.derecha {
     flex-direction: column;
@@ -378,12 +368,3 @@
     margin: 0;
   }
 }
-
-
-
-
-
-
-
-
-
