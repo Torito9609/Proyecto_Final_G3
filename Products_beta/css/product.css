@@ -1,203 +1,162 @@
 /**contenedor principal*/
 .category {
-    position: relative;
-    margin: 30px;
-    background-color: rgb(0, 38, 255);
-    border-radius: 20px;
-    width: auto;
-    padding: 20px;
-    /* justify-content: space-around; */
-    justify-content: space-around;
-    /* display: flex; */
-    flex-wrap: wrap;
-    gap: 20px;
+  position: relative;
+  margin: 30px;
+  background-color: rgb(0, 38, 255);
+  border-radius: 20px;
+  width: auto;
+  padding: 20px;
+  /* justify-content: space-around; */
+  justify-content: space-around;
+  /* display: flex; */
+  flex-wrap: wrap;
+  gap: 20px;
 
-
-
-    display: flex; /* Configura el contenedor como un flexbox */
-    justify-content: flex-start; /* Alinea elementos al inicio del eje principal */
-    align-items: flex-start; /* Alinea los elementos al inicio del eje cruzado */
-    gap: 20px; /* Espaciado entre filtros y productos */
-
+  display: flex; /* Configura el contenedor como un flexbox */
+  justify-content: flex-start; /* Alinea elementos al inicio del eje principal */
+  align-items: flex-start; /* Alinea los elementos al inicio del eje cruzado */
+  gap: 20px; /* Espaciado entre filtros y productos */
 }
 
+.name-cate {
+  /* position: absolute; */
+  position: absolute;
+  top: 8px;
+  left: 16px;
 
-
-.name-cate{
-    /* position: absolute; */
-    position: absolute;
-    top: 8px;
-    left: 16px;
- 
-    border-radius: 20px;
-    background-color: gray;
-    height: auto;
-    /* display: inline-block; */
-    /* justify-content: flex-start; */
-    padding: 10px;
+  border-radius: 20px;
+  background-color: gray;
+  height: auto;
+  /* display: inline-block; */
+  /* justify-content: flex-start; */
+  padding: 10px;
 }
 
 /**contenedores categorias*/
 .sub-category {
-    flex: 1;
-    background-color: rgb(94, 255, 0);
-    border-radius: 20px;
-    padding: 20px;
-    display: inline-block;
-    margin-top: 40px;
-    margin-left: 20px;
-    text-align: center;
-    border: 3px solid;
-
+  flex: 1;
+  background-color: rgb(94, 255, 0);
+  border-radius: 20px;
+  padding: 20px;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 20px;
+  text-align: center;
+  border: 3px solid;
 }
 /*? responsive */
 
-
-
-
 /**contenedores los mas vendidos*/
-.sub-category-sell{
-    flex: 1;
-    width: 320px ; 
-    height: 400px;
-    background-color: red;
-    border-radius: 20px;
-    padding: 20px;
-    display: inline-block;
-    margin-top: 40px;
-    margin-left: 5px;
-    text-align: center;
-    border: 3px solid;
+.sub-category-sell {
+  flex: 1;
+  width: 320px;
+  height: 400px;
+  background-color: red;
+  border-radius: 20px;
+  padding: 20px;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 5px;
+  text-align: center;
+  border: 3px solid;
 }
-
-
-
-
 
 /**contenedores productos*/
 .sub-category-product {
-    flex: 1;
-    /* width: calc(15% - 15px);  */
-    height: 300px;
-    background-color: red;
-    border-radius: 20px;
-    padding: 20px;
-    display: inline-block;
-    margin-top: 40px;
-    margin-left: 160px;
-    text-align: center;
-    border: 3px solid;
+  flex: 1;
+  /* width: calc(15% - 15px);  */
+  height: 300px;
+  background-color: red;
+  border-radius: 20px;
+  padding: 20px;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 160px;
+  text-align: center;
+  border: 3px solid;
 
-
-    margin: 10px; /* Márgenes uniformes */
-    flex: 1 1 calc(15% - 15px); /* Ajusta el tamaño de los productos */
+  margin: 10px; /* Márgenes uniformes */
+  flex: 1 1 calc(15% - 15px); /* Ajusta el tamaño de los productos */
 }
 
 .img-sub-category {
-    height: 220px;
-    width: 200px;
-    margin: 10px;
-    
+  height: 220px;
+  width: 200px;
+  margin: 10px;
 }
 
 /**contenedor los mas vendidos*/
 
 .seller {
-    margin: 30px;
-    background-color: rgb(252, 39, 2);
-    border-radius: 20px;
-    width: auto;
-    padding: 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
+  margin: 30px;
+  background-color: rgb(252, 39, 2);
+  border-radius: 20px;
+  width: auto;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 .best-sellers {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los contenedores salten a la siguiente fila */
-    gap: 15px; /* Espaciado entre contenedores */
-    flex-grow: 1; /* Ocupará el espacio restante */ 
+  display: flex;
+  flex-wrap: wrap; /* Permite que los contenedores salten a la siguiente fila */
+  gap: 15px; /* Espaciado entre contenedores */
+  flex-grow: 1; /* Ocupará el espacio restante */
 }
-
 
 /**contenedor Filtros*/
 
 .filters {
-    width: auto; 
-    height: 100vh;
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    display: flex;
-    margin-top: 40px;
+  width: auto;
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  margin-top: 40px;
 
-
-    margin-top: 0; /* Elimina márgenes verticales innecesarios */
-    flex-shrink: 0; /* Evita que el contenedor se reduzca */
+  margin-top: 0; /* Elimina márgenes verticales innecesarios */
+  flex-shrink: 0; /* Evita que el contenedor se reduzca */
 }
 @media (max-width: 768px) {
-    .filters {
-        height: 50vh;
-    }
+  .filters {
+    height: 50vh;
+  }
 }
 
 @media (max-width: 480px) {
-    .filters {
-        height: 50vh;
-        
-    }
+  .filters {
+    height: 50vh;
+  }
 }
-
-
-
-
-
 
 /** contenedor padre de los productos*/
 .distribution {
-    display: grid; /* Cambia a grid layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-    gap: 20px; /* Espaciado entre productos */
-    flex-grow: 1; /* Ocupa el espacio restante */
-    padding: 20px;
+  display: grid; /* Cambia a grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px; /* Espaciado entre productos */
+  flex-grow: 1; /* Ocupa el espacio restante */
+  padding: 20px;
 }
 
 @media (max-width: 768px) {
-    .distribution {
-        grid-template-columns: repeat(2, 1fr); /* 2 productos por fila */
-        align-items: center;
-    }
+  .distribution {
+    grid-template-columns: repeat(2, 1fr); /* 2 productos por fila */
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
-    .distribution {
-        grid-template-columns: 1fr; /* 1 producto por fila */
-        align-items: center;
-    }
+  .distribution {
+    grid-template-columns: 1fr; /* 1 producto por fila */
+    align-items: center;
+  }
 }
-
-
-
-
 
 .footer {
-    background-color: rgb(168, 166, 166);
-    /* height: 100hv;
+  background-color: rgb(168, 166, 166);
+  /* height: 100hv;
     width: 100vh; */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
