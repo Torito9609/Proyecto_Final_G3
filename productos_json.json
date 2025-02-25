@@ -15,7 +15,7 @@
       "imagen": "../img/productos/canela.png",
       "cantidad": ["500g", "125g", "250g", "10g"],
       "precio": [67830, 20230, 35700, 2063],
-      "categoría": "producto natural",
+      "categoría": "producto dulce",
       "descripción": "Canela pa la agua panela."
     },
     {
@@ -107,7 +107,7 @@
       "imagen": "../img/productos/canela.png",
       "cantidad": ["500g", "125g", "250g", "10g"],
       "precio": [67830, 20230, 35700, 2063],
-      "categoría": "producto natural",
+      "categoría": "producto dulce",
       "descripción": "Canela pa la agua panela."
     },
     {

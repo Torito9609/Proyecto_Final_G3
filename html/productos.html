@@ -26,6 +26,7 @@
       <nav class="main-navbar">
             <div class="top-section">
                 <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
+                <!--<button class="sidebar-toggle" onclick="toggleSidebar()">Filtros</button>-->
                 <div class="search-bar">
                     <!-- <input type="text" placeholder="Buscar productos..." />
                     <button type="submit" class="button-search">
@@ -60,7 +61,30 @@
 
     <!--* contenedor normal-->
 <main>
+    <!----
+    <div class="page-container">
+        <aside class="sidebar">
+          <h3>Filtros</h3>
+          <div class="filter-category">
+            <h4>Categorías</h4>
+            <ul id="categoryFilter">
+   
+            </ul>
+          </div>
+          <div class="filter-price">
+            <h4>Rango de precios</h4>
+            <input type="range" id="priceFilter" min="0" max="1000" step="50">
+            <span id="priceValue">500</span>
+          </div>
+      
+        </aside>
+      
+        <div class="content">
+          <div class="product-container"></div>
+        </div>
+      </div>
     <div class="product-container"></div>
+    -->
 
     <!--* lo que aparece en el modal -->
     <div class="modal" id="productModal" style="display: none;">
@@ -77,9 +101,7 @@
                 <input type="number" class="cantidad-producto" min="1" value="1">
                 <a href="#"><i class='bx bx-plus' ></i></a></i>
             </div>
-            <button class="btn_open_card carrito">Añadir al carrito</button>
-            
-            
+            <button class="btn_open_card carrito">Añadir al carrito</button>    
         </div>
         </div>
     </div>

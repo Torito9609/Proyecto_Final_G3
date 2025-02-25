@@ -8,11 +8,55 @@ async function loadProducts() {
 
     const data = await response.json();
     displayProducts(data.productos);
+    //populateCategories(data.productos); // Añadimos categorías al cargar productos
   } catch (error) {
     console.error("Error:", error);
   }
 }
+/*
+// Añadir categorías al sidebar dinámicamente
+function populateCategories(productos) {
+  const categories = [
+    ...new Set(productos.map((product) => product.categoría)),
+  ];
+  const categoryFilter = document.getElementById("categoryFilter");
 
+  categories.forEach((category) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<label><input type="checkbox" value="${category}"> ${category}</label>`;
+    categoryFilter.appendChild(li);
+  });
+
+  // Event listener para los filtros de categoría
+  categoryFilter.addEventListener("change", applyFilters);
+}
+
+function applyFilters() {
+  const categoryCheckboxes = document.querySelectorAll(
+    "#categoryFilter input[type='checkbox']"
+  );
+  const selectedCategories = Array.from(categoryCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  const priceRange = document.getElementById("priceFilter").value;
+
+  const filteredProducts = productos.filter((product) => {
+    const matchesCategory =
+      selectedCategories.length === 0 ||
+      selectedCategories.includes(product.categoría);
+    const matchesPrice = product.precio[2] <= priceRange;
+    return matchesCategory && matchesPrice;
+  });
+
+  displayProducts(filteredProducts);
+}
+
+function toggleSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.classList.toggle("open");
+}
+*/
 function displayProducts(productos) {
   const productContainer = document.querySelector(".product-container");
 
@@ -127,7 +171,7 @@ modalPrices.addEventListener("click", (event) => {
       cantidad: add.getAttribute("data-quantity"),
       precio: add.getAttribute("data.price"),
       cantidad_carrito: 1,
-      imagen: add.getAttribute("data-image")
+      imagen: add.getAttribute("data-image"),
     };
 
     console.log("Producto seleccionado:", productoSeleccionado); //muestra el producto que se seleccionó.

@@ -38,6 +38,21 @@ body {
   transition: transform 0.9s;
 }
 
+.page-container {
+  display: flex;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  flex: 1;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -196,7 +211,7 @@ body {
   transition: transform 0.9s, box-shadow 0.3s;
 }
 
-.btn_open_card:hover{
+.btn_open_card:hover {
   background-color: #dbc078;
 }
 
@@ -302,11 +317,44 @@ body {
   cursor: pointer;
 }
 
-
-.product-card:hover{
+.product-card:hover {
   transition: transform 0.5s, box-shadow 0.9s;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transform: scale(1.09);
 }
+/*
+
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
 
 
+  .sidebar-toggle {
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+
+.filter-category ul {
+  list-style: none;
+  padding: 0;
+}*/
