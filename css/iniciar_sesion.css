@@ -1,20 +1,20 @@
 @font-face {
   font-family: "Roma Bold";
-  src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
+  src: url("../fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roma SemiBold";
-  src: url("/fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+  src: url("../fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Ivymode";
-  src: url("/fonts/IvyMode-ThinItalic.ttf") format("truetype");
+  src: url("../fonts/IvyMode-ThinItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

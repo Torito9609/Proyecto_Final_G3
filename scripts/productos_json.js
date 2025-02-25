@@ -1,62 +1,56 @@
+//CONEXION CON EL BACKEND - PRODUCTOS
 async function loadProducts() {
   try {
-    const response = await fetch("/productos_json.json");
+    // const response = await fetch("/productos_json.json");
+    const response = await fetch("http://localhost:8080/productos/traer");
 
     if (!response.ok) {
       throw new Error("Error al cargar el archivo JSON");
     }
 
     const data = await response.json();
-    displayProducts(data.productos);
-    //populateCategories(data.productos); // Añadimos categorías al cargar productos
+    //
+
+    console.log("Datos recibidos:", data);
+    let refactoredProductos = refactorJsonFromBackEnd(await data);
+    displayProducts(refactoredProductos);
   } catch (error) {
     console.error("Error:", error);
   }
 }
-/*
-// Añadir categorías al sidebar dinámicamente
-function populateCategories(productos) {
-  const categories = [
-    ...new Set(productos.map((product) => product.categoría)),
-  ];
-  const categoryFilter = document.getElementById("categoryFilter");
 
-  categories.forEach((category) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<label><input type="checkbox" value="${category}"> ${category}</label>`;
-    categoryFilter.appendChild(li);
-  });
+function refactorJsonFromBackEnd(productos) {
+  console.log(productos);
+  let refactoredProductos = [];
 
-  // Event listener para los filtros de categoría
-  categoryFilter.addEventListener("change", applyFilters);
+  if (productos.length > 0) {
+    productos.forEach((producto) => {
+      let variantes = producto.variantes != null ? producto.variantes : [];
+      let variantesPrecio = [];
+      let variantesTamano = [];
+      variantes.forEach((variante) => {
+        variantesPrecio.push(variante.precioVariante);
+        variantesTamano.push(variante.tamanoVariante);
+      });
+      let categorias =
+        producto.categorias[0] != null ? producto.categorias[0] : null;
+
+      let nuevoProducto = {
+        id: producto.idProducto != null ? producto.idProducto : "",
+        nombre: producto.nombreProducto != null ? producto.nombreProducto : "",
+        imagen: producto.imagenProducto != null ? producto.imagenProducto : "",
+        cantidad: variantesTamano,
+        precio: variantesPrecio,
+        categoría: categorias != null ? categorias.nombreCategoria : "",
+        descripción: categorias != null ? categorias.descripcionCategoria : "",
+      };
+      refactoredProductos.push(nuevoProducto);
+    });
+    console.log(refactoredProductos);
+  }
+  return refactoredProductos;
 }
-
-function applyFilters() {
-  const categoryCheckboxes = document.querySelectorAll(
-    "#categoryFilter input[type='checkbox']"
-  );
-  const selectedCategories = Array.from(categoryCheckboxes)
-    .filter((checkbox) => checkbox.checked)
-    .map((checkbox) => checkbox.value);
-
-  const priceRange = document.getElementById("priceFilter").value;
-
-  const filteredProducts = productos.filter((product) => {
-    const matchesCategory =
-      selectedCategories.length === 0 ||
-      selectedCategories.includes(product.categoría);
-    const matchesPrice = product.precio[2] <= priceRange;
-    return matchesCategory && matchesPrice;
-  });
-
-  displayProducts(filteredProducts);
-}
-
-function toggleSidebar() {
-  const sidebar = document.querySelector(".sidebar");
-  sidebar.classList.toggle("open");
-}
-*/
+//----------------------------------------------
 function displayProducts(productos) {
   const productContainer = document.querySelector(".product-container");
 
