@@ -1,18 +1,57 @@
+//CONEXION CON EL BACKEND - PRODUCTOS
 async function loadProducts() {
   try {
-    const response = await fetch("/productos_json.json");
+   // const response = await fetch("/productos_json.json");
+   const response = await fetch("http://localhost:8080/productos/traer");
 
     if (!response.ok) {
       throw new Error("Error al cargar el archivo JSON");
     }
 
     const data = await response.json();
-    displayProducts(data.productos);
+    //
+
+    console.log("Datos recibidos:",  data);
+    let refactoredProductos = refactorJsonFromBackEnd(await data);
+    displayProducts(refactoredProductos);
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
+function refactorJsonFromBackEnd(productos){
+  console.log(productos);
+  let refactoredProductos = [];
+  
+  if(productos.length > 0){
+    productos.forEach(producto => {
+      let variantes = producto.variantes != null ? producto.variantes : [];
+      let variantesPrecio = [];
+      let variantesTamano = [];
+      variantes.forEach(variante => {
+        variantesPrecio.push(variante.precioVariante);
+        variantesTamano.push(variante.tamanoVariante);
+        
+      });
+      let categorias = producto.categorias[0] != null ? producto.categorias[0] : null;
+
+      let nuevoProducto = {
+        "id": producto.idProducto != null ? producto.idProducto : "",
+        "nombre": producto.nombreProducto != null ? producto.nombreProducto : "",
+        "imagen": producto.imagenProducto != null ? producto.imagenProducto : "",
+        "cantidad": variantesTamano ,
+        "precio": variantesPrecio,
+        "categoría": categorias !=null ? categorias.nombreCategoria : "",
+        "descripción": categorias  !=null ? categorias.descripcionCategoria : ""
+      }
+      refactoredProductos.push(nuevoProducto);
+    });
+    console.log(refactoredProductos);
+    
+  }
+  return refactoredProductos;
+}
+//----------------------------------------------
 function displayProducts(productos) {
   const productContainer = document.querySelector(".product-container");
 

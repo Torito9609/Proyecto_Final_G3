@@ -96,7 +96,7 @@ document
     this.reset();
   });
 
-/* PRUEBA DE CONEXION CON EL BACKEND*/
+/*CONEXION CON EL BACKEND*/
 async function registrarUsuario(usuario){
   let correoUsuarioNuevo = usuario.correoUsuario;
   let usuarioExistente;
@@ -210,6 +210,7 @@ document
     }
   }
 /*--------------------------------------*/
+/*VALIDACIONES EN EL FORMULARIO DE REGISTRO*/
 function validarNombre() {
   const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
