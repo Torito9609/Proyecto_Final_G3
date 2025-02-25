@@ -18,7 +18,10 @@ async function loadProducts() {
     let refactoredProductos = refactorJsonFromBackEnd(await data);
     displayProducts(refactoredProductos);
 
-    allProducts = refactoredProductos;
+    allProducts = refactoredProductos; // Guardamos los productos antes de filtrar
+    filterProducsByCategory(); // Aplicar filtro si hay una categoría guardada
+    
+
   
   } catch (error) {
     console.error("Error:", error);
@@ -178,6 +181,26 @@ async function openSavedProductModal() {
     console.log("No se encontró el producto con ID:", selectedProductId);
   }
 }
+
+function filterProducsByCategory() {
+  const selectedCategory = localStorage.getItem("selectedCategory");
+  if (selectedCategory) {
+    let filteredProducts = allProducts.filter(
+      (producto) => producto.categoría === selectedCategory
+    );
+
+    // Limpiar los productos actuales en la interfaz
+    const productContainer = document.querySelector(".product-container");
+    productContainer.innerHTML = "";
+
+    // Mostrar los productos filtrados
+    displayProducts(filteredProducts);
+
+    // Eliminar la categoría seleccionada para evitar aplicar el filtro repetidamente
+    localStorage.removeItem("selectedCategory");
+  }
+}
+
 
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Inicializamos carrito desde localStorage si existe, de lo contrario, es un array vacío
