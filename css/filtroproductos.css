@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "Roma Bold";
+    src: url("/fonts/Roma-Bold-iF6666b54004527.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roma SemiBold";
+    src: url("../fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estructura principal */
+main {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden si no caben */
+    font-family: "Roma Bold";
+}
+
+/* Sidebar */
+.sidebar {
+    max-width: 300px;  /* Máximo 300px en pantallas grandes */
+    min-width: 250px;  /* Mínimo 250px para que no se reduzca demasiado */
+    width: 100%;
+    padding: 15px;
+    background-color: #cce3f1;
+    border-right: 2px solid #ddd;
+    box-sizing: border-box;
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sidebar select {
+    width: 100%;
+    padding: 10px; /* Mayor padding para mejor usabilidad en móvil */
+    margin-bottom: 10px;
+    font-size: 16px; /* Mejor lectura */
+}
+
+.sidebar input {
+    width: 90%;
+    padding: 10px; /* Mayor padding para mejor usabilidad en móvil */
+    margin-bottom: 10px;
+    font-size: 16px; /* Mejor lectura */
+}
+
+.sidebar button {
+    width: 100%;
+    background-color: #1A6CB4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.sidebar button:hover {
+    background-color: #dbc078;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Para tablets (máx. 768px) */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Pone la sidebar arriba en pantallas pequeñas */
+    }
+
+    .sidebar {
+        max-width: 100%; /* Ocupará todo el ancho en pantallas pequeñas */
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+}
+
+/* Para móviles (máx. 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px; /* Reduce el padding para mejor ajuste */
+    }
+
+    .sidebar h3 {
+        font-size: 16px; /* Reduce el tamaño del título */
+    }
+
+    .sidebar select,
+    .sidebar input,
+    .sidebar button {
+        font-size: 14px; /* Reduce el tamaño de fuente para mejor ajuste */
+        padding: 8px;
+    }
+}

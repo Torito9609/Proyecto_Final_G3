@@ -138,6 +138,12 @@ function createProductCard(product){
     return productCard;
 }
 
+function navigate(categoria) {
+    localStorage.setItem("selectedCategory", categoria); // Guarda la categoría
+    window.location.href = "productos.html"; // Redirige a la página de productos
+  }
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     const products = await loadJson();
     displayPopularProducts(products);
