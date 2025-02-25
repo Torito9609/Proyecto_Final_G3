@@ -79,6 +79,11 @@ async function displayPopularProducts(productsFromJson) {
     }
 }
 
+function saveAndRedirect(productId){
+    localStorage.setItem("selectedProduct", productId); // Guarda el producto en localStorage
+    window.location.href = "../html/productos.html"; // Redirige a la página de productos
+}
+
 function createProductCard(product){
     //Create image container div and image element
     const imageContainer = document.createElement('div');
@@ -114,6 +119,10 @@ function createProductCard(product){
     const boton = document.createElement('button');
     boton.classList.add('add-button');
     boton.textContent = 'Añadir al carrito';
+
+    productCard.addEventListener("click", () => {
+        saveAndRedirect(product.id);
+    });
 
     imageContainer.appendChild(img);//Append img element to imgage container div
 

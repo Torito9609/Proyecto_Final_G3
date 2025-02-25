@@ -84,10 +84,55 @@ document
       return;
     }
 
-    const userExists = users.some(
-      (user) => user.email === email || user.phone === phone
-    );
-    if (userExists) {
+    let newUser = { 
+      "nombreUsuario": name, 
+      "telefonoUsuario": phone, 
+      "correoUsuario": email, 
+      "passwordHash": password,
+      "passwordSalt": password,
+      "direccionUsuario": ""
+    };
+    registrarUsuario(newUser);
+    this.reset();
+  });
+
+/*CONEXION CON EL BACKEND*/
+async function registrarUsuario(usuario){
+  let correoUsuarioNuevo = usuario.correoUsuario;
+  let usuarioExistente;
+
+  try {
+    //Usa GET para buscar si hay un usuario con el correo ingresado en el formulario
+    const response = await fetch(`http://localhost:8080/usuarios/traer/correo?correo=${correoUsuarioNuevo}`);
+    usuarioExistente = await response.json();
+
+    if(usuarioExistente.idUsuario === null){//Si retorna null el usuario no existe y lo puede registrar
+      const postResponse = await fetch('http://localhost:8080/usuarios/registrar', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuario)
+      });
+      const result = await postResponse.text();
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Registro existoso!",
+        text: "Ahora intenta iniciar sesión con tu correo y contraseña.",
+        background: "#243d74",
+        color: "#dbc078",
+        customClass: { confirmButton: "btn-alert" },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          container.classList.remove("active");
+          lock1.style.display = "none";
+          lock2.style.display = "none";
+          console.log("El registro ha sido exitoso.");
+        }
+      });
+      console.log("Usuario registrado con éxito ->", result);
+    }else{//Si el usuario existe muestra mensaje de error
       Swal.fire({
         icon: "warning",
         title: "Correo o teléfono ya existentes",
@@ -104,29 +149,10 @@ document
       );
       return;
     }
-
-    let newUser = { name, phone, email, password };
-    users.push(newUser);
-    localStorage.setItem("user", JSON.stringify(users));
-
-    Swal.fire({
-      icon: "success",
-      title: "¡Registro existoso!",
-      text: "Ahora intenta iniciar sesión con tu correo y contraseña.",
-      background: "#243d74",
-      color: "#dbc078",
-      customClass: { confirmButton: "btn-alert" },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        container.classList.remove("active");
-        lock1.style.display = "none";
-        lock2.style.display = "none";
-        console.log("El registro ha sido exitoso.");
-      }
-    });
-    console.log("Usuario registrado con éxito ->", newUser);
-    this.reset();
-  });
+  } catch (error) {
+    console.error('Error al registrar usuario: ', error);
+  }
+}
 
 document
   .getElementById("loginForm")
@@ -135,30 +161,56 @@ document
     const email = document.getElementById("email_login").value.trim();
     const password = document.getElementById("password_login").value.trim();
 
-    let users = JSON.parse(localStorage.getItem("user")) || [];
+    let loginUser = { 
+      "correoUsuario": email, 
+      "passwordHash": password
+    };
 
-    const userCorrect = users.find(
-      (user) => user.email === email && user.password === password
-    );
-    if (userCorrect) {
-      console.log("Es correcto! Iniciando sesión");
-      this.reset();
-      localStorage.setItem("logged_user", JSON.stringify(userCorrect));
-      window.location.href = "/html/inicio.html";
-    } else {
-      Swal.fire({
-        icon: "warning",
-        title: "Usuario y/o contraseña inválidos",
-        text: "Por favor intenta de nuevo.",
-        background: "#243d74",
-        color: "#dbc078",
-        customClass: { confirmButton: "btn-alert" },
-      });
-      this.reset();
-      return;
-    }
+    loginUsuario(loginUser);
+    this.reset();
   });
 
+  async function loginUsuario(usuario){
+    try {
+        const postResponse = await fetch('http://localhost:8080/usuarios/login', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(usuario)
+        });
+        const result = await postResponse.json();
+        console.log('POST Response',result);
+        
+        let userCorrect = {
+          "id": result.idUsuario,
+          "name": result.nombreUsuario,
+          "phone":result.telefonoUsuario,
+          "email":result.correoUsuario,
+          "password":result.passwordHash
+        };
+    
+        if (userCorrect.id !== null && userCorrect.id !== undefined && userCorrect.id !== '') {
+          console.log("Es correcto! Iniciando sesión");
+
+          localStorage.setItem("logged_user", JSON.stringify(userCorrect));
+          window.location.href = "/html/inicio.html";
+        } else {
+          Swal.fire({
+            icon: "warning",
+            title: "Usuario y/o contraseña inválidos",
+            text: "Por favor intenta de nuevo.",
+            background: "#243d74",
+            color: "#dbc078",
+            customClass: { confirmButton: "btn-alert" },
+          });
+        }
+    } catch (error) {
+      console.error('Error al Ingresar: ', error);
+    }
+  }
+/*--------------------------------------*/
+/*VALIDACIONES EN EL FORMULARIO DE REGISTRO*/
 function validarNombre() {
   const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
