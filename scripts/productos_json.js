@@ -182,6 +182,7 @@ async function openSavedProductModal() {
   }
 }
 
+//Muestra los productos filtrados por categoría cuando se selecciona una categoría en la página de inicio
 function filterProducsByCategory() {
   const selectedCategory = localStorage.getItem("selectedCategory");
   if (selectedCategory) {
@@ -198,6 +199,95 @@ function filterProducsByCategory() {
 
     // Eliminar la categoría seleccionada para evitar aplicar el filtro repetidamente
     localStorage.removeItem("selectedCategory");
+  }
+}
+
+//Solicitud GET al backEnd para traer categorías dinámicamente
+async function fetchCategories() {
+  try {
+      const response = await fetch("http://localhost:8080/categorias/traer"); 
+      if (!response.ok) {
+          throw new Error("Error al obtener las categorías");
+      }
+      const categories = await response.json();
+      console.log(categories);
+      
+
+      populateCategoryFilter(categories);
+  } catch (error) {
+      console.error("Error:", error);
+  }
+}
+
+
+
+document.getElementById("apply-filters").addEventListener("click", function () {
+  applyFilters();
+});
+
+// Llena las opciones de categoría en el filtro dinámicamente
+function populateCategoryFilter() {
+  const categoryFilter = document.getElementById("category-filter");
+
+  // Limpiar opciones previas
+  categoryFilter.innerHTML = '<option value="Todas">Todas</option>';
+
+  // Obtener categorías únicas y evitar valores vacíos o undefined
+  const uniqueCategories = [...new Set(allProducts.map(p => p.categoría?.trim() || "Sin categoría"))];
+
+  // Agregar las opciones al select
+  uniqueCategories.forEach(category => {
+      const option = document.createElement("option");
+      option.value = category;
+      option.textContent = category;
+      categoryFilter.appendChild(option);
+  });
+
+  console.log("Categorías añadidas:", uniqueCategories); // Verifica en la consola
+}
+
+
+// Filtrar y ordenar los productos
+function applyFilters() {
+  let filteredProducts = [...allProducts]; // Se inicializa con todos los productos
+
+  // Filtrar por categoría
+  const selectedCategory = document.getElementById("category-filter").value.trim();
+  if (selectedCategory && selectedCategory !== "Todas") {  
+    filteredProducts = filteredProducts.filter(p => p.categoría === selectedCategory);
+  }
+
+  // Filtrar por precio
+  const minPrice = parseFloat(document.getElementById("min-price").value) || 0;
+  const maxPrice = parseFloat(document.getElementById("max-price").value) || Infinity;
+
+  filteredProducts = filteredProducts.filter(p => {
+      const price = Math.min(...p.precio); // Usar el precio más bajo del producto
+      return price >= minPrice && price <= maxPrice;
+  });
+
+  // Ordenar los productos
+  const sortValue = document.getElementById("sort-filter").value;
+  if (sortValue.includes("name")) {
+      filteredProducts.sort((a, b) => sortValue === "name-asc"
+          ? a.nombre.localeCompare(b.nombre)
+          : b.nombre.localeCompare(a.nombre)
+      );
+  } else if (sortValue.includes("price")) {
+      filteredProducts.sort((a, b) => sortValue === "price-asc"
+          ? Math.min(...a.precio) - Math.min(...b.precio)
+          : Math.min(...b.precio) - Math.min(...a.precio)
+      );
+  }
+
+  // Actualizar la UI
+  const productContainer = document.querySelector(".product-container");
+  productContainer.innerHTML = "";
+
+  if (filteredProducts.length > 0) {
+      displayProducts(filteredProducts);
+  } else {
+      productContainer.innerHTML = "<p>No se encontraron productos para esta categoría.</p>";
   }
 }
 
@@ -350,4 +440,5 @@ notificationClose.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", async () => {
   await loadProducts();
   openSavedProductModal();
+  fetchCategories();
 });

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cards-modal.css">
+    <link rel="stylesheet" href="../css/filtroproductos.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="icon" type="image/png" href="/img-logos/Logo_sin-fondo_sin_slogan.png">
@@ -60,6 +61,33 @@
 
     <!--* contenedor normal-->
 <main>
+
+   <!--* contenedor de filtros-->
+  <div class="sidebar">
+    <h3>Filtrar por:</h3>
+
+    <label for="category-filter">Categoría:</label>
+    <select id="category-filter">
+        <option value="">Todas</option>
+        <!-- Las opciones se llenarán dinámicamente -->
+    </select>
+
+    <label for="price-filter">Rango de precio:</label>
+    <input type="number" id="min-price" placeholder="Mínimo">
+    <input type="number" id="max-price" placeholder="Máximo">
+
+    <h3>Ordenar por:</h3>
+    <select id="sort-filter">
+        <option value="name-asc">Nombre (A-Z)</option>
+        <option value="name-desc">Nombre (Z-A)</option>
+        <option value="price-asc">Precio (menor a mayor)</option>
+        <option value="price-desc">Precio (mayor a menor)</option>
+    </select>
+
+    <button id="apply-filters">Aplicar</button>
+</div>
+
+
     <div class="product-container"></div>
 
     <!--* lo que aparece en el modal -->
