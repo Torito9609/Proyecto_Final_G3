@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Recuperamos el carrito del localStorage
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  if (carrito.length == 0) {
+    var seguirComprandoBtn = document.getElementById("seguir-comprando");
+    seguirComprandoBtn.style.display = "none";
+  }
   renderizarCarrito(carrito);
 });
 
@@ -38,7 +42,9 @@ function renderizarCarrito(carrito) {
       productCard.classList.add("cartItems");
       productCard.innerHTML = `
       <div>
-          <img src="${producto.imagen}" alt"${producto.nombre}" style="height: 100px;">
+          <img src="${producto.imagen}" alt"${
+        producto.nombre
+      }" style="height: 100px;">
       </div>
       <div class="cart-item-info">
         <p class="nombre-producto">${producto.nombre}</p>
@@ -184,6 +190,8 @@ function vaciarCarrito() {
   carrito_actualizado = [];
   renderizarCarrito(carrito_actualizado);
   calcularTotalCompra();
+  var seguirComprandoBtn = document.getElementById("seguir-comprando");
+  seguirComprandoBtn.style.display = "none";
 }
 
 const notification = document.querySelector("#notification");

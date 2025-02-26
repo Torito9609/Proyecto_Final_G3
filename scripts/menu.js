@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   const registo_inicio = document.getElementById("btn-login");
   const token = localStorage.getItem("authToken");
+  const logo = document.querySelector(".logo_nav");
+
+  logo.addEventListener("click", () => {
+    window.location.href = "../html/inicio.html";
+  });
 
   if (token) {
     const decodedToken = jwt_decode(token);
@@ -58,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
      <button id="btn-login">Registrarse / Iniciar Sesión</button>
     </a>`;
   }
-
 
   // Alternar el menú al hacer clic en el botón del menú hamburguesa
   hamburgerMenu.addEventListener("click", (event) => {

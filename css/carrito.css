@@ -177,6 +177,16 @@
   border-color: #dbc078;
 }
 
+.vaciar {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.vaciar a {
+  text-decoration: none;
+}
+
 .vaciar-carrito {
   width: 150px;
 }
