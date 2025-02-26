@@ -202,8 +202,8 @@ h1 {
   height: 30%;
 }
 
-.add-button :hover {
-  background-color: #c1e5fb !important;
+.add-button:hover {
+  background-color: #dbc078 !important;
 }
 
 .populars {

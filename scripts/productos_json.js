@@ -67,13 +67,20 @@ function displayProducts(productos) {
   productos.forEach((product) => {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
+    let precios = product.precio;
+    console.log(precios);
+    
+    let precioMinimo;
+    if(precios.length > 0){
+      precioMinimo = Math.min(...precios);
+    }
 
     const productHTML = `
     <img src="${product.imagen}" alt="${product.nombre}" class ="img-cards-modal">
     <div class="decoration-cards">
     <h2>${product.nombre}</h2>
        <p><strong>Categoría:</strong> ${product.categoría}</p>
-       <p>$${product.precio[2]}</p>
+       <p>$${precioMinimo}</p>
         <button class="btn_open_card">Añadir al carrito</button>
         </div>
       `;
