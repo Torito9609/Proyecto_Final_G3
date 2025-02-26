@@ -1,0 +1,322 @@
+@font-face {
+    font-family: "Roma";
+    src: url("../fonts/Roma-SemiBold-iF6666b5401d862.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Roma Regular";
+    src: url("../fonts/Roma-Regular-iF6666b5402fe3b.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .checkout-flow {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #1d2957;
+    width: auto;
+    font-family: "Roma", sans-serif;
+    font-size: large;
+  }
+  
+  .checkout-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #dbc078;
+    border-right: 1px solid #ddd;
+  }
+  .checkout-step svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  .checkout-step1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #243d74;
+    border-right: 1px solid #ddd;
+  }
+  .checkout-step1 svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+
+  
+  
+  .checkout-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+     align-items: center;
+
+  }
+  
+  .checkout-step:last-child {
+    border-right: none;
+  }
+  
+  .checkout-step.active {
+    color: #243d74;
+
+  }
+  
+  /* .cart-items {
+    flex: 2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: "Roma";
+  } */
+  
+  .cartItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    width: 650px;
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 15px;
+  }
+  
+  .cart-item-info p {
+    flex: 1;
+    width: 150px;
+  }
+  
+  .cart-item-info .cantidad {
+    font-family: "Roma Regular", sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+  }
+  
+  .cantidad-producto {
+    width: 70px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .bx {
+    font-size: 20px;
+    color: #1a6cb4;
+    background-color: #dbc078;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .cart-item-info .nombre-producto {
+    font-size: 20px;
+  }
+  
+  .cart-item-price {
+    font-weight: bold;
+    width: 100px;
+    margin: 0px 20px;
+  }
+  
+  .dismiss {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .summary {
+    width: 500px;
+    max-width: 100%;
+    background: rgba(0, 49, 92, 0.1); /* Azul transparente */
+    border-radius: 12px;
+    padding: 20px;
+    font-family: "Roma";
+    margin: 50px auto;
+    
+    /* Borde blanco para que resalte */
+    border: 2px solid white;
+
+    /* Sombra más notoria */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Efecto al pasar el cursor sobre el formulario */
+.summary:hover {
+    transform: scale(1.02); /* Leve aumento */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+  
+  .summary h2 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    
+  }
+
+  .summary form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo el contenido */
+}
+
+.summary label {
+    width: 100%;
+    text-align: left; /* Mantiene los labels alineados a la izquierda */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.summary input {
+    width: 300px; /* Ajusta el tamaño de los inputs */
+    max-width: 300px; /* Evita que sean muy largos */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espaciado entre los campos */
+    display: block; /* Asegura que ocupen toda la línea */
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.summary input:focus,
+.summary input:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: #1a6cb4; /* Resalta el borde */
+    outline: none; /* Elimina el contorno azul predeterminado */
+}
+  
+  .btn {
+    display: block;
+    margin: 20px auto;
+    width: 20%;
+    padding: 10px;
+    background-color: #1a6cb4;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid;
+    border-color: #dbc078;
+  }
+  
+  .vaciar-carrito {
+    width: 150px;
+  }
+  
+  .btn-checkout:hover {
+    background-color: #0056b3;
+  }
+  /* Estilos para el formulario dentro de la sección "DATOS DE ENTREGA" */
+form {
+    /* display: flex; */
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    border: 2px solid #1d2957;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px; /* Máximo ancho */
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+button.btn-checkout {
+    width: 100%;
+}
+
+  
+  /* Notificación */
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification p {
+    margin: 0;
+    padding-right: 20px;
+  }
+  
+  .notification button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  

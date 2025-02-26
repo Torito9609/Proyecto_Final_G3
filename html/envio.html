@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles Envio</title>
+    <link rel="stylesheet" href="../css/envio.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="checkout-flow">
+      <div class="checkout-step active">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.7"
+          >
+            <path
+              d="m22 12.5l-.833 2.5m0 0L20 18.5h-4.5l-1-3.5zM16.5 20.51l.01-.011m2.99.011l.01-.011M9 11a4 4 0 1 0 0-8a4 4 0 0 0 0 8"
+            />
+            <path d="M2 18a7 7 0 0 1 11.33-5.5" />
+          </g>
+        </svg>
+        Resumen de productos
+      </div>
+      <div class="checkout-step">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <circle cx="12" cy="9" r="2.5" fill="currentColor" />
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 20.5c0 0 -6 -7 -6 -11.5c0 -3.31 2.69 -6 6 -6c3.31 0 6 2.69 6 6c0 4.5 -6 11.5 -6 11.5Z"
+          />
+        </svg>
+        Detalles de envío
+      </div>
+      <div class="checkout-step1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="m11.005 2l7.298 2.28a1 1 0 0 1 .702.955V7h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1l-3.22.001c-.387.51-.857.96-1.4 1.33L11.005 22l-5.38-3.668a6 6 0 0 1-2.62-4.958V5.235a1 1 0 0 1 .702-.954zm0 2.094l-6 1.876v7.404a4 4 0 0 0 1.558 3.169l.189.136l4.253 2.9L14.787 17h-4.782a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h7V5.97zm0 7.906v3h9v-3zm0-2h9V9h-9z"
+          />
+        </svg>
+        Método de pago
+      </div>
+    </div>
+
+    <div class="checkout-container"> 
+        <div class="cart-items" id="cart-items"></div>
+
+        <div class="summary">
+            <h2>DATOS DE ENVÍO</h2>
+            <form id="shipping-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label> 
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error" id="error-nombre"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                    <span class="error" id="error-apellido"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" required>
+                    <span class="error" id="error-correo"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" required>
+                    <span class="error" id="error-telefono"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="barrio">Barrio</label>
+                    <input type="text" id="barrio" name="barrio" required>
+                    <span class="error" id="error-barrio"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                    <span class="error" id="error-direccion"></span>
+                </div>
+
+                <button type="submit" class="btn btn-checkout">Ir a pagar</button>
+            </form>
+        </div>
+    </div>
+      
+
+    <script src="/scripts/validacion-envio.js"></script>
+  </body>
+</html>
