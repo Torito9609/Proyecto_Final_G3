@@ -150,13 +150,12 @@ body {
 
 /* * contenedor padre*/
 .product-container {
-  padding: 50px;
-
-  background-color: rgb(255, 255, 255);
-
+  flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste flexible */
+  gap: 50px;
+  padding: 20px;
+  align-items: start; /* Asegura que todos los productos se alineen en la parte superior */
 }
 
 .img-cards-modal {

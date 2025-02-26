@@ -282,6 +282,11 @@
     flex-direction: column;
   }
 }
+@media (max-width: 463px) {
+  .top-section {
+    justify-content: center;
+  }
+}
 
 /* */
 .colores_relleno {
@@ -353,7 +358,7 @@
   }
 
   .nav-links.active {
-    max-height: 320px;
+    max-height: 500px;
     padding: 10px 0;
     transform: translateX(0);
     transform: translateY(-60px);
