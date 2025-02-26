@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página_de_inicio</title>
-    <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/inicio.css" />
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/inicio.css" />
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="icon" type="image/png" href="/img/logo2.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -47,8 +47,9 @@
         <ul class="nav-links">
           <li><a href="/html/inicio.html">Inicio</a></li>
           <li><a href="/html/productos.html">Productos</a></li>
-          <li><a href="/html/index.html">Sobre nosotros</a></li>
+          <li><a href="/index.html">Sobre nosotros</a></li>
           <li><a href="/html/contactenos.html">Contáctenos</a></li>
+          <button class="close-menu">Cerrar</button>
         </ul>
         <div class="hamburger-menu">
           <span></span>
@@ -58,39 +59,42 @@
       </div>
     </nav>
 
-    <div class="call-to-action">
-      <p>¡Haz crecer tu negocio con Zafiro Azul! Comprar ahora</p>
-    </div>
+
 
     <div class="video-banner">
-        <video autoplay muted loop class="video">
+        <video autoplay muted loop class="video" id="bannerVideo">
             <source src="/video/videobanner.mp4" type="video/mp4">
             Tu navegador no soporta el elemento de video.
           </video>
-          <div class="overlay">
-            
+          <div class="overlay">            
+          </div>
+          <div class="call-to-action">
+            <p class="cta-text">Potencia tu negocio con Zafiro Azul</p>
+            <a href="/html/productos.html">
+            <button class="cta-button">Comprar ahora</button>
+          </a>
           </div>
     </div>
  
 
     <h1 id="categorie-text">CATEGORÍAS</h1>
     <div class="categories">
-        <div class="categorie-card">
-            <img src="/img/naturales.jpg" alt="Productos Naturales">
+        <div class="categorie-card" onclick="navigate('Productos naturales')">
+            <img src="/img/naturales.jpg" alt="Productos naturales">
             <p>Productos Naturales</p>
             <span>Disfruta de lo mejor de la naturaleza en cada producto.</span>
         </div>
-        <div class="categorie-card">
+        <div class="categorie-card" onclick="navigate('Productos procesados')">
             <img src="/img/procesados.jpg" alt="Productos Procesados">
             <p>Productos Procesados</p>
             <span>Calidad y sabor en productos listos para disfrutar.</span>
         </div>
-        <div class="categorie-card">
+        <div class="categorie-card" onclick="navigate('Productos dulces')">
             <img src="/img/mermelada.jpg" alt="Productos Dulces">
             <p>Productos Dulces</p>
             <span>Endulza tu vida con nuestras opciones irresistibles.</span>
         </div>
-        <div class="categorie-card">
+        <div class="categorie-card" onclick="navigate('Vinagres y otros')">
             <img src="/img/vinagre.webp" alt="Vinagres y otros">
             <p>Vinagres y otros</p>
             <span>Descubre sabores únicos para tu cocina.</span>
@@ -119,7 +123,7 @@
         </div>
         <div class="special-card">
             <img src="/icons/payment-method-bank-svgrepo-com.svg" alt="Métodos de pago flexible">
-            <p>Métodos de pago flexible</p>
+            <p>Pago flexible</p>
             <span>Ofrecemos múltiples métodos de pago pensados para tu comodidad y la de tu negocio.</span>
         </div>
         <div class="special-card">
@@ -134,7 +138,7 @@
         </div>
         <div class="special-card">
             <img src="/icons/award-badge-quality-svgrepo-com.svg" alt="Productos de alta calidad">
-            <p>Productos de alta calidad</p>
+            <p>Alta calidad</p>
             <span>Seleccionamos los mejores condimentos para ofrecerte frescura, sabor y calidad superior.</span>
         </div>
     </div>
@@ -181,19 +185,19 @@
           <p>Síguenos en nuestras redes sociales</p>
     
           <div id="footer_social_media">
-            <a href="#" class="footer-link" id="instagram">
+            <a href="https://www.instagram.com/inversioneszafiro_col/" class="footer-link" id="instagram">
               <i class="fa-brands fa-instagram"></i>
             </a>
-    
+      
             <a href="#" class="footer-link" id="facebook">
               <i class="fa-brands fa-facebook-f"></i>
             </a>
     
-            <a href="#" class="footer-link" id="whatsapp">
+            <a href="https://wa.me/573024116438" class="footer-link" id="whatsapp">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
     
-            <a href="#" class="footer-link" id="tiktok">
+            <a href="https://www.tiktok.com/@inversioneszafiro_col" class="footer-link" id="tiktok">
               <i class="fa-brands fa-tiktok"></i>
             </a>
           </div>
@@ -238,11 +242,9 @@
     
           <p> ¡Únete a nuestra comunidad! Suscríbete para recibir promociones y novedades de nuestros condimentos. </p>
           <div id="input_group">
-            <input type="email" id="email">
-            <button>
-              <i class="fa-regular fa-envelope"></i>
-            </button>
-          </div>
+            <input type="email" id="email" placeholder="Tu correo">
+            <button><i class="fa-regular fa-envelope"></i></button>
+        </div>
         </div>
       </div>
     
@@ -256,6 +258,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../scripts/inicio.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script src="/scripts/menu.js"></script>
     <script src="/scripts/carrito_contador.js"></script>
 </body>

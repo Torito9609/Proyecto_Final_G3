@@ -21,7 +21,7 @@ document
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-    let users = JSON.parse(localStorage.getItem("user")) || [];
+    //let users = JSON.parse(localStorage.getItem("user")) || [];
 
     if (!namePattern.test(name)) {
       Swal.fire({
@@ -84,30 +84,28 @@ document
       return;
     }
 
-    const userExists = users.some(
-      (user) => user.email === email || user.phone === phone
-    );
-    if (userExists) {
-      Swal.fire({
-        icon: "warning",
-        title: "Correo o teléfono ya existentes",
-        text: "Por favor intenta registrarte con otro correo o número de teléfono",
-        background: "#243d74",
-        color: "#dbc078",
-        customClass: { confirmButton: "btn-alert" },
-      });
-      console.log(
-        "Error: Usuario duplicado -> Email:",
-        email,
-        "Teléfono:",
-        phone
-      );
-      return;
-    }
+    let newUser = {
+      nombreUsuario: name,
+      telefonoUsuario: phone,
+      correoUsuario: email,
+      password: password,
+    };
+    registrarUsuario(newUser);
+    this.reset();
+  });
 
-    let newUser = { name, phone, email, password };
-    users.push(newUser);
-    localStorage.setItem("user", JSON.stringify(users));
+/*CONEXION CON EL BACKEND*/
+async function registrarUsuario(usuario) {
+  try {
+    //Si retorna null el usuario no existe y lo puede registrar
+    const postResponse = await fetch("http://localhost:8080/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    const result = await postResponse.text();
 
     Swal.fire({
       icon: "success",
@@ -124,9 +122,11 @@ document
         console.log("El registro ha sido exitoso.");
       }
     });
-    console.log("Usuario registrado con éxito ->", newUser);
-    this.reset();
-  });
+    console.log("Usuario registrado con éxito ->", result);
+  } catch (error) {
+    console.error("Error al registrar usuario: ", error);
+  }
+}
 
 document
   .getElementById("loginForm")
@@ -135,30 +135,65 @@ document
     const email = document.getElementById("email_login").value.trim();
     const password = document.getElementById("password_login").value.trim();
 
-    let users = JSON.parse(localStorage.getItem("user")) || [];
+    let loginUser = {
+      correo: email,
+      password: password,
+    };
 
-    const userCorrect = users.find(
-      (user) => user.email === email && user.password === password
-    );
-    if (userCorrect) {
-      console.log("Es correcto! Iniciando sesión");
-      this.reset();
-      localStorage.setItem("logged_user", JSON.stringify(userCorrect));
-      window.location.href = "/html/inicio.html";
-    } else {
+    loginUsuario(loginUser);
+    this.reset();
+  });
+
+async function loginUsuario(usuario) {
+  try {
+    const postResponse = await fetch("http://localhost:8080/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+
+    // Verifica si la respuesta es válida antes de intentar parsearla
+    if (postResponse.ok) {
+      const result = await postResponse.json();
+      const token = result.token; // Asegúrate de que el token venga con este nombre o ajústalo según tu backend
+      localStorage.setItem("authToken", token);
+      console.log("Login exitoso ->", result);
+
       Swal.fire({
-        icon: "warning",
-        title: "Usuario y/o contraseña inválidos",
-        text: "Por favor intenta de nuevo.",
+        icon: "success",
+        title: "¡Ingreso exitoso!",
+        text: "Has iniciado sesión correctamente.",
+        background: "#243d74",
+        color: "#dbc078",
+        customClass: { confirmButton: "btn-alert" },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Redirige después de que el usuario haga clic en "OK"
+          window.location.href = "/html/inicio.html";
+        }
+      });
+    } else {
+      // Si el status no es OK, muestra un mensaje de error
+      const errorText = await postResponse.text();
+      console.error("Error al Ingresar: ", errorText);
+      Swal.fire({
+        icon: "error",
+        title: "Error al iniciar sesión",
+        text: "Credenciales incorrectas.",
         background: "#243d74",
         color: "#dbc078",
         customClass: { confirmButton: "btn-alert" },
       });
-      this.reset();
-      return;
     }
-  });
+  } catch (error) {
+    console.error("Error al Ingresar: ", error);
+  }
+}
 
+/*--------------------------------------*/
+/*VALIDACIONES EN EL FORMULARIO DE REGISTRO*/
 function validarNombre() {
   const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 

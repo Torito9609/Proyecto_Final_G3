@@ -79,6 +79,11 @@ async function displayPopularProducts(productsFromJson) {
     }
 }
 
+function saveAndRedirect(productId){
+    localStorage.setItem("selectedProduct", productId); // Guarda el producto en localStorage
+    window.location.href = "../html/productos.html"; // Redirige a la página de productos
+}
+
 function createProductCard(product){
     //Create image container div and image element
     const imageContainer = document.createElement('div');
@@ -115,6 +120,10 @@ function createProductCard(product){
     boton.classList.add('add-button');
     boton.textContent = 'Añadir al carrito';
 
+    productCard.addEventListener("click", () => {
+        saveAndRedirect(product.id);
+    });
+
     imageContainer.appendChild(img);//Append img element to imgage container div
 
     infoContainer.appendChild(name);//Append product name (h3) to product info container div
@@ -128,6 +137,12 @@ function createProductCard(product){
 
     return productCard;
 }
+
+function navigate(categoria) {
+    localStorage.setItem("selectedCategory", categoria); // Guarda la categoría
+    window.location.href = "productos.html"; // Redirige a la página de productos
+  }
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     const products = await loadJson();

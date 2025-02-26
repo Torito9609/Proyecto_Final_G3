@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/cards-modal.css">
-    <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="../css/cards-modal.css">
+    <link rel="stylesheet" href="../css/filtroproductos.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="icon" type="image/png" href="/img-logos/Logo_sin-fondo_sin_slogan.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -26,6 +27,7 @@
       <nav class="main-navbar">
             <div class="top-section">
                 <div class="logo"><img src="/img-logos/Logo_sin-fondo_sin_slogan.png" class="logo_nav"> </div>
+                <!--<button class="sidebar-toggle" onclick="toggleSidebar()">Filtros</button>-->
                 <div class="search-bar">
                     <!-- <input type="text" placeholder="Buscar productos..." />
                     <button type="submit" class="button-search">
@@ -46,8 +48,9 @@
                 <ul class="nav-links">
                     <li><a href="/html/inicio.html">Inicio</a></li>
                     <li><a href="/html/productos.html">Productos</a></li>
-                    <li><a href="/html/index.html">Sobre nosotros</a></li>
+                    <li><a href="/index.html">Sobre nosotros</a></li>
                     <li><a href="/html/contactenos.html">Contáctenos</a></li>
+                    <button class="close-menu">Cerrar</button>
                 </ul>
                 <div class="hamburger-menu">
                     <span></span>
@@ -59,7 +62,35 @@
 
     <!--* contenedor normal-->
 <main>
+
+   <!--* contenedor de filtros-->
+  <div class="sidebar">
+    <h3>Filtrar por:</h3>
+
+    <label for="category-filter">Categoría:</label>
+    <select id="category-filter">
+        <option value="">Todas</option>
+        <!-- Las opciones se llenarán dinámicamente -->
+    </select>
+
+    <label for="price-filter">Rango de precio:</label>
+    <input type="number" id="min-price" placeholder="Mínimo">
+    <input type="number" id="max-price" placeholder="Máximo">
+
+    <h3>Ordenar por:</h3>
+    <select id="sort-filter">
+        <option value="name-asc">Nombre (A-Z)</option>
+        <option value="name-desc">Nombre (Z-A)</option>
+        <option value="price-asc">Precio (menor a mayor)</option>
+        <option value="price-desc">Precio (mayor a menor)</option>
+    </select>
+
+    <button id="apply-filters">Aplicar</button>
+</div>
+
+
     <div class="product-container"></div>
+    
 
     <!--* lo que aparece en el modal -->
     <div class="modal" id="productModal" style="display: none;">
@@ -76,9 +107,7 @@
                 <input type="number" class="cantidad-producto" min="1" value="1">
                 <a href="#"><i class='bx bx-plus' ></i></a></i>
             </div>
-            <button class="btn_open_card carrito">Añadir al carrito</button>
-            
-            
+            <button class="btn_open_card carrito">Añadir al carrito</button>    
         </div>
         </div>
     </div>
@@ -97,7 +126,7 @@
         <p>Síguenos en nuestras redes sociales</p>
 
         <div id="footer_social_media">
-          <a href="#" class="footer-link" id="instagram">
+          <a href="https://www.instagram.com/inversioneszafiro_col/" class="footer-link" id="instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
 
@@ -105,11 +134,11 @@
             <i class="fa-brands fa-facebook-f"></i>
           </a>
 
-          <a href="#" class="footer-link" id="whatsapp">
+          <a href="https://wa.me/573024116438" class="footer-link" id="whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
 
-          <a href="#" class="footer-link" id="tiktok">
+          <a href="https://www.tiktok.com/@inversioneszafiro_col" class="footer-link" id="tiktok">
             <i class="fa-brands fa-tiktok"></i>
           </a>
         </div>
@@ -154,10 +183,9 @@
 
         <p> ¡Únete a nuestra comunidad! Suscríbete para recibir promociones y novedades de nuestros condimentos. </p>
         <div id="input_group">
-          <input type="email" id="email">
-          <button>
-            <i class="fa-regular fa-envelope"></i>
-          </button>
+            <input type="email" id="email" placeholder="Tu correo">
+            <button><i class="fa-regular fa-envelope"></i></button>
+        </div>
         </div>
       </div>
     </div>
@@ -173,6 +201,7 @@
 
     <script src="/scripts/productos_json.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script src="/scripts/menu.js"></script>
         </body>
 
