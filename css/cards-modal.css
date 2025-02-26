@@ -357,3 +357,92 @@ body {
   list-style: none;
   padding: 0;
 }*/
+
+
+
+/** Ajustes responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    width: 80%; /* Deja espacio a los lados */
+    max-height: 90%; /* Para que no ocupe toda la pantalla */
+    /* overflow-y: auto;  */
+  }
+
+  .modal img {
+    width: 80%;
+    max-height: 200px;
+    border-radius: 20px 20px 0 0;
+    margin: auto;
+    display: block;  
+    object-fit: contain;
+
+  }
+  
+  .org-modal {
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .modal-content {
+    width: 99%;
+  }
+  .modalTitle{
+    font-size: 15px;
+    margin: 3px;
+  }
+  .modalPrices{
+    margin:1px;
+  }
+  .modalCategory {
+    font-size: 12px;
+    margin: 5px;
+  }
+  
+  .modalDescription {
+    font-size: 12px;
+    margin: 5px;
+  }
+
+  .show-modal{
+    font-size: 12px !important;
+}
+}
+
+@media (max-width: 768px) {
+  .modalTitle {
+    font-size: 24px;
+  }
+
+  .modalCategory {
+    font-size: 14px;
+  }
+
+  .modalDescription {
+    font-size: 13px;
+  }
+
+  .cantidad-container {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .cantidad-container a i {
+    font-size: 18px;
+    padding: 4px;
+  }
+
+  .cantidad-producto {
+    width: 40px;
+    height: 25px;
+    font-size: 16px;
+  }
+
+  .btn_open_card.carrito {
+    font-size: 16px;
+    padding: 8px 15px;
+    width: 80%; /* Ajuste para pantallas chicas */
+  }
+}
