@@ -2,28 +2,56 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerMenu = document.querySelector(".hamburger-menu");
   const navLinks = document.querySelector(".nav-links");
   const registo_inicio = document.getElementById("btn-login");
-  loged_user = JSON.parse(localStorage.getItem("logged_user"));
+  const token = localStorage.getItem("authToken");
 
-  if (loged_user != undefined) {
-    //registo_inicio.classList.add("hide-button");
-   // const element = document.getElementById("btn-login");
-   // element.remove();
+  if (token) {
+    const decodedToken = jwt_decode(token);
+    console.log("Token decodificado: ", decodedToken);
+    const nombreUsuario = decodedToken.nombre;
+    console.log(nombreUsuario);
 
     let containerLogIn = document.getElementById("login-section");
-    let userData = JSON.parse(localStorage.getItem("logged_user"));
 
-    const userNameContainer = document.createElement('div');
+    const userNameContainer = document.createElement("div");
     userNameContainer.classList.add("user-name-container");
-    const userIcon = document.createElement('i');
+    const userIcon = document.createElement("i");
     userIcon.classList.add("bx");
     userIcon.classList.add("bxs-user");
-    const userName = document.createElement('p');
-    userName.textContent = userData.name;
+    const userName = document.createElement("p");
+    userName.textContent = nombreUsuario;
 
     userNameContainer.appendChild(userIcon);
     userNameContainer.appendChild(userName);
     containerLogIn.appendChild(userNameContainer);
-  }else {
+
+    // Creamos el menú desplegable (que estará oculto por defecto)
+    const dropdownMenu = document.createElement("div");
+    dropdownMenu.classList.add("dropdown-menu");
+    dropdownMenu.style.display = "none";
+
+    // Creamos la opción de "Cerrar sesión"
+    const logoutOption = document.createElement("p");
+    logoutOption.classList.add("dropdown-item");
+    logoutOption.textContent = "Cerrar sesión";
+
+    // Añadimos el evento de clic para cerrar sesión
+    logoutOption.addEventListener("click", () => {
+      // Eliminar el token del almacenamiento local
+      localStorage.removeItem("authToken");
+      window.location.href = "../html/inicio.html";
+    });
+    dropdownMenu.appendChild(logoutOption);
+    // Añadimos el menú desplegable al contenedor del nombre de usuario
+    userNameContainer.appendChild(dropdownMenu);
+    userNameContainer.addEventListener("click", () => {
+      // Alternamos la visibilidad del menú desplegable
+      if (dropdownMenu.style.display === "none") {
+        dropdownMenu.style.display = "block";
+      } else {
+        dropdownMenu.style.display = "none";
+      }
+    });
+  } else {
     let containerLogIn = document.getElementById("login-section");
     containerLogIn.innerHTML = `          
     <a href="/html/inciar_sesiom.html">

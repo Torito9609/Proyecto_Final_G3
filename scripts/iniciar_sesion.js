@@ -88,9 +88,7 @@ document
       nombreUsuario: name,
       telefonoUsuario: phone,
       correoUsuario: email,
-      passwordHash: password,
-      passwordSalt: password,
-      direccionUsuario: "",
+      password: password,
     };
     registrarUsuario(newUser);
     this.reset();
@@ -98,64 +96,33 @@ document
 
 /*CONEXION CON EL BACKEND*/
 async function registrarUsuario(usuario) {
-  let correoUsuarioNuevo = usuario.correoUsuario;
-  let usuarioExistente;
-
   try {
-    //Usa GET para buscar si hay un usuario con el correo ingresado en el formulario
-    const response = await fetch(
-      `http://localhost:8080/usuarios/traer/correo?correo=${correoUsuarioNuevo}`
-    );
-    usuarioExistente = await response.json();
+    //Si retorna null el usuario no existe y lo puede registrar
+    const postResponse = await fetch("http://localhost:8080/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    const result = await postResponse.text();
 
-    if (usuarioExistente.idUsuario === null) {
-      //Si retorna null el usuario no existe y lo puede registrar
-      const postResponse = await fetch(
-        "http://localhost:8080/usuarios/registrar",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(usuario),
-        }
-      );
-      const result = await postResponse.text();
-
-      Swal.fire({
-        icon: "success",
-        title: "¡Registro existoso!",
-        text: "Ahora intenta iniciar sesión con tu correo y contraseña.",
-        background: "#243d74",
-        color: "#dbc078",
-        customClass: { confirmButton: "btn-alert" },
-      }).then((result) => {
-        if (result.isConfirmed) {
-          container.classList.remove("active");
-          lock1.style.display = "none";
-          lock2.style.display = "none";
-          console.log("El registro ha sido exitoso.");
-        }
-      });
-      console.log("Usuario registrado con éxito ->", result);
-    } else {
-      //Si el usuario existe muestra mensaje de error
-      Swal.fire({
-        icon: "warning",
-        title: "Correo o teléfono ya existentes",
-        text: "Por favor intenta registrarte con otro correo o número de teléfono",
-        background: "#243d74",
-        color: "#dbc078",
-        customClass: { confirmButton: "btn-alert" },
-      });
-      console.log(
-        "Error: Usuario duplicado -> Email:",
-        email,
-        "Teléfono:",
-        phone
-      );
-      return;
-    }
+    Swal.fire({
+      icon: "success",
+      title: "¡Registro existoso!",
+      text: "Ahora intenta iniciar sesión con tu correo y contraseña.",
+      background: "#243d74",
+      color: "#dbc078",
+      customClass: { confirmButton: "btn-alert" },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        container.classList.remove("active");
+        lock1.style.display = "none";
+        lock2.style.display = "none";
+        console.log("El registro ha sido exitoso.");
+      }
+    });
+    console.log("Usuario registrado con éxito ->", result);
   } catch (error) {
     console.error("Error al registrar usuario: ", error);
   }
@@ -169,8 +136,8 @@ document
     const password = document.getElementById("password_login").value.trim();
 
     let loginUser = {
-      correoUsuario: email,
-      passwordHash: password,
+      correo: email,
+      password: password,
     };
 
     loginUsuario(loginUser);
@@ -179,38 +146,42 @@ document
 
 async function loginUsuario(usuario) {
   try {
-    const postResponse = await fetch("http://localhost:8080/usuarios/login", {
+    const postResponse = await fetch("http://localhost:8080/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(usuario),
     });
-    const result = await postResponse.json();
-    console.log("POST Response", result);
 
-    let userCorrect = {
-      id: result.idUsuario,
-      name: result.nombreUsuario,
-      phone: result.telefonoUsuario,
-      email: result.correoUsuario,
-      password: result.passwordHash,
-    };
+    // Verifica si la respuesta es válida antes de intentar parsearla
+    if (postResponse.ok) {
+      const result = await postResponse.json();
+      const token = result.token; // Asegúrate de que el token venga con este nombre o ajústalo según tu backend
+      localStorage.setItem("authToken", token);
+      console.log("Login exitoso ->", result);
 
-    if (
-      userCorrect.id !== null &&
-      userCorrect.id !== undefined &&
-      userCorrect.id !== ""
-    ) {
-      console.log("Es correcto! Iniciando sesión");
-
-      localStorage.setItem("logged_user", JSON.stringify(userCorrect));
-      window.location.href = "/html/inicio.html";
-    } else {
       Swal.fire({
-        icon: "warning",
-        title: "Usuario y/o contraseña inválidos",
-        text: "Por favor intenta de nuevo.",
+        icon: "success",
+        title: "¡Ingreso exitoso!",
+        text: "Has iniciado sesión correctamente.",
+        background: "#243d74",
+        color: "#dbc078",
+        customClass: { confirmButton: "btn-alert" },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Redirige después de que el usuario haga clic en "OK"
+          window.location.href = "/html/inicio.html";
+        }
+      });
+    } else {
+      // Si el status no es OK, muestra un mensaje de error
+      const errorText = await postResponse.text();
+      console.error("Error al Ingresar: ", errorText);
+      Swal.fire({
+        icon: "error",
+        title: "Error al iniciar sesión",
+        text: "Credenciales incorrectas.",
         background: "#243d74",
         color: "#dbc078",
         customClass: { confirmButton: "btn-alert" },
@@ -220,6 +191,7 @@ async function loginUsuario(usuario) {
     console.error("Error al Ingresar: ", error);
   }
 }
+
 /*--------------------------------------*/
 /*VALIDACIONES EN EL FORMULARIO DE REGISTRO*/
 function validarNombre() {
